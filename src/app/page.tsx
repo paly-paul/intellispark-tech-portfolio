@@ -1,4 +1,9 @@
 import type { Metadata } from 'next'
+import ServicesSection from '@/components/sections/ServicesSection'
+import AudienceSection from '@/components/sections/AudienceSection'
+import CaseStudiesSection from '@/components/sections/CaseStudiesSection'
+import FAQSection from '@/components/sections/FAQSection'
+import CTASection from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
   title: 'Intellispark Technologies — Build Your India Team',
@@ -20,22 +25,22 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Copy */}
             <div className="space-y-8">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 aos">
                 <span className="w-2 h-2 rounded-full bg-teal" />
                 <span className="text-sm font-500 text-gray-600">GCC & Talent Solutions · Kochi, India</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-800 leading-tight text-navy">
+              <h1 className="text-4xl md:text-5xl font-800 leading-tight text-navy aos aos-delay-1">
                 A thoughtful way<br />
                 to build your team<br />
                 <em className="text-teal not-italic">in India.</em>
               </h1>
 
-              <p className="text-lg text-gray-600 max-w-md leading-relaxed">
+              <p className="text-lg text-gray-600 max-w-md leading-relaxed aos aos-delay-2">
                 Whether you&apos;re exploring a GCC for the first time or scaling an existing India presence, we take the time to understand your goals — and help you get there without unnecessary risk or guesswork.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 aos aos-delay-3">
                 <a
                   href="/book-a-call"
                   className="px-8 py-3 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors inline-flex items-center justify-center gap-2"
@@ -53,7 +58,7 @@ export default function Home() {
               </div>
 
               {/* Trust Stats */}
-              <div className="pt-8 space-y-4">
+              <div className="pt-8 space-y-4 aos aos-delay-3">
                 <p className="text-sm font-500 text-gray-600">Trusted by companies across the US, UK & ANZ</p>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -85,20 +90,25 @@ export default function Home() {
             </div>
 
             {/* Right: Placeholder */}
-            <div className="hidden md:block h-96 bg-gradient-to-br from-blue-pale to-teal-light rounded-2xl" />
+            <div className="hidden md:block h-96 bg-gradient-to-br from-blue-pale to-teal-light rounded-2xl aos aos-delay-2" />
           </div>
         </div>
       </section>
 
-      {/* Placeholder for additional sections */}
-      <section className="py-20 md:py-32 px-6 md:px-8 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-700 text-navy mb-8">More sections coming soon</h2>
-          <p className="text-gray-600 text-lg">
-            The homepage is being built with all sections including Services, Case Studies, FAQ, and more.
-          </p>
-        </div>
-      </section>
+      {/* Services Section */}
+      <ServicesSection />
+
+      {/* Audience Section */}
+      <AudienceSection />
+
+      {/* Case Studies Section */}
+      <CaseStudiesSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* CTA Section */}
+      <CTASection />
     </div>
   )
 }

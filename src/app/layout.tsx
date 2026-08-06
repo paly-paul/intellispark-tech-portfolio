@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/footer/Footer'
+import { AOSProvider } from '@/components/AOSProvider'
 import '@/styles/globals.css'
 
 const inter = Inter({
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-inter bg-white text-gray-900">
+        <AOSProvider />
         <Nav />
         <main>{children}</main>
         <Footer />
