@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --black: #111111;
+    --teal: #00B8A9;
+    --teal-light: #E6FBF9;
+    --blue: #2D5BFF;
+    --blue-light: #5B82FF;
+    --blue-pale: #EEF2FF;
+    --navy: #0A0F1E;
+    --navy-mid: #0F1628;
+    --navy-card: #131929;
+    --white: #FFFFFF;
+    --white-80: rgba(255, 255, 255, 0.8);
+    --white-70: rgba(255, 255, 255, 0.7);
+    --white-55: rgba(255, 255, 255, 0.55);
+    --white-50: rgba(255, 255, 255, 0.5);
+    --white-40: rgba(255, 255, 255, 0.4);
+    --white-30: rgba(255, 255, 255, 0.3);
+    --white-20: rgba(255, 255, 255, 0.2);
+    --white-15: rgba(255, 255, 255, 0.15);
+    --white-12: rgba(255, 255, 255, 0.12);
+    --white-10: rgba(255, 255, 255, 0.1);
+    --white-08: rgba(255, 255, 255, 0.08);
+    --white-07: rgba(255, 255, 255, 0.07);
+    --white-06: rgba(255, 255, 255, 0.06);
+    --gray-50: #F8F9FA;
+    --gray-100: #F1F3F5;
+    --gray-200: #E9ECEF;
+    --gray-300: #CED4DA;
+    --gray-500: #868E96;
+    --gray-600: #6C757D;
+    --gray-700: #495057;
+    --gray-900: #212529;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --nav-height: 72px;
+  }
+
+  * {
+    @apply box-border m-0 p-0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-inter bg-white text-gray-900 antialiased overflow-x-hidden;
+    font-family: var(--font);
+  }
+
+  /* Offset anchor links for sticky nav */
+  [id] {
+    scroll-margin-top: calc(var(--nav-height) + 24px);
+  }
+}
+
+/* ── ANIMATE ON SCROLL ── */
+.aos {
+  @apply opacity-0 transition-all;
+  transform: translateY(28px);
+  transition-duration: 750ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aos.is-visible {
+  @apply opacity-100;
+  transform: translateY(0);
+}
+
+.aos-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.aos-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.aos-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
