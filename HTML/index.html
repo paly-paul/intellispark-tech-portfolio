@@ -1,0 +1,5322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Intellispark Technologies — Helping global companies build thoughtful, high-performing teams in Kochi, India. GCC Setup, BOT/COPO, Staff Augmentation, Product Engineering and AiPODS." />
+  <title>Intellispark Technologies — Build Your India Team</title>
+
+  <!-- Inter typeface -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons (replaces emoji icons) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+  :root {
+    --black:       #111111;
+    --teal:        #00B8A9;
+    --teal-light:  #E6FBF9;
+    --blue:        #2D5BFF;
+    --blue-light:  #5B82FF;
+    --blue-pale:   #EEF2FF;
+    --navy:        #0A0F1E;
+    --navy-mid:    #0F1628;
+    --navy-card:   #131929;
+    --white:       #FFFFFF;
+    --white-80:    rgba(255,255,255,0.80);
+    --white-70:    rgba(255,255,255,0.70);
+    --white-55:    rgba(255,255,255,0.55);
+    --white-50:    rgba(255,255,255,0.50);
+    --white-40:    rgba(255,255,255,0.40);
+    --white-30:    rgba(255,255,255,0.30);
+    --white-20:    rgba(255,255,255,0.20);
+    --white-15:    rgba(255,255,255,0.15);
+    --white-12:    rgba(255,255,255,0.12);
+    --white-10:    rgba(255,255,255,0.10);
+    --white-08:    rgba(255,255,255,0.08);
+    --white-07:    rgba(255,255,255,0.07);
+    --white-06:    rgba(255,255,255,0.06);
+    --gray-50:     #F8F9FA;
+    --gray-100:    #F1F3F5;
+    --gray-200:    #E9ECEF;
+    --gray-300:    #CED4DA;
+    --gray-500:    #868E96;
+    --gray-600:    #6C757D;
+    --gray-700:    #495057;
+    --gray-900:    #212529;
+    --font:        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --nav-height:  72px;
+  }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--gray-900);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* Offset anchor links for sticky nav */
+    [id] { scroll-margin-top: calc(var(--nav-height) + 24px); }
+
+    /* ── ANIMATE ON SCROLL ── */
+    .aos {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .aos.is-visible { opacity: 1; transform: translateY(0); }
+    .aos-delay-1 { transition-delay: 0.1s; }
+    .aos-delay-2 { transition-delay: 0.2s; }
+    .aos-delay-3 { transition-delay: 0.3s; }
+
+
+/* ── SECTION-01-NAV ── */
+
+
+    /* ── NAV SHELL ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      z-index: 1000;
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    }
+
+    .nav.scrolled {
+      border-color: var(--gray-200);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.97);
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* ── LOGO ── */
+    .nav__logo {
+      flex-shrink: 0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-placeholder {
+      height: 36px;
+      padding: 0 14px;
+      background: var(--gray-100);
+      border: 1.5px dashed var(--gray-300);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-500);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    /* Real logo once asset is provided — swap logo-placeholder for logo-mark + logo-text */
+    .logo-mark {
+      width: 34px; height: 34px;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.4px;
+    }
+
+    /* ── DESKTOP LINKS ── */
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+      flex: 1;
+    }
+
+    .nav__links > li { position: relative; }
+
+    .nav__links > li > a,
+    .nav__links > li > button {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 13px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-700);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .nav__links > li > a:hover,
+    .nav__links > li > button:hover {
+      background: var(--gray-100);
+      color: var(--black);
+    }
+
+    .chevron {
+      width: 14px; height: 14px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.2s;
+    }
+
+    .nav__links > li.open > button .chevron { transform: rotate(180deg); }
+
+    /* ── DROPDOWN ── */
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: 520px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.12);
+      padding: 12px;
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .nav__links > li.open .dropdown {
+      display: grid;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.12s;
+    }
+
+    .dropdown__item:hover { background: var(--gray-50); transform: scale(1.01); }
+
+    .dropdown__icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+    }
+
+    .dropdown__title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+
+    .dropdown__desc {
+      font-size: 12.5px;
+      color: var(--gray-500);
+      line-height: 1.4;
+    }
+
+    /* ── CTA (desktop) ── */
+    .nav__cta {
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      font-family: var(--font);
+      white-space: nowrap;
+      box-shadow: 0 2px 12px rgba(45,91,255,0.28);
+    }
+
+    .btn-primary:hover {
+      background: #1A45E8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(45,91,255,0.38);
+    }
+
+    /* ── MOBILE RIGHT SIDE ── */
+    .nav__mobile-right {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+
+    /* Mobile CTA — compact */
+    .btn-primary-sm {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 2px 10px rgba(45,91,255,0.28);
+      font-family: var(--font);
+    }
+
+    /* Hamburger */
+    .nav__hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px; height: 36px;
+      padding: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+
+    .nav__hamburger:hover { background: var(--gray-100); }
+
+    .nav__hamburger span {
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    /* ── MOBILE MENU PANEL ── */
+    .nav__mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      background: var(--white);
+      border-top: 1px solid var(--gray-100);
+      padding: 12px 20px 28px;
+      flex-direction: column;
+      gap: 2px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+      z-index: 999;
+      max-height: calc(100vh - var(--nav-height));
+      overflow-y: auto;
+    }
+
+    .nav__mobile-menu.open { display: flex; }
+
+    .m-link {
+      display: block;
+      padding: 13px 6px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--gray-700);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .m-section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--gray-500);
+      padding: 16px 6px 8px;
+    }
+
+    .m-service {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+
+    .m-service:hover { background: var(--gray-100); }
+
+    .m-icon {
+      width: 30px; height: 30px;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav__links, .nav__cta { display: none; }
+      .nav__mobile-right { display: flex; }
+    }
+
+    @media (max-width: 400px) {
+      .btn-primary-sm { padding: 7px 12px; font-size: 12px; }
+      .nav__inner { padding: 0 16px; gap: 8px; }
+    }
+
+    .demo-body {
+      padding-top: calc(var(--nav-height) + 40px);
+      padding-left: 32px;
+      color: var(--gray-500);
+      font-size: 14px;
+    }
+
+/* ── SECTION-02-HERO ── */
+
+    
+
+    body {
+      font-family: var(--font);
+      background: var(--navy);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO WRAPPER ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding-top: var(--nav-height);
+    }
+
+    /* ── HERO PHOTOGRAPHIC BACKGROUND ── */
+    .hero__bg-image {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80') center/cover;
+      opacity: 0.12;
+      mix-blend-mode: luminosity;
+      z-index: 0;
+    }
+
+    .hero__bg-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--navy) 35%, rgba(10,15,30,0.6));
+      z-index: 0;
+    }
+
+    /* ── ANIMATED BACKGROUND ORBS ── */
+    .hero__orbs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+      animation: drift 12s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: var(--blue);
+      top: -180px; right: -100px;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 400px; height: 400px;
+      background: var(--teal);
+      bottom: 0px; left: -80px;
+      animation-delay: -5s;
+      opacity: 0.13;
+    }
+
+    .orb-3 {
+      width: 300px; height: 300px;
+      background: var(--blue-light);
+      top: 50%; left: 38%;
+      animation-delay: -8s;
+      opacity: 0.08;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -20px) scale(1.04); }
+      66%       { transform: translate(-20px, 15px) scale(0.97); }
+    }
+
+    /* ── GRID OVERLAY ── */
+    .hero__grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--white-06) 1px, transparent 1px),
+        linear-gradient(90deg, var(--white-06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+      mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.4) 80%, transparent);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 32px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      flex: 1;
+    }
+
+    /* ── LEFT: COPY ── */
+    .hero__copy {}
+
+    /* Eyebrow pill */
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white-12);
+      border: 1px solid var(--white-12);
+      border-radius: 100px;
+      padding: 6px 14px 6px 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.3px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .eyebrow-dot {
+      width: 6px; height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    /* Headline */
+    .hero__headline {
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .hero__headline em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Subheadline */
+    .hero__sub {
+      font-size: clamp(16px, 1.5vw, 18px);
+      color: var(--white-70);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+
+    /* CTA row */
+    .hero__ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+      font-family: var(--font);
+      box-shadow: 0 4px 24px rgba(45,91,255,0.45);
+      white-space: nowrap;
+    }
+
+    .btn-hero-primary:hover {
+      background: #1A45E8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(45,91,255,0.55);
+    }
+
+    .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 4px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white-70);
+      text-decoration: none;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-hero-secondary:hover { color: var(--white); }
+
+    .btn-hero-secondary svg {
+      transition: transform 0.15s;
+    }
+
+    .btn-hero-secondary:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ── TRUST BAR ── */
+    .hero__trust {
+      border-top: 1px solid var(--white-12);
+      padding-top: 28px;
+    }
+
+    .trust-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--white-40);
+      margin-bottom: 18px;
+    }
+
+    .trust-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-stat {}
+
+    .trust-stat__number {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .trust-stat__number span {
+      color: var(--teal);
+      font-size: 18px;
+    }
+
+    .trust-stat__label {
+      font-size: 12px;
+      color: var(--white-50);
+      font-weight: 500;
+    }
+
+    /* ── RIGHT: ILLUSTRATION ── */
+    .hero__visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .visual-card {
+      width: 100%;
+      max-width: 520px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 24px;
+      padding: 36px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: relative;
+      overflow: visible;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+
+    .visual-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(45,91,255,0.08) 0%, rgba(0,184,169,0.08) 100%);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    /* Floating metric cards */
+    .metric-card {
+      position: absolute;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: float 6s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    .metric-card:nth-child(1) {
+      top: -20px; right: -16px;
+      animation-delay: 0s;
+    }
+
+    .metric-card:nth-child(2) {
+      bottom: -10px; left: -28px;
+      animation-delay: -3s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    .metric-icon {
+      width: 38px; height: 38px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+
+    .metric-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+    }
+    .metric-text span {
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+
+    /* Map/Network SVG wrapper */
+    .network-svg-wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SCROLL INDICATOR ── */
+    .hero__scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--white-40);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--white-40), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 60px 24px 80px;
+        text-align: center;
+      }
+
+      .hero__sub { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .hero__ctas { justify-content: center; }
+      .trust-stats { justify-content: center; }
+      .hero__visual { order: -1; }
+
+      .visual-card { max-width: 400px; }
+
+      .metric-card:nth-child(1) { right: 0; top: -12px; }
+      .metric-card:nth-child(2) { left: 0; bottom: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-stats { gap: 24px; }
+      .hero__scroll { display: none; }
+      .metric-card { display: none; }
+    }
+
+/* ── SECTION-03-SEGMENTS ── */
+
+
+    /* ── SECTION SHELL ── */
+    .segments {
+      background: var(--gray-50);
+      padding: 100px 32px;
+    }
+
+    .segments__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .segments__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+
+    .segments__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .segments__eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .segments__title {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    .segments__sub {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 400px;
+      align-self: end;
+      padding-bottom: 4px;
+    }
+
+    /* ── CARDS GRID ── */
+    .segments__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    /* ── INDIVIDUAL CARD ── */
+    .seg-card {
+      position: relative;
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      overflow: hidden;
+    }
+
+    /* accent top bar — unique per card */
+    .seg-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+
+    .seg-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 56px rgba(0,0,0,0.10);
+      border-color: transparent;
+      background: var(--white);
+    }
+
+    .seg-card__icon { transition: transform 0.25s; }
+    .seg-card:hover .seg-card__icon { transform: scale(1.1) rotate(5deg); }
+
+    .seg-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Card colour themes */
+    .seg-card--blue::before   { background: linear-gradient(90deg, var(--blue), #5B82FF); }
+    .seg-card--teal::before   { background: linear-gradient(90deg, var(--teal), #00D4C8); }
+    .seg-card--indigo::before { background: linear-gradient(90deg, #6366F1, #8B5CF6); }
+    .seg-card--amber::before  { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
+
+    .seg-card--blue:hover   { box-shadow: 0 20px 48px rgba(45,91,255,0.12); }
+    .seg-card--teal:hover   { box-shadow: 0 20px 48px rgba(0,184,169,0.12); }
+    .seg-card--indigo:hover { box-shadow: 0 20px 48px rgba(99,102,241,0.12); }
+    .seg-card--amber:hover  { box-shadow: 0 20px 48px rgba(245,158,11,0.12); }
+
+    /* ── ICON ── */
+    .seg-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .seg-card:hover .seg-card__icon {
+      transform: scale(1.08);
+    }
+
+    .seg-card--blue   .seg-card__icon { background: #EEF2FF; color: var(--blue); }
+    .seg-card--teal   .seg-card__icon { background: #E6FBF9; color: var(--teal); }
+    .seg-card--indigo .seg-card__icon { background: #EEF2FF; color: #6366F1; }
+    .seg-card--amber  .seg-card__icon { background: #FFFBEB; color: #D97706; }
+
+    /* ── WHO LABEL ── */
+    .seg-card__who {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 8px;
+    }
+
+    .seg-card--blue   .seg-card__who { color: var(--blue); }
+    .seg-card--teal   .seg-card__who { color: var(--teal); }
+    .seg-card--indigo .seg-card__who { color: #6366F1; }
+    .seg-card--amber  .seg-card__who { color: #D97706; }
+
+    /* ── CARD TITLE ── */
+    .seg-card__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    /* ── CARD DESC ── */
+    .seg-card__desc {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    /* ── CONCERNS LIST ── */
+    .seg-card__concerns {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .seg-card__concerns li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.4;
+    }
+
+    .concern-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .seg-card--blue   .concern-dot { background: var(--blue); }
+    .seg-card--teal   .concern-dot { background: var(--teal); }
+    .seg-card--indigo .concern-dot { background: #6366F1; }
+    .seg-card--amber  .concern-dot { background: #D97706; }
+
+    /* ── CARD LINK ── */
+    .seg-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-top: auto;
+      transition: gap 0.18s ease;
+    }
+
+    .seg-card:hover .seg-card__link { gap: 10px; }
+
+    .seg-card--blue   .seg-card__link { color: var(--blue); }
+    .seg-card--teal   .seg-card__link { color: var(--teal); }
+    .seg-card--indigo .seg-card__link { color: #6366F1; }
+    .seg-card--amber  .seg-card__link { color: #D97706; }
+
+    .link-arrow {
+      width: 16px; height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── BOTTOM CTA ── */
+    .segments__footer {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .segments__footer-text {
+      font-size: 15px;
+      color: var(--gray-500);
+    }
+
+    .segments__footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      transition: gap 0.15s;
+    }
+
+    .segments__footer-link:hover { gap: 10px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .segments__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .segments { padding: 72px 24px; }
+
+      .segments__header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .segments__sub { max-width: 100%; }
+    }
+
+    @media (max-width: 560px) {
+      .segments__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+/* ── SECTION-04-SERVICES ── */
+
+
+    /* ── SECTION SHELL ── */
+    .services {
+      background: var(--white);
+      padding: 100px 32px;
+    }
+
+    .services__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .services__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .services__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    .services__eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    .services__title {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    .services__sub {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 420px;
+      align-self: end;
+      padding-bottom: 4px;
+    }
+
+    /* ── SERVICES GRID ── */
+    .services__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    /* ── SERVICE CARD ── */
+    .svc-card {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      transition: background 0.2s;
+      border-right: 1.5px solid var(--gray-200);
+      border-bottom: 1.5px solid var(--gray-200);
+    }
+
+    /* Remove right border on even cards (right column) */
+    .svc-card:nth-child(2n) {
+      border-right: none;
+    }
+
+    /* Remove bottom border on last two cards */
+    .svc-card:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    /* Featured card — spans full width */
+    .svc-card--featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      gap: 56px;
+      align-items: center;
+      border-right: none;
+      background: linear-gradient(to right, #ffffff, #F8FAFF);
+    }
+
+    /* Image panel in featured card */
+    .svc-card__img-wrap {
+      flex-shrink: 0;
+      width: 38%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+
+    .svc-card__img-wrap img {
+      width: 100%; height: auto; display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .svc-card:hover .svc-card__img-wrap img { transform: scale(1.04); }
+
+    .svc-card:hover {
+      background: var(--gray-50);
+    }
+
+    /* ── ICON ── */
+    .svc-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      transition: transform 0.22s;
+    }
+
+    .svc-card:hover .svc-card__icon {
+      transform: translateY(-4px);
+    }
+
+    .svc-card--featured .svc-card__icon {
+      margin-bottom: 0;
+      margin-top: 4px;
+    }
+
+    /* ── CONTENT ── */
+    .svc-card__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Tag */
+    .svc-card__tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 8px;
+    }
+
+    /* Title */
+    .svc-card__title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .svc-card--featured .svc-card__title {
+      font-size: 24px;
+    }
+
+    /* Positioning line */
+    .svc-card__position {
+      font-size: 14.5px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Capabilities list */
+    .svc-card__caps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .svc-card__caps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--gray-700);
+      line-height: 1.45;
+    }
+
+    .cap-check {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 0;
+      line-height: 1.45;
+    }
+
+    /* Learn more link */
+    .svc-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: auto;
+      transition: gap 0.15s;
+    }
+
+    .svc-card:hover .svc-card__link {
+      gap: 10px;
+    }
+
+    .link-arrow {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Featured card badge */
+    .svc-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #EEF2FF;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .theme-blue   .svc-card__icon { background: #EEF2FF; color: var(--blue); }
+    .theme-blue   .svc-card__tag  { color: var(--blue); }
+    .theme-blue   .svc-card__link { color: var(--blue); }
+    .theme-blue   .cap-check      { color: var(--blue); }
+
+    .theme-teal   .svc-card__icon { background: #E6FBF9; color: var(--teal); }
+    .theme-teal   .svc-card__tag  { color: var(--teal); }
+    .theme-teal   .svc-card__link { color: var(--teal); }
+    .theme-teal   .cap-check      { color: var(--teal); }
+
+    .theme-indigo .svc-card__icon { background: #EEEDFF; color: #6366F1; }
+    .theme-indigo .svc-card__tag  { color: #6366F1; }
+    .theme-indigo .svc-card__link { color: #6366F1; }
+    .theme-indigo .cap-check      { color: #6366F1; }
+
+    .theme-violet .svc-card__icon { background: #F3EEFF; color: #7C3AED; }
+    .theme-violet .svc-card__tag  { color: #7C3AED; }
+    .theme-violet .svc-card__link { color: #7C3AED; }
+    .theme-violet .cap-check      { color: #7C3AED; }
+
+    .theme-emerald .svc-card__icon { background: #ECFDF5; color: #059669; }
+    .theme-emerald .svc-card__tag  { color: #059669; }
+    .theme-emerald .svc-card__link { color: #059669; }
+    .theme-emerald .cap-check      { color: #059669; }
+
+    /* ── BOTTOM CTA STRIP ── */
+    .services__cta {
+      margin-top: 48px;
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .cta-strip__text h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .cta-strip__text p {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+      font-family: var(--font);
+      box-shadow: 0 2px 12px rgba(45,91,255,0.28);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-primary:hover {
+      background: #1A45E8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(45,91,255,0.38);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .services__header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .services__sub { max-width: 100%; }
+
+      .services__grid {
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+      }
+
+      .svc-card {
+        border-right: none;
+      }
+
+      .svc-card:nth-last-child(-n+2) {
+        border-bottom: 1.5px solid var(--gray-200);
+      }
+
+      .svc-card:last-child {
+        border-bottom: none;
+      }
+
+      .svc-card--featured {
+        flex-direction: column-reverse;
+        gap: 28px;
+      }
+
+      .svc-card--featured .svc-card__icon {
+        margin-bottom: 0;
+      }
+
+      .svc-card__img-wrap { width: 100%; }
+    }
+
+    @media (max-width: 600px) {
+      .services { padding: 72px 20px; }
+      .svc-card { padding: 28px 24px; }
+
+      .services__cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+      }
+    }
+
+/* ── SECTION-05-KOCHI ── */
+
+
+    /* ── SECTION SHELL ── */
+    .kochi {
+      padding: 120px 32px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      /* Parallax photo background */
+      background: url('https://images.unsplash.com/photo-1593693397690-362cb9666c6c?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+      background-attachment: fixed;
+    }
+
+    .kochi::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,15,30,0.96) 0%, rgba(10,15,30,0.88) 100%);
+      z-index: 0;
+    }
+
+    /* Keep orb div for layout — now hidden behind overlay */
+    .kochi__bg { display: none; }
+    .kochi__bg-orb { display: none; }
+
+    .kochi__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── TOP: EYEBROW + HEADLINE ── */
+    .kochi__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .kochi__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    .kochi__eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .kochi__title {
+      font-size: clamp(30px, 3.2vw, 44px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .kochi__title em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .kochi__header-right {
+      padding-bottom: 4px;
+    }
+
+    .kochi__header-right p {
+      font-size: 16px;
+      color: var(--white-55);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    /* Kochi fast facts inline */
+    .kochi__facts-inline {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .fact-inline {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .fact-inline__num {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .fact-inline__num span { color: var(--teal); }
+
+    .fact-inline__label {
+      font-size: 12px;
+      color: var(--white-30);
+      font-weight: 500;
+    }
+
+    /* ── PILLARS GRID ── */
+    .kochi__pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    /* ── PILLAR CARD ── */
+    .pillar {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 24px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color 0.25s, transform 0.25s, background 0.25s;
+    }
+
+    .pillar:hover {
+      border-color: rgba(0,184,169,0.40);
+      transform: translateY(-8px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* Gradient corner accent */
+    .pillar::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle at top right, rgba(0,184,169,0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .pillar__number {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--white-30);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .pillar__icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: rgba(0,184,169,0.15);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      transition: transform 0.25s;
+    }
+
+    .pillar:hover .pillar__icon {
+      transform: scale(1.08);
+    }
+
+    .pillar__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .pillar__desc {
+      font-size: 14px;
+      color: var(--white-55);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* Supporting data points */
+    .pillar__datapoints {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 20px;
+      border-top: 1px solid var(--white-12);
+    }
+
+    .datapoint {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--white-55);
+      line-height: 1.4;
+    }
+
+    .datapoint-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .kochi__compare {
+      background: var(--navy-card);
+      border: 1px solid var(--white-12);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .compare__header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--white-12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .compare__header h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .compare__header p {
+      font-size: 13px;
+      color: var(--white-30);
+    }
+
+    .compare__table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare__table th {
+      padding: 14px 24px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--white-30);
+      border-bottom: 1px solid var(--white-07);
+    }
+
+    .compare__table th:not(:first-child) {
+      text-align: center;
+    }
+
+    .compare__table td {
+      padding: 16px 24px;
+      font-size: 14px;
+      color: var(--white-80);
+      border-bottom: 1px solid var(--white-07);
+      vertical-align: middle;
+    }
+
+    .compare__table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .compare__table td:not(:first-child) {
+      text-align: center;
+    }
+
+    .compare__table tr:hover td {
+      background: var(--white-07);
+    }
+
+    /* Kochi column highlight */
+    .col-kochi {
+      background: rgba(0,184,169,0.06);
+    }
+
+    .col-kochi-header {
+      background: rgba(0,184,169,0.08);
+      color: var(--teal) !important;
+    }
+
+    .check-yes {
+      color: var(--teal);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .check-no {
+      color: var(--white-30);
+      font-size: 18px;
+    }
+
+    .check-partial {
+      color: #F59E0B;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .row-label {
+      font-weight: 500;
+      color: var(--white-55);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .kochi__header {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 48px;
+      }
+
+      .kochi__pillars {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .compare__table th,
+      .compare__table td {
+        padding: 12px 16px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .kochi { padding: 72px 20px; }
+      .kochi__facts-inline { gap: 20px; }
+
+      .compare__header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      /* Simplify table on mobile */
+      .compare__table .hide-mobile { display: none; }
+
+      .compare__table th,
+      .compare__table td { padding: 12px 14px; }
+    }
+
+/* ── SECTION-06-HOW-IT-WORKS ── */
+
+
+    /* ── SECTION SHELL ── */
+    .hiw {
+      background: var(--white);
+      padding: 96px 32px;
+    }
+
+    .hiw__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .hiw__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 80px;
+    }
+
+    .hiw__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .hiw__eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .hiw__title {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    .hiw__sub {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 420px;
+      align-self: end;
+      padding-bottom: 4px;
+    }
+
+    /* ── TIMELINE LAYOUT ── */
+    .hiw__timeline {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 48px;
+      position: relative;
+    }
+
+    /* Vertical spine line */
+    .hiw__spine {
+      position: absolute;
+      left: 200px;
+      top: 24px;
+      bottom: 24px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--teal), var(--blue), rgba(45,91,255,0.2));
+      transform: translateX(calc(-50% + 24px));
+      pointer-events: none;
+    }
+
+    /* ── PHASE ROW ── */
+    .phase {
+      display: contents;
+    }
+
+    /* Left: step label column */
+    .phase__left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 48px;
+      padding-top: 4px;
+      padding-bottom: 64px;
+      position: relative;
+    }
+
+    .phase__left:last-of-type { padding-bottom: 0; }
+
+    .phase__step-num {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-300);
+      margin-bottom: 6px;
+    }
+
+    .phase__step-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      text-align: right;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .phase__duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    /* Node dot on spine */
+    .phase__node {
+      position: absolute;
+      right: -12px;
+      top: 6px;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .phase__node-inner {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+
+    /* Right: content column */
+    .phase__right {
+      padding-bottom: 64px;
+      padding-left: 24px;
+    }
+
+    .phase:last-of-type .phase__right { padding-bottom: 0; }
+
+    /* Phase content card */
+    .phase__card {
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Colour tint top border */
+    .phase__card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .phase--1 .phase__card::before { background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+    .phase--2 .phase__card::before { background: linear-gradient(90deg, var(--blue), #5B82FF); }
+    .phase--3 .phase__card::before { background: linear-gradient(90deg, #6366F1, #8B5CF6); }
+
+    /* Phase colours */
+    .phase--1 .phase__step-num    { color: var(--teal); }
+    .phase--1 .phase__node        { background: var(--teal); }
+    .phase--1 .phase__node-inner  { background: var(--white); }
+    .phase--1 .phase__duration    { background: var(--teal-light); color: var(--teal); }
+
+    .phase--2 .phase__step-num    { color: var(--blue); }
+    .phase--2 .phase__node        { background: var(--blue); }
+    .phase--2 .phase__node-inner  { background: var(--white); }
+    .phase--2 .phase__duration    { background: var(--blue-light); color: var(--blue); }
+
+    .phase--3 .phase__step-num    { color: #6366F1; }
+    .phase--3 .phase__node        { background: #6366F1; }
+    .phase--3 .phase__node-inner  { background: var(--white); }
+    .phase--3 .phase__duration    { background: #EEEDFF; color: #6366F1; }
+
+    /* Card headline */
+    .phase__card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .phase__card-sub {
+      font-size: 14.5px;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    /* Two column: we do / you do */
+    .phase__columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .phase__col-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+
+    .phase__col-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .phase__col-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--gray-700);
+      line-height: 1.45;
+    }
+
+    .item-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .phase--1 .item-dot { background: var(--teal); }
+    .phase--2 .item-dot { background: var(--blue); }
+    .phase--3 .item-dot { background: #6366F1; }
+
+    /* Outcome strip */
+    .phase__outcome {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .phase--1 .phase__outcome { background: var(--teal-light); color: #007A72; }
+    .phase--2 .phase__outcome { background: var(--blue-light); color: #1A3FCC; }
+    .phase--3 .phase__outcome { background: #EEEDFF; color: #4F46E5; }
+
+    .outcome-icon { font-size: 16px; flex-shrink: 0; }
+
+    /* ── BOTTOM CTA ── */
+    .hiw__cta {
+      margin-top: 72px;
+      text-align: center;
+    }
+
+    .hiw__cta p {
+      font-size: 16px;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+
+    .hiw__cta p strong {
+      color: var(--black);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+      font-family: var(--font);
+      box-shadow: 0 2px 12px rgba(45,91,255,0.28);
+    }
+
+    .btn-primary:hover {
+      background: #1A45E8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(45,91,255,0.38);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .hiw__header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 56px;
+      }
+
+      .hiw__sub { max-width: 100%; }
+
+      /* Stack timeline vertically */
+      .hiw__timeline {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .hiw__spine { display: none; }
+
+      .phase__left {
+        align-items: flex-start;
+        padding-right: 0;
+        padding-bottom: 16px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .phase__step-name { text-align: left; margin-bottom: 0; }
+      .phase__node { display: none; }
+
+      .phase__right {
+        padding-left: 0;
+        padding-bottom: 40px;
+      }
+
+      .phase__columns {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hiw { padding: 72px 20px; }
+      .phase__card { padding: 24px 20px; }
+    }
+
+/* ── SECTION-07-CASE-STUDIES ── */
+
+
+    /* ── SECTION SHELL ── */
+    .proof {
+      background: var(--gray-50);
+      padding: 96px 32px;
+    }
+
+    .proof__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .proof__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .proof__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    .proof__eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    .proof__title {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    .proof__sub {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 420px;
+      align-self: end;
+      padding-bottom: 4px;
+    }
+
+    /* ── FEATURED QUOTE ── */
+    .proof__quote {
+      background: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border-radius: 28px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0;
+      align-items: center;
+      color: white;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.18);
+    }
+
+    .proof__quote::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(10,15,30,0.95) 0%, rgba(45,91,255,0.85) 100%);
+      z-index: 0;
+    }
+
+    .quote__body {
+      position: relative;
+      z-index: 1;
+      padding: 56px 48px;
+    }
+
+    .quote__text {
+      font-size: clamp(20px, 2.2vw, 26px);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.55;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    .quote__attribution {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .quote__avatar {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.25);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .quote__avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .quote__name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .quote__role {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+    }
+
+    /* Quote right: outcome pill stack */
+    .quote__outcomes {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 1;
+      position: relative;
+      flex-shrink: 0;
+      padding: 56px 48px 56px 0;
+    }
+
+    .outcome-pill {
+      background: rgba(255,255,255,0.10);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 220px;
+    }
+
+    .outcome-pill__icon {
+      font-size: 30px;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .outcome-pill__num {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .outcome-pill__num span { color: var(--teal); }
+
+    .outcome-pill__label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* ── CASE STUDY CARDS ── */
+    .proof__cases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .case-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.28s, box-shadow 0.28s;
+    }
+
+    /* Case card cover image */
+    .case-card__img {
+      height: 188px;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    /* Old padding wrapper — keep for card body */
+    .case-card__body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .case-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+    }
+
+    .case-card:hover::before { opacity: 1; }
+
+    .case-card--1::before { background: linear-gradient(90deg, var(--teal), #00D4C8); }
+    .case-card--2::before { background: linear-gradient(90deg, var(--blue), #5B82FF); }
+    .case-card--3::before { background: linear-gradient(90deg, #6366F1, #8B5CF6); }
+
+    /* Industry tag */
+    .case-card__industry {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .case-card--1 .case-card__industry { background: var(--teal-light); color: #007A72; }
+    .case-card--2 .case-card__industry { background: var(--blue-light); color: #1A3FCC; }
+    .case-card--3 .case-card__industry { background: #EEEDFF; color: #4F46E5; }
+
+    /* Company descriptor */
+    .case-card__company {
+      font-size: 12px;
+      color: var(--gray-500);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    /* Case title */
+    .case-card__title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    /* Problem/solution */
+    .case-card__desc {
+      font-size: 13.5px;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* Metrics row */
+    .case-card__metrics {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0 0;
+      border-top: 1px solid var(--gray-200);
+      margin-bottom: 20px;
+    }
+
+    .metric {
+      flex: 1;
+    }
+
+    .metric__num {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .case-card--1 .metric__num { color: var(--teal); }
+    .case-card--2 .metric__num { color: var(--blue); }
+    .case-card--3 .metric__num { color: #6366F1; }
+
+    .metric__label {
+      font-size: 11px;
+      color: var(--gray-500);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* Read more link */
+    .case-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap 0.15s;
+      margin-top: auto;
+    }
+
+    .case-card:hover .case-card__link { gap: 10px; }
+
+    .case-card--1 .case-card__link { color: var(--teal); }
+    .case-card--2 .case-card__link { color: var(--blue); }
+    .case-card--3 .case-card__link { color: #6366F1; }
+
+    .link-arrow {
+      width: 14px; height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── BOTTOM ROW: CTA + ALL STUDIES LINK ── */
+    .proof__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 36px;
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 16px;
+    }
+
+    .proof__footer-text {
+      font-size: 15px;
+      color: var(--gray-600);
+    }
+
+    .proof__footer-text strong {
+      color: var(--black);
+      font-weight: 700;
+    }
+
+    .proof__footer-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+      font-family: var(--font);
+      box-shadow: 0 2px 12px rgba(45,91,255,0.28);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #1A45E8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(45,91,255,0.38);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-700);
+      text-decoration: none;
+      transition: color 0.15s, gap 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-ghost:hover {
+      color: var(--blue);
+      gap: 10px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .proof__cases {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .proof__header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .proof__sub { max-width: 100%; }
+
+      .proof__quote {
+        grid-template-columns: 1fr;
+      }
+
+      .quote__outcomes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 32px 40px 32px;
+        gap: 12px;
+      }
+
+      .outcome-pill { min-width: 0; flex: 1; }
+    }
+
+    @media (max-width: 640px) {
+      .proof { padding: 72px 20px; }
+
+      .proof__cases {
+        grid-template-columns: 1fr;
+      }
+
+      .quote__body { padding: 32px 24px; }
+
+      .proof__footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 16px;
+      }
+
+      .proof__footer-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .btn-primary { width: 100%; justify-content: center; }
+    }
+
+/* ── SECTION-08-CTA-STRIP ── */
+
+
+    /* ── SECTION SHELL ── */
+    .cta-strip {
+      background: var(--navy);
+      padding: 96px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background elements */
+    .cta-strip__bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Gradient sweep */
+    .cta-strip__bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 0% 50%, rgba(0,184,169,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 70% at 100% 50%, rgba(45,91,255,0.10) 0%, transparent 60%);
+    }
+
+    /* Dot grid pattern */
+    .cta-strip__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(to right, transparent, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 80%, transparent);
+    }
+
+    /* ── INNER ── */
+    .cta-strip__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* ── LEFT: COPY ── */
+    .cta-strip__copy {}
+
+    .cta-strip__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    .cta-strip__eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .cta-strip__title {
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .cta-strip__title em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-strip__sub {
+      font-size: 16px;
+      color: var(--white-50);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    /* CTA buttons row */
+    .cta-strip__buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+      font-family: var(--font);
+      box-shadow: 0 4px 24px rgba(45,91,255,0.45);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #1A45E8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(45,91,255,0.55);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white-80);
+      background: var(--white-08);
+      border: 1.5px solid var(--white-15);
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.12s;
+      font-family: var(--font);
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white-15);
+      border-color: rgba(255,255,255,0.28);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ── RIGHT: REASSURANCE CARD ── */
+    .cta-strip__card {
+      background: var(--white-08);
+      border: 1px solid var(--white-15);
+      border-radius: 20px;
+      padding: 32px 28px;
+      backdrop-filter: blur(12px);
+      width: 300px;
+      flex-shrink: 0;
+    }
+
+    .cta-card__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    .cta-card__items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cta-card__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--white-80);
+      line-height: 1.5;
+    }
+
+    .cta-card__check {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(0,184,169,0.15);
+      border: 1px solid rgba(0,184,169,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .cta-card__check svg {
+      width: 10px; height: 10px;
+      stroke: var(--teal);
+      fill: none;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cta-card__divider {
+      height: 1px;
+      background: var(--white-08);
+      margin: 20px 0;
+    }
+
+    .cta-card__footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--white-50);
+    }
+
+    .cta-card__avatar-stack {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--white);
+      margin-left: -8px;
+      flex-shrink: 0;
+    }
+
+    .avatar:first-child { margin-left: 0; }
+
+    .avatar--1 { background: linear-gradient(135deg, var(--teal), #007A72); }
+    .avatar--2 { background: linear-gradient(135deg, var(--blue), #1A3FCC); }
+    .avatar--3 { background: linear-gradient(135deg, #6366F1, #4F46E5); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .cta-strip__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .cta-strip__card {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .cta-strip { padding: 72px 20px; }
+      .cta-strip__buttons { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    }
+
+/* ── SECTION-09-FAQ ── */
+
+
+    /* ── SECTION SHELL ── */
+    .faq {
+      background: var(--white);
+      padding: 96px 32px;
+    }
+
+    .faq__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── LEFT: STICKY HEADER ── */
+    .faq__left {
+      position: sticky;
+      top: 96px;
+    }
+
+    .faq__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .faq__eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .faq__title {
+      font-size: clamp(26px, 2.5vw, 36px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+      letter-spacing: -0.7px;
+      margin-bottom: 16px;
+    }
+
+    .faq__sub {
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    /* Still have questions nudge */
+    .faq__nudge {
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .faq__nudge p {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .faq__nudge p strong {
+      color: var(--black);
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: none;
+      border-radius: 9px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+      font-family: var(--font);
+      box-shadow: 0 2px 12px rgba(45,91,255,0.28);
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: #1A45E8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 18px rgba(45,91,255,0.38);
+    }
+
+    /* ── RIGHT: ACCORDION ── */
+    .faq__accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    /* ── FAQ ITEM ── */
+    .faq-item {
+      border-bottom: 1.5px solid var(--gray-200);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Question button */
+    .faq-item__btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 28px;
+      background: var(--white);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font);
+      transition: background 0.15s;
+    }
+
+    .faq-item__btn:hover {
+      background: var(--gray-50);
+    }
+
+    .faq-item.open .faq-item__btn {
+      background: var(--gray-50);
+    }
+
+    .faq-item__question {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .faq-item.open .faq-item__question {
+      color: var(--blue);
+    }
+
+    /* Icon */
+    .faq-item__icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--gray-100);
+      border: 1.5px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s, transform 0.25s;
+    }
+
+    .faq-item.open .faq-item__icon {
+      background: var(--blue-light, #EEF2FF);
+      border-color: rgba(45,91,255,0.2);
+      transform: rotate(45deg);
+    }
+
+    .faq-item__icon svg {
+      width: 12px; height: 12px;
+      stroke: var(--gray-500);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+    }
+
+    .faq-item.open .faq-item__icon svg {
+      stroke: var(--blue);
+    }
+
+    /* Answer panel */
+    .faq-item__body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item.open .faq-item__body {
+      max-height: 600px;
+    }
+
+    .faq-item__answer {
+      padding: 0 28px 28px;
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.75;
+    }
+
+    .faq-item__answer p + p {
+      margin-top: 12px;
+    }
+
+    .faq-item__answer strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    .faq-item__answer a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .faq-item__answer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Category label on first item of a group */
+    .faq-item__category {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--gray-500);
+      padding: 0 28px 0;
+      padding-top: 20px;
+      padding-bottom: 4px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .faq__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .faq__left {
+        position: static;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .faq { padding: 72px 20px; }
+      .faq-item__btn { padding: 20px 20px; }
+      .faq-item__answer { padding: 0 20px 24px; }
+      .faq-item__question { font-size: 15px; }
+    }
+
+/* ── SECTION-10-FOOTER ── */
+
+
+    /* ── FOOTER SHELL ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--white-10);
+    }
+
+    /* ── TOP BAND: EMAIL CAPTURE ── */
+    .footer-top {
+      border-bottom: 1px solid var(--white-10);
+      padding: 40px 32px;
+    }
+
+    .footer-top__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-top__copy h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .footer-top__copy p {
+      font-size: 14px;
+      color: var(--white-40);
+    }
+
+    .footer-top__form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .footer-top__input {
+      width: 280px;
+      padding: 11px 16px;
+      font-size: 14px;
+      font-family: var(--font);
+      color: var(--white);
+      background: var(--white-07);
+      border: 1.5px solid var(--white-20);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .footer-top__input::placeholder {
+      color: var(--white-40);
+    }
+
+    .footer-top__input:focus {
+      border-color: var(--teal);
+      background: rgba(0,184,169,0.06);
+    }
+
+    .btn-subscribe {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--teal);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: var(--font);
+      white-space: nowrap;
+      transition: background 0.15s, transform 0.12s;
+    }
+
+    .btn-subscribe:hover {
+      background: #009E96;
+      transform: translateY(-1px);
+    }
+
+    /* ── MAIN FOOTER GRID ── */
+    .footer-main {
+      padding: 64px 32px 48px;
+    }
+
+    .footer-main__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 48px;
+    }
+
+    /* ── COL 1: BRAND ── */
+    .footer-brand {}
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 16px;
+    }
+
+    .logo-placeholder {
+      height: 34px;
+      padding: 0 14px;
+      background: var(--white-07);
+      border: 1.5px dashed var(--white-20);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white-40);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--white-40);
+      line-height: 1.7;
+      max-width: 260px;
+      margin-bottom: 28px;
+    }
+
+    /* Social links */
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-link {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--white-07);
+      border: 1px solid var(--white-10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--white-40);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .social-link:hover {
+      background: var(--white-10);
+      color: var(--white);
+      border-color: var(--white-20);
+    }
+
+    .social-link svg {
+      width: 16px; height: 16px;
+      fill: currentColor;
+    }
+
+    /* ── COL 2–3: NAV COLS ── */
+    .footer-nav {}
+
+    .footer-nav__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--white-40);
+      margin-bottom: 20px;
+    }
+
+    .footer-nav__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-nav__list a {
+      font-size: 14px;
+      color: var(--white-70);
+      text-decoration: none;
+      transition: color 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .footer-nav__list a:hover {
+      color: var(--white);
+    }
+
+    /* ── COL 4: CONTACT ── */
+    .footer-contact {}
+
+    .footer-contact__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--white-40);
+      margin-bottom: 20px;
+    }
+
+    .footer-contact__items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .contact-item__icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--white-07);
+      border: 1px solid var(--white-10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item__icon svg {
+      width: 14px; height: 14px;
+      stroke: var(--teal);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-item__text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .contact-item__label {
+      font-size: 11px;
+      color: var(--white-40);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-item__value {
+      font-size: 14px;
+      color: var(--white-70);
+    }
+
+    .contact-item__value a {
+      color: var(--white-70);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .contact-item__value a:hover { color: var(--teal); }
+
+    /* Book a call button in footer */
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border-radius: 9px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.12s;
+      box-shadow: 0 2px 12px rgba(45,91,255,0.30);
+    }
+
+    .footer-cta:hover {
+      background: #1A45E8;
+      transform: translateY(-1px);
+    }
+
+    /* ── BOTTOM BAR ── */
+    .footer-bottom {
+      border-top: 1px solid var(--white-10);
+      padding: 24px 32px;
+    }
+
+    .footer-bottom__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom__left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--white-40);
+    }
+
+    .footer-bottom__left span { color: var(--teal); }
+
+    .footer-bottom__links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer-bottom__links a {
+      font-size: 13px;
+      color: var(--white-40);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-bottom__links a:hover { color: var(--white-70); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .footer-main__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .footer-top__inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-top__form {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .footer-top__input { width: 100%; }
+      .btn-subscribe { width: 100%; justify-content: center; }
+    }
+
+    @media (max-width: 560px) {
+      .footer-main { padding: 48px 20px 40px; }
+      .footer-top  { padding: 32px 20px; }
+      .footer-bottom { padding: 20px; }
+
+      .footer-main__inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .footer-bottom__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .footer-bottom__links {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+
+    <!-- Logo — swap logo-mark + logo-text for actual asset when available -->
+    <a href="/" class="nav__logo" aria-label="Intellispark home">
+      <div class="logo-mark"><i class="ph-bold ph-lightning"></i></div>
+      <div class="logo-text">Intellispark</div>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="nav__links" role="list">
+
+      <li>
+        <a href="/gcc">GCC Solutions</a>
+      </li>
+
+      <li id="servicesMenu">
+        <button aria-haspopup="true" aria-expanded="false" id="servicesBtn" onclick="toggleDropdown()">
+          Services
+          <i class="ph-bold ph-caret-down chevron" style="width:14px;height:14px;"></i>
+        </button>
+
+        <div class="dropdown" role="menu" aria-labelledby="servicesBtn">
+          <a href="/gcc-setup" class="dropdown__item" role="menuitem">
+            <div class="dropdown__icon" style="background:#EEF2FF; color:var(--blue);"><i class="ph-fill ph-buildings"></i></div>
+            <div>
+              <div class="dropdown__title">GCC Setup</div>
+              <div class="dropdown__desc">End-to-end Global Capability Centre establishment</div>
+            </div>
+          </a>
+          <a href="/bot-copo" class="dropdown__item" role="menuitem">
+            <div class="dropdown__icon" style="background:#E6FBF9; color:var(--teal);"><i class="ph-fill ph-arrows-clockwise"></i></div>
+            <div>
+              <div class="dropdown__title">BOT / COPO</div>
+              <div class="dropdown__desc">Build-Operate-Transfer with flexible exit options</div>
+            </div>
+          </a>
+          <a href="/staff-augmentation" class="dropdown__item" role="menuitem">
+            <div class="dropdown__icon" style="background:#FFFBEB; color:#D97706;"><i class="ph-fill ph-users-three"></i></div>
+            <div>
+              <div class="dropdown__title">Staff Augmentation</div>
+              <div class="dropdown__desc">Vetted talent, embedded in your team</div>
+            </div>
+          </a>
+          <a href="/product-engineering" class="dropdown__item" role="menuitem">
+            <div class="dropdown__icon" style="background:#F3EEFF; color:#7C3AED;"><i class="ph-fill ph-code"></i></div>
+            <div>
+              <div class="dropdown__title">Product Engineering</div>
+              <div class="dropdown__desc">Custom software built for scale</div>
+            </div>
+          </a>
+          <a href="/aipods" class="dropdown__item" role="menuitem">
+            <div class="dropdown__icon" style="background:#ECFDF5; color:#059669;"><i class="ph-fill ph-robot"></i></div>
+            <div>
+              <div class="dropdown__title">AiPODS</div>
+              <div class="dropdown__desc">AI-powered offshore delivery squads</div>
+            </div>
+          </a>
+          <a href="/service-delivery" class="dropdown__item" role="menuitem">
+            <div class="dropdown__icon" style="background:#EEF2FF; color:var(--blue);"><i class="ph-fill ph-map-pin"></i></div>
+            <div>
+              <div class="dropdown__title">Service Delivery Centres</div>
+              <div class="dropdown__desc">Dedicated centres for ongoing operations</div>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li><a href="/kochi-advantage">Kochi Advantage</a></li>
+      <li><a href="/case-studies">Case Studies</a></li>
+      <li><a href="/about">About</a></li>
+
+    </ul>
+
+    <!-- Desktop CTA -->
+    <div class="nav__cta">
+      <a href="/book-a-call" class="btn-primary">Book a Call →</a>
+    </div>
+
+    <!-- Mobile: CTA + Hamburger -->
+    <div class="nav__mobile-right">
+      <a href="/book-a-call" class="btn-primary-sm">Book a Call</a>
+      <button
+        class="nav__hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        id="hamburgerBtn"
+        onclick="toggleMobile()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Mobile Menu Panel -->
+<div class="nav__mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="/gcc" class="m-link">GCC Solutions</a>
+  <div class="m-section-label">Services</div>
+  <a href="/gcc-setup" class="m-service">
+    <div class="m-icon" style="background:#EEF2FF; color:var(--blue);"><i class="ph-fill ph-buildings"></i></div> GCC Setup
+  </a>
+  <a href="/bot-copo" class="m-service">
+    <div class="m-icon" style="background:#E6FBF9; color:var(--teal);"><i class="ph-fill ph-arrows-clockwise"></i></div> BOT / COPO
+  </a>
+  <a href="/staff-augmentation" class="m-service">
+    <div class="m-icon" style="background:#FFFBEB; color:#D97706;"><i class="ph-fill ph-users-three"></i></div> Staff Augmentation
+  </a>
+  <a href="/product-engineering" class="m-service">
+    <div class="m-icon" style="background:#F3EEFF; color:#7C3AED;"><i class="ph-fill ph-code"></i></div> Product Engineering
+  </a>
+  <a href="/aipods" class="m-service">
+    <div class="m-icon" style="background:#ECFDF5; color:#059669;"><i class="ph-fill ph-robot"></i></div> AiPODS
+  </a>
+  <a href="/service-delivery" class="m-service">
+    <div class="m-icon" style="background:#EEF2FF; color:var(--blue);"><i class="ph-fill ph-map-pin"></i></div> Service Delivery Centres
+  </a>
+  <a href="/kochi-advantage" class="m-link">Kochi Advantage</a>
+  <a href="/case-studies" class="m-link">Case Studies</a>
+  <a href="/about" class="m-link">About</a>
+</div>
+
+<!-- Click-outside overlay -->
+<div id="overlay" style="display:none; position:fixed; inset:0; z-index:998;" onclick="closeAll()"></div>
+
+
+<!-- ════════════════════════════════
+     HERO SECTION
+════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-headline">
+
+  <!-- Photographic background layers -->
+  <div class="hero__bg-image" aria-hidden="true"></div>
+  <div class="hero__bg-gradient" aria-hidden="true"></div>
+
+  <!-- Background orbs -->
+  <div class="hero__orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Subtle grid -->
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <!-- Main grid -->
+  <div class="hero__inner">
+
+    <!-- LEFT: Copy -->
+    <div class="hero__copy">
+
+      <div class="hero__eyebrow">
+        <span class="eyebrow-dot"></span>
+        GCC & Talent Solutions · Kochi, India
+      </div>
+
+      <h1 class="hero__headline" id="hero-headline">
+        A thoughtful way<br>
+        to build your team<br>
+        <em>in India.</em>
+      </h1>
+
+      <p class="hero__sub">
+        Whether you're exploring a GCC for the first time or scaling an existing India presence, we take the time to understand your goals — and help you get there without unnecessary risk or guesswork.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="/book-a-call" class="btn-hero-primary">
+          Book a Call
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="/case-studies" class="btn-hero-secondary">
+          See how it works
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="hero__trust">
+        <p class="trust-label">Trusted by companies across the US, UK &amp; ANZ</p>
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <div class="trust-stat__number">XX<span>days</span></div>
+            <div class="trust-stat__label">Avg. GCC launch time</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-stat__number">XX<span>+</span></div>
+            <div class="trust-stat__label">Professionals placed</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-stat__number">XX<span>%</span></div>
+            <div class="trust-stat__label">Cost vs. onshore teams</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-stat__number">XX<span>+</span></div>
+            <div class="trust-stat__label">Global clients</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Visual -->
+    <div class="hero__visual" aria-hidden="true">
+
+      <!-- Floating metric cards -->
+      <div class="metric-card">
+        <div class="metric-icon" style="background:#EEF2FF; color:var(--blue);"><i class="ph-fill ph-rocket-launch"></i></div>
+        <div class="metric-text">
+          <strong>GCC Live in 90 Days</strong>
+          <span>Fastest in the industry</span>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon" style="background:#E6FBF9; color:var(--teal);"><i class="ph-fill ph-check-circle"></i></div>
+        <div class="metric-text">
+          <strong>Zero attrition in Year 1</strong>
+          <span>Retained talent pipeline</span>
+        </div>
+      </div>
+
+      <!-- Network / City illustration card -->
+      <div class="visual-card">
+        <div class="network-svg-wrap">
+          <svg viewBox="0 0 460 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+
+            <!-- Connection lines -->
+            <g stroke="rgba(45,91,255,0.25)" stroke-width="1.2" stroke-dasharray="5,4">
+              <!-- Kochi to London -->
+              <path d="M230 220 C180 160, 80 130, 50 90"/>
+              <!-- Kochi to New York -->
+              <path d="M230 220 C260 160, 340 120, 390 80"/>
+              <!-- Kochi to Sydney -->
+              <path d="M230 220 C290 240, 370 260, 410 290"/>
+              <!-- Kochi to Singapore -->
+              <path d="M230 220 C270 230, 340 240, 370 250"/>
+            </g>
+
+            <!-- Animated pulses along lines -->
+            <circle r="4" fill="#2D5BFF" opacity="0.9">
+              <animateMotion dur="4s" repeatCount="indefinite" path="M230 220 C180 160, 80 130, 50 90"/>
+              <animate attributeName="opacity" values="0;0.9;0" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="4" fill="#00B8A9" opacity="0.9">
+              <animateMotion dur="5s" repeatCount="indefinite" path="M230 220 C260 160, 340 120, 390 80"/>
+              <animate attributeName="opacity" values="0;0.9;0" dur="5s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="3.5" fill="#5B82FF" opacity="0.8">
+              <animateMotion dur="4.5s" repeatCount="indefinite" begin="1s" path="M230 220 C290 240, 370 260, 410 290"/>
+              <animate attributeName="opacity" values="0;0.8;0" dur="4.5s" begin="1s" repeatCount="indefinite"/>
+            </circle>
+
+
+            <!-- City nodes: outer -->
+            <!-- London -->
+            <circle cx="50" cy="90" r="28" fill="rgba(45,91,255,0.08)" stroke="rgba(45,91,255,0.35)" stroke-width="1"/>
+            <circle cx="50" cy="90" r="16" fill="rgba(45,91,255,0.15)" stroke="rgba(45,91,255,0.5)" stroke-width="1"/>
+            <circle cx="50" cy="90" r="6" fill="#2D5BFF"/>
+            <text x="50" y="128" text-anchor="middle" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="system-ui,sans-serif">London</text>
+
+            <!-- New York -->
+            <circle cx="390" cy="80" r="28" fill="rgba(45,91,255,0.08)" stroke="rgba(45,91,255,0.35)" stroke-width="1"/>
+            <circle cx="390" cy="80" r="16" fill="rgba(45,91,255,0.15)" stroke="rgba(45,91,255,0.5)" stroke-width="1"/>
+            <circle cx="390" cy="80" r="6" fill="#2D5BFF"/>
+            <text x="390" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="system-ui,sans-serif">New York</text>
+
+            <!-- Sydney -->
+            <circle cx="410" cy="290" r="24" fill="rgba(0,184,169,0.08)" stroke="rgba(0,184,169,0.35)" stroke-width="1"/>
+            <circle cx="410" cy="290" r="14" fill="rgba(0,184,169,0.15)" stroke="rgba(0,184,169,0.5)" stroke-width="1"/>
+            <circle cx="410" cy="290" r="5" fill="#00B8A9"/>
+            <text x="410" y="324" text-anchor="middle" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="system-ui,sans-serif">Sydney</text>
+
+            <!-- Singapore -->
+            <circle cx="370" cy="250" r="22" fill="rgba(91,130,255,0.08)" stroke="rgba(91,130,255,0.35)" stroke-width="1"/>
+            <circle cx="370" cy="250" r="13" fill="rgba(91,130,255,0.12)" stroke="rgba(91,130,255,0.4)" stroke-width="1"/>
+            <circle cx="370" cy="250" r="5" fill="#5B82FF"/>
+            <text x="370" y="283" text-anchor="middle" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="system-ui,sans-serif">Singapore</text>
+
+            <!-- KOCHI: central hub node -->
+            <!-- Outer glow ring -->
+            <circle cx="230" cy="220" r="52" fill="rgba(0,184,169,0.06)" stroke="rgba(0,184,169,0.15)" stroke-width="1">
+              <animate attributeName="r" values="48;56;48" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="230" cy="220" r="38" fill="rgba(0,184,169,0.10)" stroke="rgba(0,184,169,0.3)" stroke-width="1.5"/>
+            <circle cx="230" cy="220" r="24" fill="rgba(0,184,169,0.18)" stroke="rgba(0,184,169,0.55)" stroke-width="1.5"/>
+            <circle cx="230" cy="220" r="10" fill="#00B8A9"/>
+
+            <!-- Kochi label -->
+            <text x="230" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="rgba(255,255,255,0.85)" font-family="system-ui,sans-serif">Kochi, India</text>
+            <text x="230" y="290" text-anchor="middle" font-size="10" font-weight="500" fill="rgba(0,184,169,0.8)" font-family="system-ui,sans-serif">Your delivery hub</text>
+
+            <!-- Mini buildings at Kochi to suggest city -->
+            <rect x="216" y="205" width="5" height="10" rx="1" fill="rgba(0,184,169,0.6)"/>
+            <rect x="223" y="200" width="6" height="15" rx="1" fill="rgba(0,184,169,0.8)"/>
+            <rect x="231" y="208" width="4" height="7" rx="1" fill="rgba(0,184,169,0.5)"/>
+            <rect x="237" y="203" width="5" height="12" rx="1" fill="rgba(0,184,169,0.7)"/>
+
+          </svg>
+        </div>
+
+        <!-- Card label -->
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:12px; color:rgba(255,255,255,0.4); font-weight:500;">Active client network</span>
+          <span style="font-size:12px; color: #00B8A9; font-weight:600;">● Live connections</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════
+     SEGMENT SELECTOR
+════════════════════════════════ -->
+<section class="segments aos" aria-labelledby="segments-title">
+  <div class="segments__inner">
+
+    <!-- Header -->
+    <div class="segments__header">
+      <div>
+        <div class="segments__eyebrow">Who we work with</div>
+        <h2 class="segments__title" id="segments-title">
+          Every company's<br>India journey looks different.
+        </h2>
+      </div>
+      <p class="segments__sub">
+        We've worked with first-timers who had no idea where to start, and seasoned teams looking to do things better. Tell us where you are, and we'll meet you there.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="segments__grid">
+
+      <!-- Card 1: Mid-market first-timer -->
+      <a href="/for/mid-market" class="seg-card seg-card--blue aos aos-delay-1" aria-label="Learn more about GCC setup for mid-market companies">
+        <div class="seg-card__icon"><i class="ph-duotone ph-plant" style="color:var(--blue);"></i></div>
+        <div class="seg-card__who">Mid-market · First-timer</div>
+        <h3 class="seg-card__title">Exploring India for the first time</h3>
+        <p class="seg-card__desc">You're considering a GCC or offshore team but aren't sure where to begin — or whether the risk is worth it.</p>
+        <ul class="seg-card__concerns" aria-label="Common concerns">
+          <li><i class="ph-fill ph-check-circle" style="color:var(--blue); font-size:15px; flex-shrink:0; margin-top:1px;"></i>How do I structure this without losing control?</li>
+          <li><i class="ph-fill ph-check-circle" style="color:var(--blue); font-size:15px; flex-shrink:0; margin-top:1px;"></i>What does it actually cost to get started?</li>
+          <li><i class="ph-fill ph-check-circle" style="color:var(--blue); font-size:15px; flex-shrink:0; margin-top:1px;"></i>How long before we see results?</li>
+        </ul>
+        <span class="seg-card__link">
+          See how we help
+          <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <!-- Card 2: Enterprise scaling -->
+      <a href="/for/enterprise" class="seg-card seg-card--teal aos aos-delay-2" aria-label="Learn more about scaling for enterprise companies">
+        <div class="seg-card__icon"><i class="ph-duotone ph-buildings" style="color:var(--teal);"></i></div>
+        <div class="seg-card__who">Enterprise · Scaling</div>
+        <h3 class="seg-card__title">Scaling an existing India presence</h3>
+        <p class="seg-card__desc">You already have operations in India but need a smarter, faster way to grow — without the complexity of going it alone.</p>
+        <ul class="seg-card__concerns" aria-label="Common concerns">
+          <li><i class="ph-fill ph-check-circle" style="color:var(--teal); font-size:15px; flex-shrink:0; margin-top:1px;"></i>We need senior talent, not just headcount.</li>
+          <li><i class="ph-fill ph-check-circle" style="color:var(--teal); font-size:15px; flex-shrink:0; margin-top:1px;"></i>Our current vendor isn't delivering quality.</li>
+          <li><i class="ph-fill ph-check-circle" style="color:var(--teal); font-size:15px; flex-shrink:0; margin-top:1px;"></i>We want more control over the team culture.</li>
+        </ul>
+        <span class="seg-card__link">
+          See how we help
+          <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <!-- Card 3: Startup moving fast -->
+      <a href="/for/startups" class="seg-card seg-card--indigo aos aos-delay-3" aria-label="Learn more about fast team building for startups">
+        <div class="seg-card__icon"><i class="ph-duotone ph-lightning" style="color:#6366F1;"></i></div>
+        <div class="seg-card__who">Startup · Moving Fast</div>
+        <h3 class="seg-card__title">Building a remote team quickly</h3>
+        <p class="seg-card__desc">You're growing fast and need strong engineers or specialists embedded in your team — without months of recruiting.</p>
+        <ul class="seg-card__concerns" aria-label="Common concerns">
+          <li><i class="ph-fill ph-check-circle" style="color:#6366F1; font-size:15px; flex-shrink:0; margin-top:1px;"></i>We need people who work like part of the team.</li>
+          <li><i class="ph-fill ph-check-circle" style="color:#6366F1; font-size:15px; flex-shrink:0; margin-top:1px;"></i>Speed matters — we can't wait 6 months.</li>
+          <li><i class="ph-fill ph-check-circle" style="color:#6366F1; font-size:15px; flex-shrink:0; margin-top:1px;"></i>Quality and communication are non-negotiable.</li>
+        </ul>
+        <span class="seg-card__link">
+          See how we help
+          <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <!-- Card 4: Existing GCC optimising -->
+      <a href="/for/gcc-optimise" class="seg-card seg-card--amber aos" aria-label="Learn more about optimising an existing GCC">
+        <div class="seg-card__icon"><i class="ph-duotone ph-wrench" style="color:#D97706;"></i></div>
+        <div class="seg-card__who">GCC Owner · Optimising</div>
+        <h3 class="seg-card__title">Getting more from your GCC</h3>
+        <p class="seg-card__desc">Your GCC is running but not firing on all cylinders. You need a partner to help you improve delivery, governance, or team performance.</p>
+        <ul class="seg-card__concerns" aria-label="Common concerns">
+          <li><i class="ph-fill ph-check-circle" style="color:#D97706; font-size:15px; flex-shrink:0; margin-top:1px;"></i>Output quality isn't meeting expectations.</li>
+          <li><i class="ph-fill ph-check-circle" style="color:#D97706; font-size:15px; flex-shrink:0; margin-top:1px;"></i>We're struggling with retention and morale.</li>
+          <li><i class="ph-fill ph-check-circle" style="color:#D97706; font-size:15px; flex-shrink:0; margin-top:1px;"></i>We need better processes, not just more people.</li>
+        </ul>
+        <span class="seg-card__link">
+          See how we help
+          <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+    </div>
+
+    <!-- Footer nudge -->
+    <div class="segments__footer">
+      <span class="segments__footer-text">Not sure which fits you?</span>
+      <a href="/book-a-call" class="segments__footer-link">
+        Book a Call and we'll figure it out together
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     SERVICES OVERVIEW
+════════════════════════════════ -->
+<section class="services aos" aria-labelledby="services-title">
+  <div class="services__inner">
+
+    <!-- Header -->
+    <div class="services__header">
+      <div>
+        <div class="services__eyebrow">What we do</div>
+        <h2 class="services__title" id="services-title">
+          Everything you need<br>to build in India.
+        </h2>
+      </div>
+      <p class="services__sub">
+        From setting up your first offshore team to running a fully governed Global Capability Centre — we offer the right model for where you are today, with room to grow.
+      </p>
+    </div>
+
+    <!-- Services grid -->
+    <div class="services__grid" role="list">
+
+      <!-- 1. GCC Setup — Featured, full width -->
+      <a href="/gcc-setup" class="svc-card svc-card--featured theme-blue" role="listitem" aria-label="GCC Setup service">
+        <div class="svc-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Modern collaborative office space" loading="lazy">
+        </div>
+        <div class="svc-card__content">
+          <div class="svc-card__badge">
+            <i class="ph-fill ph-star"></i>
+            Most popular
+          </div>
+          <div class="svc-card__tag">GCC Setup</div>
+          <h3 class="svc-card__title">Global Capability Centre — done right, from day one.</h3>
+          <p class="svc-card__position">
+            We handle the end-to-end complexity of establishing your GCC in Kochi — legal entity formation, talent acquisition, infrastructure, governance — so you can focus on your business, not the setup.
+          </p>
+          <ul class="svc-card__caps" aria-label="Capabilities">
+            <li><i class="ph-bold ph-check cap-check"></i>Entity formation, compliance &amp; statutory registrations</li>
+            <li><i class="ph-bold ph-check cap-check"></i>End-to-end hiring: sourcing, screening, onboarding</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Office setup, IT infrastructure &amp; security frameworks</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Ongoing HR, payroll &amp; governance support post-launch</li>
+          </ul>
+          <span class="svc-card__link" aria-label="Learn more about GCC Setup">
+            Learn more
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- 2. BOT / COPO -->
+      <a href="/bot-copo" class="svc-card theme-teal aos" role="listitem" aria-label="BOT / COPO service">
+        <div class="svc-card__icon" aria-hidden="true"><i class="ph-duotone ph-arrows-clockwise"></i></div>
+        <div class="svc-card__content">
+          <div class="svc-card__tag">BOT / COPO</div>
+          <h3 class="svc-card__title">Build, Operate, Transfer — at your pace.</h3>
+          <p class="svc-card__position">
+            Start with us managing everything. Take full ownership when you're ready. No irreversible decisions on day one.
+          </p>
+          <ul class="svc-card__caps" aria-label="Capabilities">
+            <li><i class="ph-bold ph-check cap-check"></i>Structured transition with defined handover milestones</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Operate phase: full accountability on our side</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Flexible COPO model with co-ownership options</li>
+          </ul>
+          <span class="svc-card__link" aria-label="Learn more about BOT / COPO">
+            Learn more
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- 3. Staff Augmentation -->
+      <a href="/staff-augmentation" class="svc-card theme-indigo aos" role="listitem" aria-label="Staff Augmentation service">
+        <div class="svc-card__icon" aria-hidden="true"><i class="ph-duotone ph-users-three"></i></div>
+        <div class="svc-card__content">
+          <div class="svc-card__tag">Staff Augmentation</div>
+          <h3 class="svc-card__title">The right people, in your team, fast.</h3>
+          <p class="svc-card__position">
+            Vetted professionals who work as a genuine extension of your team — not contractors who disappear after a sprint.
+          </p>
+          <ul class="svc-card__caps" aria-label="Capabilities">
+            <li><i class="ph-bold ph-check cap-check"></i>Roles across engineering, product, data &amp; operations</li>
+            <li><i class="ph-bold ph-check cap-check"></i>2–4 week placement timeline for most roles</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Retention support &amp; culture alignment included</li>
+          </ul>
+          <span class="svc-card__link" aria-label="Learn more about Staff Augmentation">
+            Learn more
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- 4. Product Engineering -->
+      <a href="/product-engineering" class="svc-card theme-violet aos" role="listitem" aria-label="Product Engineering service">
+        <div class="svc-card__icon" aria-hidden="true"><i class="ph-duotone ph-code-block"></i></div>
+        <div class="svc-card__content">
+          <div class="svc-card__tag">Product Engineering</div>
+          <h3 class="svc-card__title">Software built to last, not just to ship.</h3>
+          <p class="svc-card__position">
+            Dedicated engineering teams who own your roadmap outcomes — not feature factories working ticket by ticket.
+          </p>
+          <ul class="svc-card__caps" aria-label="Capabilities">
+            <li><i class="ph-bold ph-check cap-check"></i>Full-stack, mobile, data &amp; cloud engineering</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Agile squads with embedded QA &amp; DevOps</li>
+            <li><i class="ph-bold ph-check cap-check"></i>IP stays with you — always</li>
+          </ul>
+          <span class="svc-card__link" aria-label="Learn more about Product Engineering">
+            Learn more
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- 5. AiPODS — full width bottom -->
+      <a href="/aipods" class="svc-card svc-card--featured theme-emerald aos" role="listitem" aria-label="AiPODS service">
+        <div class="svc-card__icon" aria-hidden="true"><i class="ph-duotone ph-robot"></i></div>
+        <div class="svc-card__content">
+          <div class="svc-card__badge" style="background:#ECFDF5; color:#059669;">
+            <i class="ph-fill ph-sparkle"></i>
+            New offering
+          </div>
+          <div class="svc-card__tag">AiPODS</div>
+          <h3 class="svc-card__title">AI-powered delivery squads for the teams building tomorrow.</h3>
+          <p class="svc-card__position">
+            Purpose-built offshore pods that combine senior engineers with embedded AI tooling — designed for companies who want to move faster without cutting corners on quality.
+          </p>
+          <ul class="svc-card__caps" aria-label="Capabilities">
+            <li><i class="ph-bold ph-check cap-check"></i>Pre-configured AI toolchains: code review, test generation, documentation</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Senior-led squads with built-in AI fluency</li>
+            <li><i class="ph-bold ph-check cap-check"></i>Outcome-focused delivery, not hours logged</li>
+          </ul>
+          <span class="svc-card__link" aria-label="Learn more about AiPODS">
+            Learn more about AiPODS
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- CTA strip -->
+    <div class="services__cta">
+      <div class="cta-strip__text">
+        <h3>Not sure which model fits your situation?</h3>
+        <p>We'll ask a few questions and help you figure out the right approach — no pressure, no pitch.</p>
+      </div>
+      <a href="/book-a-call" class="btn-primary">
+        Book a Call
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     KOCHI ADVANTAGE
+════════════════════════════════ -->
+<section class="kochi aos" aria-labelledby="kochi-title">
+
+  <div class="kochi__bg" aria-hidden="true">
+    <div class="kochi__bg-orb kochi__bg-orb--1"></div>
+    <div class="kochi__bg-orb kochi__bg-orb--2"></div>
+  </div>
+
+  <div class="kochi__inner">
+
+    <!-- Header -->
+    <div class="kochi__header">
+      <div>
+        <div class="kochi__eyebrow">Why Kochi</div>
+        <h2 class="kochi__title" id="kochi-title">
+          India's most liveable<br>
+          tech city is also its<br>
+          <em>best-kept secret.</em>
+        </h2>
+      </div>
+
+      <div class="kochi__header-right">
+        <p>
+          While Bangalore and Hyderabad get the headlines, Kochi offers something quietly different — a deep talent pool, significantly lower costs, and a quality of life that keeps your team happy and stable for the long haul.
+        </p>
+        <div class="kochi__facts-inline">
+          <div class="fact-inline">
+            <div class="fact-inline__num">XX<span>%</span></div>
+            <div class="fact-inline__label">Lower cost than Bangalore</div>
+          </div>
+          <div class="fact-inline">
+            <div class="fact-inline__num">XX<span>k+</span></div>
+            <div class="fact-inline__label">Tech graduates annually</div>
+          </div>
+          <div class="fact-inline">
+            <div class="fact-inline__num">XX<span>%</span></div>
+            <div class="fact-inline__label">Lower attrition vs. metro avg.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Three pillars -->
+    <div class="kochi__pillars">
+
+      <!-- Pillar 1: Talent -->
+      <div class="pillar aos aos-delay-1">
+        <div class="pillar__number">01</div>
+        <div class="pillar__icon" aria-hidden="true"><i class="ph-duotone ph-graduation-cap"></i></div>
+        <h3 class="pillar__title">Deep, Diverse Talent</h3>
+        <p class="pillar__desc">
+          Kerala produces some of India's highest concentrations of engineering and science graduates per capita. Kochi's tech corridor draws from this pipeline — and retains it.
+        </p>
+        <div class="pillar__datapoints">
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            Strong presence of Tier-1 engineering colleges within commuting distance
+          </div>
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            High English fluency and international exposure across the workforce
+          </div>
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            Growing cluster of fintech, SaaS and product engineering talent
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Cost -->
+      <div class="pillar aos aos-delay-2">
+        <div class="pillar__number">02</div>
+        <div class="pillar__icon" aria-hidden="true"><i class="ph-duotone ph-chart-line-up"></i></div>
+        <h3 class="pillar__title">Real Cost Advantage</h3>
+        <p class="pillar__desc">
+          Compared to Bangalore or Hyderabad, Kochi offers meaningfully lower salary bands, real estate costs and operational overhead — without compromising on talent quality.
+        </p>
+        <div class="pillar__datapoints">
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            XX–XX% lower total employment cost vs. comparable Bangalore roles
+          </div>
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            Office space at a fraction of metro city rates
+          </div>
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            Lower cost of living means your compensation goes further
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 3: Stability & Life -->
+      <div class="pillar aos aos-delay-3">
+        <div class="pillar__number">03</div>
+        <div class="pillar__icon" aria-hidden="true"><i class="ph-duotone ph-leaf"></i></div>
+        <h3 class="pillar__title">Stability That Compounds</h3>
+        <p class="pillar__desc">
+          Kochi consistently ranks as one of India's most liveable cities. For your GCC, this translates directly into lower attrition, stronger team culture, and compounding institutional knowledge.
+        </p>
+        <div class="pillar__datapoints">
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            Ranked among India's top cities for quality of life and infrastructure
+          </div>
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            Lower job-hopping culture compared to larger metros
+          </div>
+          <div class="datapoint">
+            <span class="datapoint-dot" aria-hidden="true"></span>
+            Employees who stay longer build the institutional knowledge your GCC depends on
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Comparison table -->
+    <div class="kochi__compare">
+      <div class="compare__header">
+        <h3>How Kochi compares</h3>
+        <p>A straightforward look at what matters when choosing your India location.</p>
+      </div>
+      <table class="compare__table" role="table" aria-label="City comparison table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th class="col-kochi-header">Kochi</th>
+            <th class="hide-mobile">Bangalore</th>
+            <th class="hide-mobile">Hyderabad</th>
+            <th>Mumbai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">Talent availability</td>
+            <td class="col-kochi"><span class="check-yes">✓ Strong</span></td>
+            <td class="hide-mobile"><span class="check-yes">✓ Very strong</span></td>
+            <td class="hide-mobile"><span class="check-yes">✓ Strong</span></td>
+            <td><span class="check-partial">Moderate</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">Employment cost</td>
+            <td class="col-kochi"><span class="check-yes">✓ Low</span></td>
+            <td class="hide-mobile"><span class="check-no">High</span></td>
+            <td class="hide-mobile"><span class="check-partial">Medium</span></td>
+            <td><span class="check-no">Very high</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">Attrition rate</td>
+            <td class="col-kochi"><span class="check-yes">✓ Low</span></td>
+            <td class="hide-mobile"><span class="check-no">Very high</span></td>
+            <td class="hide-mobile"><span class="check-partial">High</span></td>
+            <td><span class="check-partial">High</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">Quality of life</td>
+            <td class="col-kochi"><span class="check-yes">✓ Excellent</span></td>
+            <td class="hide-mobile"><span class="check-partial">Moderate</span></td>
+            <td class="hide-mobile"><span class="check-yes">✓ Good</span></td>
+            <td><span class="check-no">Challenging</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">Infrastructure</td>
+            <td class="col-kochi"><span class="check-yes">✓ Modern</span></td>
+            <td class="hide-mobile"><span class="check-yes">✓ Strong</span></td>
+            <td class="hide-mobile"><span class="check-yes">✓ Strong</span></td>
+            <td><span class="check-partial">Strained</span></td>
+          </tr>
+          <tr>
+            <td class="row-label">GCC ecosystem maturity</td>
+            <td class="col-kochi"><span class="check-yes">✓ Growing fast</span></td>
+            <td class="hide-mobile"><span class="check-yes">✓ Mature</span></td>
+            <td class="hide-mobile"><span class="check-yes">✓ Mature</span></td>
+            <td><span class="check-partial">Limited</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════ -->
+<section class="hiw aos" aria-labelledby="hiw-title">
+  <div class="hiw__inner">
+
+    <!-- Header -->
+    <div class="hiw__header">
+      <div>
+        <div class="hiw__eyebrow">How it works</div>
+        <h2 class="hiw__title" id="hiw-title">
+          From first conversation<br>to a team that's yours.
+        </h2>
+      </div>
+      <p class="hiw__sub">
+        No black boxes, no surprises. Here's exactly what the journey looks like — and what you can expect from us at every stage.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="hiw__timeline" role="list">
+
+      <!-- Spine line -->
+      <div class="hiw__spine" aria-hidden="true"></div>
+
+      <!-- ── PHASE 1: Discovery ── -->
+      <div class="phase phase--1" role="listitem">
+
+        <div class="phase__left">
+          <div class="phase__step-num">Phase 01</div>
+          <div class="phase__step-name">Understand &amp; Plan</div>
+          <div class="phase__duration">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Weeks 1–2
+          </div>
+          <div class="phase__node" aria-hidden="true">
+            <div class="phase__node-inner"></div>
+          </div>
+        </div>
+
+        <div class="phase__right">
+          <div class="phase__card">
+            <h3 class="phase__card-title">We start by listening, not selling.</h3>
+            <p class="phase__card-sub">
+              Before we recommend anything, we take time to understand your business, your team structure, your goals — and your concerns. This shapes everything that follows.
+            </p>
+
+            <div class="phase__columns">
+              <div>
+                <div class="phase__col-label">What we do</div>
+                <ul class="phase__col-items">
+                  <li><span class="item-dot" aria-hidden="true"></span>Deep-dive discovery call with your stakeholders</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Assess the right engagement model for your situation</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Map out roles, timelines and success metrics</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Deliver a clear, costed proposal — no ambiguity</li>
+                </ul>
+              </div>
+              <div>
+                <div class="phase__col-label">What you do</div>
+                <ul class="phase__col-items">
+                  <li><span class="item-dot" aria-hidden="true"></span>Share your goals and current team structure</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Tell us what's worked and what hasn't before</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Review and approve the proposed plan</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="phase__outcome">
+              <span class="outcome-icon">✓</span>
+              You leave Phase 1 with a clear plan, a realistic timeline, and full confidence in the next step.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── PHASE 2: Setup ── -->
+      <div class="phase phase--2" role="listitem">
+
+        <div class="phase__left">
+          <div class="phase__step-num">Phase 02</div>
+          <div class="phase__step-name">Build &amp; Launch</div>
+          <div class="phase__duration">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Weeks 3–12
+          </div>
+          <div class="phase__node" aria-hidden="true">
+            <div class="phase__node-inner"></div>
+          </div>
+        </div>
+
+        <div class="phase__right">
+          <div class="phase__card">
+            <h3 class="phase__card-title">We handle the complexity. You stay focused.</h3>
+            <p class="phase__card-sub">
+              From legal entity setup to your first hire's first day — we manage the operational details so you don't have to. You're involved at the decisions that matter, without being buried in the ones that don't.
+            </p>
+
+            <div class="phase__columns">
+              <div>
+                <div class="phase__col-label">What we do</div>
+                <ul class="phase__col-items">
+                  <li><span class="item-dot" aria-hidden="true"></span>Legal entity formation and compliance setup</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Source, screen and interview candidates</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Negotiate offers and manage onboarding</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Set up office infrastructure and IT environment</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Establish payroll, HR policies and governance</li>
+                </ul>
+              </div>
+              <div>
+                <div class="phase__col-label">What you do</div>
+                <ul class="phase__col-items">
+                  <li><span class="item-dot" aria-hidden="true"></span>Make final hiring decisions on shortlisted candidates</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Approve tooling and infrastructure choices</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Weekly check-ins with your Intellispark lead</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Begin integrating your new team into workflows</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="phase__outcome">
+              <span class="outcome-icon">✓</span>
+              You leave Phase 2 with a fully operational team, embedded in your processes and ready to deliver.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── PHASE 3: Scale ── -->
+      <div class="phase phase--3" role="listitem">
+
+        <div class="phase__left">
+          <div class="phase__step-num">Phase 03</div>
+          <div class="phase__step-name">Grow &amp; Scale</div>
+          <div class="phase__duration">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Month 3 onwards
+          </div>
+          <div class="phase__node" aria-hidden="true">
+            <div class="phase__node-inner"></div>
+          </div>
+        </div>
+
+        <div class="phase__right">
+          <div class="phase__card">
+            <h3 class="phase__card-title">We stay with you — as much or as little as you need.</h3>
+            <p class="phase__card-sub">
+              Once your team is running, we shift into a support and growth role. Whether you want to scale headcount, improve governance, or eventually take full ownership — we flex to where you are.
+            </p>
+
+            <div class="phase__columns">
+              <div>
+                <div class="phase__col-label">What we do</div>
+                <ul class="phase__col-items">
+                  <li><span class="item-dot" aria-hidden="true"></span>Ongoing HR, payroll and compliance management</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Retention programmes and team engagement support</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Scale hiring as your team grows</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Governance reviews and performance reporting</li>
+                </ul>
+              </div>
+              <div>
+                <div class="phase__col-label">What you do</div>
+                <ul class="phase__col-items">
+                  <li><span class="item-dot" aria-hidden="true"></span>Lead the team day-to-day on your products</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Define growth plans and headcount needs</li>
+                  <li><span class="item-dot" aria-hidden="true"></span>Choose your level of Intellispark involvement</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="phase__outcome">
+              <span class="outcome-icon">✓</span>
+              Your India team operates like any other part of your organisation — productive, stable and growing.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="hiw__cta">
+      <p>
+        <strong>Ready to take the first step?</strong> The discovery call is free, and there's no obligation.
+      </p>
+      <a href="/book-a-call" class="btn-primary">
+        Book a Call
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     CASE STUDIES / SOCIAL PROOF
+════════════════════════════════ -->
+<section class="proof aos" aria-labelledby="proof-title">
+  <div class="proof__inner">
+
+    <!-- Header -->
+    <div class="proof__header">
+      <div>
+        <div class="proof__eyebrow">Client stories</div>
+        <h2 class="proof__title" id="proof-title">
+          Real teams.<br>Real outcomes.
+        </h2>
+      </div>
+      <p class="proof__sub">
+        We're proud of what our clients have built. Here are a few of their stories — told in their own words and numbers.
+      </p>
+    </div>
+
+    <!-- Featured testimonial quote -->
+    <blockquote class="proof__quote" aria-label="Client testimonial">
+      <div class="quote__body">
+        <p class="quote__text">
+          "We'd spoken to three other vendors before Intellispark. The difference was that they actually listened to what we were trying to build — not just how many seats they could fill. Eighteen months later, our Kochi team is the most stable and productive we have globally."
+        </p>
+        <div class="quote__attribution">
+          <div class="quote__avatar">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80" alt="VP of Engineering">
+          </div>
+          <div>
+            <div class="quote__name">VP of Engineering</div>
+            <div class="quote__role">Series B SaaS company · United Kingdom</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote__outcomes" aria-label="Key outcomes">
+        <div class="outcome-pill">
+          <i class="ph-duotone ph-users outcome-pill__icon"></i>
+          <div>
+            <div class="outcome-pill__num">XX<span>+</span></div>
+            <div class="outcome-pill__label">Engineers placed in 18 months</div>
+          </div>
+        </div>
+        <div class="outcome-pill">
+          <i class="ph-duotone ph-chart-polar outcome-pill__icon"></i>
+          <div>
+            <div class="outcome-pill__num">XX<span>%</span></div>
+            <div class="outcome-pill__label">Year-1 retention rate</div>
+          </div>
+        </div>
+        <div class="outcome-pill">
+          <i class="ph-duotone ph-timer outcome-pill__icon"></i>
+          <div>
+            <div class="outcome-pill__num">XX<span>wks</span></div>
+            <div class="outcome-pill__label">From brief to first hire</div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+
+    <!-- Case study cards -->
+    <div class="proof__cases">
+
+      <!-- Case 1: GCC first-timer -->
+      <a href="/case-studies/mid-market-fintech-gcc" class="case-card case-card--1 aos aos-delay-1" aria-label="Case study: Fintech company GCC setup">
+        <div class="case-card__img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80');" role="img" aria-label="Fintech office"></div>
+        <div class="case-card__body">
+          <div class="case-card__industry">
+            <i class="ph-fill ph-bank"></i> Fintech
+          </div>
+          <div class="case-card__company">Mid-market · 200–500 employees · Australia</div>
+          <h3 class="case-card__title">Setting up a first GCC in under 90 days — without a dedicated India team.</h3>
+          <p class="case-card__desc">
+            A growing Australian fintech needed to scale their engineering capacity quickly but had no experience operating in India. They came to us with a tight timeline and significant concerns about compliance and quality control.
+          </p>
+          <div class="case-card__metrics">
+            <div class="metric">
+              <div class="metric__num">XX</div>
+              <div class="metric__label">Days to first hire</div>
+            </div>
+            <div class="metric">
+              <div class="metric__num">XX</div>
+              <div class="metric__label">Engineers onboarded in 6 months</div>
+            </div>
+            <div class="metric">
+              <div class="metric__num">XX%</div>
+              <div class="metric__label">Cost saving vs. onshore</div>
+            </div>
+          </div>
+          <span class="case-card__link">
+            Read the story
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Case 2: Staff aug for startup -->
+      <a href="/case-studies/saas-startup-staff-aug" class="case-card case-card--2 aos aos-delay-2" aria-label="Case study: SaaS startup staff augmentation">
+        <div class="case-card__img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80');" role="img" aria-label="Engineering team collaborating"></div>
+        <div class="case-card__body">
+          <div class="case-card__industry">
+            <i class="ph-fill ph-cloud"></i> SaaS
+          </div>
+          <div class="case-card__company">Startup · 50–100 employees · United Kingdom</div>
+          <h3 class="case-card__title">Doubling engineering velocity without doubling the UK payroll.</h3>
+          <p class="case-card__desc">
+            A London-based SaaS startup was burning through their Series A runway on expensive onshore hires. They needed senior engineers fast, with no tolerance for the ramp-up time typical of offshore arrangements.
+          </p>
+          <div class="case-card__metrics">
+            <div class="metric">
+              <div class="metric__num">XX</div>
+              <div class="metric__label">Weeks to first deployment</div>
+            </div>
+            <div class="metric">
+              <div class="metric__num">XX%</div>
+              <div class="metric__label">Reduction in cost per engineer</div>
+            </div>
+            <div class="metric">
+              <div class="metric__num">XX</div>
+              <div class="metric__label">Features shipped in quarter 1</div>
+            </div>
+          </div>
+          <span class="case-card__link">
+            Read the story
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Case 3: BOT / enterprise -->
+      <a href="/case-studies/enterprise-bot-transition" class="case-card case-card--3 aos aos-delay-3" aria-label="Case study: Enterprise BOT transition">
+        <div class="case-card__img" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80');" role="img" aria-label="Enterprise office"></div>
+        <div class="case-card__body">
+          <div class="case-card__industry">
+            <i class="ph-fill ph-buildings"></i> Enterprise Tech
+          </div>
+          <div class="case-card__company">Enterprise · 1,000+ employees · United States</div>
+          <h3 class="case-card__title">Transitioning from a managed vendor to full GCC ownership — without disruption.</h3>
+          <p class="case-card__desc">
+            A US enterprise had an underperforming offshore arrangement and wanted to take direct ownership of their India team. The challenge: transition cleanly without losing institutional knowledge or productivity.
+          </p>
+          <div class="case-card__metrics">
+            <div class="metric">
+              <div class="metric__num">XX</div>
+              <div class="metric__label">Month BOT transition period</div>
+            </div>
+            <div class="metric">
+              <div class="metric__num">XX%</div>
+              <div class="metric__label">Staff retained through transition</div>
+            </div>
+            <div class="metric">
+              <div class="metric__num">XX%</div>
+              <div class="metric__label">Productivity improvement post-transfer</div>
+            </div>
+          </div>
+          <span class="case-card__link">
+            Read the story
+            <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Footer strip -->
+    <div class="proof__footer">
+      <p class="proof__footer-text">
+        <strong>Want to see if we've worked with companies like yours?</strong> We're happy to share relevant experience on a call.
+      </p>
+      <div class="proof__footer-actions">
+        <a href="/case-studies" class="btn-ghost">
+          View all case studies
+          <svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/book-a-call" class="btn-primary">
+          Book a Call
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     MID-PAGE CTA STRIP
+════════════════════════════════ -->
+<section class="cta-strip aos" aria-labelledby="cta-title">
+
+  <div class="cta-strip__bg" aria-hidden="true"></div>
+
+  <div class="cta-strip__inner">
+
+    <!-- Left: copy -->
+    <div class="cta-strip__copy">
+
+      <div class="cta-strip__eyebrow">Let's talk</div>
+
+      <h2 class="cta-strip__title" id="cta-title">
+        Thinking about building<br>
+        a team in India?<br>
+        <em>Start with a conversation.</em>
+      </h2>
+
+      <p class="cta-strip__sub">
+        There's no script, no sales deck on the first call. Just an honest conversation about where you are, what you're hoping to achieve, and whether we're the right fit for each other.
+      </p>
+
+      <div class="cta-strip__buttons">
+        <a href="/book-a-call" class="btn-primary">
+          Book a Call
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="/resources/gcc-guide" class="btn-secondary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+          </svg>
+          Download the GCC Guide
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Right: reassurance card -->
+    <div class="cta-strip__card" aria-label="What to expect on a call">
+
+      <div class="cta-card__label">What to expect</div>
+
+      <ul class="cta-card__items">
+        <li class="cta-card__item">
+          <span class="cta-card__check" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg>
+          </span>
+          A 30-minute call — no longer unless you want it to be
+        </li>
+        <li class="cta-card__item">
+          <span class="cta-card__check" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg>
+          </span>
+          We'll ask about your goals, not pitch our services
+        </li>
+        <li class="cta-card__item">
+          <span class="cta-card__check" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg>
+          </span>
+          Honest advice — even if we're not the right fit
+        </li>
+        <li class="cta-card__item">
+          <span class="cta-card__check" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg>
+          </span>
+          A clear next step — never a vague follow-up
+        </li>
+      </ul>
+
+      <div class="cta-card__divider" aria-hidden="true"></div>
+
+      <div class="cta-card__footer">
+        <div class="cta-card__avatar-stack" aria-hidden="true">
+          <div class="avatar avatar--1">A</div>
+          <div class="avatar avatar--2">R</div>
+          <div class="avatar avatar--3">S</div>
+        </div>
+        <span>Our team typically responds within 4 hours</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     FAQ
+════════════════════════════════ -->
+<section class="faq aos" aria-labelledby="faq-title">
+  <div class="faq__inner">
+
+    <!-- Left: sticky header -->
+    <div class="faq__left">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__title" id="faq-title">
+        Questions we hear most often.
+      </h2>
+      <p class="faq__sub">
+        Honest answers to the things companies actually want to know before getting started.
+      </p>
+
+      <div class="faq__nudge">
+        <p>
+          <strong>Still have questions?</strong>
+          We're happy to talk through your specific situation — no obligation, no pressure.
+        </p>
+        <a href="/book-a-call" class="btn-primary">
+          Book a Call
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: accordion -->
+    <div class="faq__accordion" role="list">
+
+      <!-- ── COST & TIMELINE ── -->
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-1-body"
+          id="faq-1-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">How much does it cost to set up a GCC through Intellispark?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-1-body" role="region" aria-labelledby="faq-1-btn">
+          <div class="faq-item__answer">
+            <p>The honest answer is: it depends on your model, team size, and the roles you're hiring for. We don't have a one-size-fits-all price because we don't think that's the right approach.</p>
+            <p>What we can tell you is that a typical GCC setup through Intellispark — including entity formation, initial hires, and first 90 days of operations — is structured so that the total investment is recovered within the first 12–18 months through the cost differential versus onshore hiring.</p>
+            <p>We'll give you a detailed, itemised cost estimate after our first discovery call — before you make any commitment. <a href="/book-a-call">Book a call</a> to get started.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-2-body"
+          id="faq-2-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">How long does it realistically take to get a team up and running?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-2-body" role="region" aria-labelledby="faq-2-btn">
+          <div class="faq-item__answer">
+            <p>For staff augmentation — placing individuals into your existing team — we can typically make first placements within 2–4 weeks of agreeing the brief.</p>
+            <p>For a full GCC setup, the typical timeline from signed agreement to first hire is 8–12 weeks. A team of 10–15 people is usually operational within 4–5 months. The variable is almost always role complexity and seniority, not our process.</p>
+            <p>We'll give you a milestone-based timeline in our proposal, so you know exactly what to expect and when.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RISK & QUALITY ── -->
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-3-body"
+          id="faq-3-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">We've had bad experiences with offshore teams before. How is this different?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-3-body" role="region" aria-labelledby="faq-3-btn">
+          <div class="faq-item__answer">
+            <p>This is the most common thing we hear — and we take it seriously, because the concern is usually valid. Most offshore failures come down to three things: misaligned expectations upfront, poor candidate matching, and a vendor who disappears after placement.</p>
+            <p><strong>What we do differently:</strong> We spend significant time on the discovery phase to understand exactly what good looks like for you before we source anyone. We're selective — we'd rather take longer and get it right than fill a seat quickly. And we stay involved after placement, because our reputation depends on your team's performance, not just the handshake.</p>
+            <p>We're also honest when we think a situation isn't a good fit for us. If we don't think we can deliver what you need, we'll tell you — rather than take the engagement and underdeliver.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-4-body"
+          id="faq-4-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">How do you ensure the quality of candidates you place?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-4-body" role="region" aria-labelledby="faq-4-btn">
+          <div class="faq-item__answer">
+            <p>Every candidate goes through a multi-stage process: technical assessment, communication evaluation, a structured interview with our internal team, and reference checks. We only present candidates we'd personally be comfortable hiring.</p>
+            <p>You'll also make the final call on every hire — we present shortlists, not faits accomplis. And if a placement doesn't work out within the first 90 days, we replace at no additional cost.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CONTROL & LEGAL ── -->
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-5-body"
+          id="faq-5-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">Will we have direct control over our team, or does everything go through Intellispark?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-5-body" role="region" aria-labelledby="faq-5-btn">
+          <div class="faq-item__answer">
+            <p>Your team works directly for you — on your tools, in your workflows, reporting to your managers. Intellispark handles the employment infrastructure (payroll, HR, compliance, facilities), but the day-to-day direction of the team is entirely yours.</p>
+            <p>Think of us as the operational layer that lets you focus on leading the team, not administering it. The level of ongoing involvement from our side is flexible — some clients want us very present, others just want clean payroll and to be left alone. We adapt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-6-body"
+          id="faq-6-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">What are the legal and compliance requirements for setting up in India?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-6-body" role="region" aria-labelledby="faq-6-btn">
+          <div class="faq-item__answer">
+            <p>Setting up in India involves entity registration, tax compliance (GST, TDS), local labour law adherence, and depending on your sector, potential regulatory considerations. It's manageable — but it requires knowing what you're doing.</p>
+            <p>We handle this end-to-end for GCC and BOT engagements, working with established legal partners in Kerala. For staff augmentation, we employ your team members directly and manage all compliance on your behalf — you have no direct employer obligations in India.</p>
+            <p>We'll walk you through the specifics relevant to your structure on the first call — it's usually less complex than people expect.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── MODEL CHOICE ── -->
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-7-body"
+          id="faq-7-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">What's the difference between a GCC, BOT, and staff augmentation — and how do I know which is right for us?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-7-body" role="region" aria-labelledby="faq-7-btn">
+          <div class="faq-item__answer">
+            <p><strong>GCC (Global Capability Centre)</strong> — You own the entity and the team directly. Higher upfront investment, but full control and maximum long-term cost efficiency. Best for companies committed to India as a strategic location.</p>
+            <p><strong>BOT (Build-Operate-Transfer)</strong> — We build and run the operation, then hand it over to you on a pre-agreed schedule. Lower initial risk, structured path to ownership. Good for companies who want to validate before committing fully.</p>
+            <p><strong>Staff Augmentation</strong> — We place individual professionals into your existing team. Fastest to start, most flexible, no long-term infrastructure commitment. Best for specific role gaps or teams that aren't ready for a full GCC yet.</p>
+            <p>We'll help you figure out the right model on a discovery call — most companies land somewhere along this spectrum rather than at one fixed point.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button
+          class="faq-item__btn"
+          aria-expanded="false"
+          aria-controls="faq-8-body"
+          id="faq-8-btn"
+          onclick="toggleFaq(this)"
+        >
+          <span class="faq-item__question">What happens if things don't go as planned — can we exit or change direction?</span>
+          <span class="faq-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-item__body" id="faq-8-body" role="region" aria-labelledby="faq-8-btn">
+          <div class="faq-item__answer">
+            <p>Yes — and we think it's important to be clear about this upfront. For staff augmentation, notice periods are straightforward and specified in your agreement. For GCC and BOT engagements, we build exit and transition provisions into every contract so you're never locked in without a clear path forward.</p>
+            <p>We'd rather design flexibility in from the start than have a difficult conversation later. If your situation changes — business priorities shift, the engagement isn't working — we'll work with you to find the right resolution, not hold you to something that no longer makes sense.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer role="contentinfo">
+
+  <!-- ── TOP: EMAIL CAPTURE ── -->
+  <div class="footer-top">
+    <div class="footer-top__inner">
+      <div class="footer-top__copy">
+        <h3>Stay informed on GCC trends in India.</h3>
+        <p>Occasional insights on talent, operations and what's changing in the market. No spam.</p>
+      </div>
+      <form class="footer-top__form" onsubmit="handleSubscribe(event)" novalidate>
+        <input
+          type="email"
+          class="footer-top__input"
+          placeholder="your@company.com"
+          aria-label="Email address for newsletter"
+          required
+        />
+        <button type="submit" class="btn-subscribe">
+          Subscribe
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── MAIN GRID ── -->
+  <div class="footer-main">
+    <div class="footer-main__inner">
+
+      <!-- Col 1: Brand -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Intellispark home">
+          <div class="logo-mark"><i class="ph-bold ph-lightning"></i></div>
+          <div style="font-size:17px; font-weight:700; color:var(--white); letter-spacing:-0.4px;">Intellispark</div>
+        </a>
+        <p class="footer-tagline">
+          Helping global companies build thoughtful, high-performing teams in Kochi, India.
+        </p>
+        <div class="footer-socials" aria-label="Social media links">
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/company/intellispark" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <!-- Twitter/X -->
+          <a href="https://twitter.com/intellispark" class="social-link" aria-label="Twitter / X" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://youtube.com/@intellispark" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Services -->
+      <nav class="footer-nav" aria-label="Services">
+        <div class="footer-nav__label">Services</div>
+        <ul class="footer-nav__list">
+          <li><a href="/gcc-setup">GCC Setup</a></li>
+          <li><a href="/bot-copo">BOT / COPO</a></li>
+          <li><a href="/staff-augmentation">Staff Augmentation</a></li>
+          <li><a href="/product-engineering">Product Engineering</a></li>
+          <li><a href="/aipods">AiPODS</a></li>
+          <li><a href="/service-delivery">Service Delivery Centres</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 3: Company -->
+      <nav class="footer-nav" aria-label="Company">
+        <div class="footer-nav__label">Company</div>
+        <ul class="footer-nav__list">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/kochi-advantage">Why Kochi</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+          <li><a href="/blog">Insights</a></li>
+          <li><a href="/resources/gcc-guide">GCC Guide</a></li>
+          <li><a href="/careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 4: Contact -->
+      <div class="footer-contact">
+        <div class="footer-contact__label">Get in touch</div>
+        <div class="footer-contact__items">
+
+          <div class="contact-item">
+            <div class="contact-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item__text">
+              <span class="contact-item__label">Email</span>
+              <span class="contact-item__value">
+                <a href="mailto:hello@intellispark.tech">hello@intellispark.tech</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-item__text">
+              <span class="contact-item__label">Phone</span>
+              <span class="contact-item__value">
+                <a href="tel:+91XXXXXXXXXX">+91 XX XXXX XXXX</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-item__text">
+              <span class="contact-item__label">Office</span>
+              <span class="contact-item__value">Kochi, Kerala, India</span>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="/book-a-call" class="footer-cta">
+          Book a Call
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── BOTTOM BAR ── */-->
+  <div class="footer-bottom">
+    <div class="footer-bottom__inner">
+      <div class="footer-bottom__left">
+        © 2025 Intellispark Technologies. Made with
+        <span aria-label="care">♥</span>
+        in Kochi, India.
+      </div>
+      <div class="footer-bottom__links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── NAV: scroll shadow ──
+  const navEl = document.getElementById('mainNav');
+  if (navEl) {
+    window.addEventListener('scroll', () => {
+      navEl.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
+
+  // ── NAV: services dropdown ──
+  const servicesMenu = document.getElementById('servicesMenu');
+  const servicesBtn  = document.getElementById('servicesBtn');
+  const overlay      = document.getElementById('overlay');
+
+  window.toggleDropdown = function () {
+    if (!servicesMenu) return;
+    const isOpen = servicesMenu.classList.toggle('open');
+    servicesBtn.setAttribute('aria-expanded', String(isOpen));
+    if (overlay) overlay.style.display = isOpen ? 'block' : 'none';
+  };
+
+  // ── NAV: mobile menu ──
+  const mobileMenu   = document.getElementById('mobileMenu');
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+
+  window.toggleMobile = function () {
+    if (!mobileMenu) return;
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  window.closeAll = function () {
+    if (servicesMenu) servicesMenu.classList.remove('open');
+    if (servicesBtn)  servicesBtn.setAttribute('aria-expanded', 'false');
+    if (mobileMenu)   mobileMenu.classList.remove('open');
+    if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+    if (overlay)      overlay.style.display = 'none';
+  };
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') window.closeAll();
+  });
+
+  // ── FAQ: accordion ──
+  window.toggleFaq = function (btn) {
+    const item   = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-item__btn').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  // ── FOOTER: newsletter subscribe ──
+  window.handleSubscribe = function (e) {
+    e.preventDefault();
+    const input = e.target.querySelector('input');
+    const btn   = e.target.querySelector('button');
+    if (!input.value || !input.value.includes('@')) return;
+    btn.textContent      = '✓ Subscribed';
+    btn.style.background = '#00B8A9';
+    btn.disabled         = true;
+    input.disabled       = true;
+    input.value          = '';
+    input.placeholder    = "Thanks — we'll be in touch.";
+  };
+
+  // ── ANIMATE ON SCROLL ──
+  (function initAOS() {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.aos').forEach(el => observer.observe(el));
+  })();
+
+})();
+</script>
+
+
+</body>
+</html>
