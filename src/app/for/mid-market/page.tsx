@@ -1,17 +1,18 @@
 'use client'
 
-import { ArrowUpRight } from '@phosphor-icons/react'
+import { Leaf, XCircle, Buildings, Users, OfficeChair, CurrencyCircleDollar, Handshake, ChartBar } from '@phosphor-icons/react'
 import ConsolePage from '@/components/templates/ConsolePage'
 
 export default function MidMarket() {
   return (
     <ConsolePage
-      eyebrow="Audience · Mid-Market"
-      icon={<ArrowUpRight weight="bold" size={16} />}
-      h1="You know you need India. You&apos;re not sure how to do it right."
-      intro="Mid-market companies want to scale engineering, reduce costs, and enter the Indian market — but the risk feels high. We de-risk it. We help you build a centre that actually works."
-      accent="#059669"
-      badges={['Strategic scaling', 'Risk management']}
+      eyebrow="FOR · MID-MARKET COMPANIES"
+      icon={<Leaf weight="bold" size={16} />}
+      h1="Exploring India for the first time?"
+      h1ClassName="text-3xl md:text-[44px] font-900 leading-[1.1] mb-6 font-bold"
+      intro="You've probably heard the case for an India team. You may have even looked at it before and walked away. We work with mid-market companies at exactly this stage — and we take the uncertainty seriously, because it's usually warranted."
+      accent="#2D5BFF"
+      badges={['Kochi, India', 'First GCC specialists']}
       navSections={[
         { id: 'the-reality', label: 'The reality' },
         { id: 'what-goes-wrong', label: 'What goes wrong' },
@@ -21,105 +22,90 @@ export default function MidMarket() {
       related={[
         { label: 'GCC Setup', href: '/gcc-setup' },
         { label: 'BOT / COPO', href: '/bot-copo' },
-        { label: 'For Enterprise', href: '/for/enterprise' },
+        { label: 'Kochi advantage', href: '/kochi-advantage' },
       ]}
     >
       {/* Section: The reality */}
       <section id="the-reality" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">The reality</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">You can save XX% on engineering costs. But it&apos;s not as simple as everyone says.</h2>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">The reality</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">The first one is the hardest. Here&apos;s why.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          India is real cost-savings. But it&apos;s not just hiring cheap. You need to think about:
+        <p className="text-gray-600 text-base leading-relaxed mb-6 max-w-2xl">
+          Companies that have successfully built India teams will tell you the first one is harder than they expected. Not because India is uniquely complicated — but because you&apos;re making decisions without the benefit of having made them before. Entity structure, compensation benchmarks, management bandwidth, cultural integration. Each one has a right answer. None of them are obvious the first time.
         </p>
-        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-          <ul className="space-y-3">
-            <li className="flex gap-3">
-              <span className="text-emerald-600 font-700 flex-shrink-0">→</span>
-              <span className="text-gray-700 text-sm">Setting up an entity in a foreign country with tax, legal, and HR implications.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-emerald-600 font-700 flex-shrink-0">→</span>
-              <span className="text-gray-700 text-sm">Finding people who speak your language, understand your culture, and can deliver quality.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-emerald-600 font-700 flex-shrink-0">→</span>
-              <span className="text-gray-700 text-sm">Managing people across 12 time zones and 10,000 miles away.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-emerald-600 font-700 flex-shrink-0">→</span>
-              <span className="text-gray-700 text-sm">Building systems and processes that actually work with that distance.</span>
-            </li>
-          </ul>
-        </div>
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
+          Our job is to surface those decisions early, give you clear options, and carry the operational load so your internal team isn&apos;t consumed by the build.
+        </p>
       </section>
 
       {/* Section: What goes wrong */}
       <section id="what-goes-wrong" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">What goes wrong</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">How mid-market India initiatives usually fail.</h2>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">What goes wrong</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">The patterns we see — and how we avoid them.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          We&apos;ve seen this pattern a hundred times:
-        </p>
-        <div className="space-y-3">
-          {[
-            'Hire fast, build culture slow. Attrition hits XX% by month 6.',
-            'Poor vetting. You end up with people who talk a good game but can&apos;t deliver.',
-            'Communication breakdown. Time zones + distance + poor processes = miscaligned expectations.',
-            'No leadership in place. You end up micromanaging or ignoring the centre.',
-            'Technology and process gaps. Your India team isn&apos;t integrated into your systems.',
-            'Cost control failure. You budgeted for XX people but end up spending XX% more.',
-          ].map((item, idx) => (
-            <div key={idx} className="flex gap-3 p-3 bg-red-50 rounded-lg border border-red-200">
-              <span className="text-red-600 font-700 flex-shrink-0">✗</span>
-              <span className="text-gray-900 text-sm">{item}</span>
-            </div>
-          ))}
+        <div className="space-y-4">
+          <div className="flex gap-3">
+            <XCircle weight="fill" className="text-red-500 mt-1 flex-shrink-0" size={20} />
+            <p className="text-gray-600 text-base leading-relaxed">
+              <span className="font-700 text-gray-900">Rushing the hiring process</span> to meet an artificial deadline. We build in the time to get it right — typically 12–16 weeks from brief to first hire.
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <XCircle weight="fill" className="text-red-500 mt-1 flex-shrink-0" size={20} />
+            <p className="text-gray-600 text-base leading-relaxed">
+              <span className="font-700 text-gray-900">Choosing a location based on cost alone</span> without assessing talent density and retention risk. Kochi has a meaningful cost advantage and better retention than Bengaluru — we&apos;ll show you the data.
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <XCircle weight="fill" className="text-red-500 mt-1 flex-shrink-0" size={20} />
+            <p className="text-gray-600 text-base leading-relaxed">
+              <span className="font-700 text-gray-900">Underinvesting in management integration.</span> The India team and the parent org need to work well together from week one. We facilitate that, not just the operational side.
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <XCircle weight="fill" className="text-red-500 mt-1 flex-shrink-0" size={20} />
+            <p className="text-gray-600 text-base leading-relaxed">
+              <span className="font-700 text-gray-900">Using a vendor who wins the pitch then disappears.</span> We stay involved after the handshake — because our reputation depends on your team&apos;s performance, not the contract signing.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Section: How we help */}
       <section id="how-we-help" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">How we help</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">We&apos;ve built enough centres to avoid these traps.</h2>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">How we help</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">We carry the operational burden. You stay focused on your business.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          We help you build a centre that works — efficiently, at scale, with real people who stay.
+          We manage everything from entity formation to your first hire&apos;s first day — so your internal team is involved at the decisions that matter, not buried in the ones that don&apos;t.
         </p>
-        <div className="space-y-4">
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Design from day one</h3>
-            <p className="text-sm text-gray-600">
-              We help you design the team structure, hiring strategy, and operations model before you hire a single person. This prevents chaos later.
-            </p>
+        <div className="flex flex-wrap gap-3">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full">
+            <Buildings weight="bold" className="text-blue" size={16} />
+            <span className="text-gray-900 text-sm font-500">Entity & legal setup</span>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Smart hiring</h3>
-            <p className="text-sm text-gray-600">
-              We source and vet candidates heavily. We don&apos;t just find people — we find people who fit your culture and can actually deliver.
-            </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full">
+            <Users weight="bold" className="text-blue" size={16} />
+            <span className="text-gray-900 text-sm font-500">Talent sourcing & screening</span>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Leadership embedded</h3>
-            <p className="text-sm text-gray-600">
-              We help you place or build the director/manager of the centre. That person is your cultural bridge, not a vendor rep.
-            </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full">
+            <OfficeChair weight="bold" className="text-blue" size={16} />
+            <span className="text-gray-900 text-sm font-500">Office infrastructure</span>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Process and integration</h3>
-            <p className="text-sm text-gray-600">
-              We set up systems, communication cadences, and tools that make distance irrelevant. Your India centre feels like part of the company.
-            </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full">
+            <CurrencyCircleDollar weight="bold" className="text-blue" size={16} />
+            <span className="text-gray-900 text-sm font-500">Payroll & HR policy</span>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Ongoing coaching</h3>
-            <p className="text-sm text-gray-600">
-              We stay engaged through month XX. We help you adjust as you learn. We flag problems early.
-            </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full">
+            <Handshake weight="bold" className="text-blue" size={16} />
+            <span className="text-gray-900 text-sm font-500">Culture integration</span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full">
+            <ChartBar weight="bold" className="text-blue" size={16} />
+            <span className="text-gray-900 text-sm font-500">Governance framework</span>
           </div>
         </div>
       </section>
@@ -127,25 +113,44 @@ export default function MidMarket() {
       {/* Section: Timeline */}
       <section id="timeline" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">Timeline</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">From decision to first hire — XX days. From first hire to productive centre — XX months.</h2>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Timeline</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">What a well-run first GCC looks like, week by week.</h2>
         </div>
-        <div className="space-y-4">
-          <div className="border-l-4 border-emerald-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Month 1: Design and setup</h3>
-            <p className="text-gray-600 text-sm">Define team structure, roles, hiring profile. Set up entity, systems, processes. Get ready to hire.</p>
+        <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white mb-6 flex flex-col">
+          <div className="flex flex-row border-b border-gray-100 last:border-0">
+            <div className="w-16 md:w-24 flex-shrink-0 bg-[#2D5BFF]/5 p-2.5 md:p-3 border-r border-gray-100 flex items-start justify-center">
+              <span className="text-[#2D5BFF] font-700 text-sm md:text-base mt-0.5 font-bold">W1–2</span>
+            </div>
+            <div className="p-2.5 md:p-3 flex-1">
+              <h3 className="text-base md:text-lg font-900 font-bold text-gray-900 mb-0.5 md:mb-1 font-bold">Discovery & planning</h3>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                Deep-dive sessions with your stakeholders. We map the engagement model, roles, timelines and success metrics — and deliver a costed proposal.
+              </p>
+            </div>
           </div>
-          <div className="border-l-4 border-emerald-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Month 2–3: Hiring</h3>
-            <p className="text-gray-600 text-sm">Source, interview, and onboard your first batch of XX people. Build culture from day one.</p>
+
+          <div className="flex flex-row border-b border-gray-100 last:border-0">
+            <div className="w-16 md:w-24 flex-shrink-0 bg-[#2D5BFF]/5 p-2.5 md:p-3 border-r border-gray-100 flex items-start justify-center">
+              <span className="text-[#2D5BFF] font-700 text-sm md:text-base mt-0.5 font-bold">W3–8</span>
+            </div>
+            <div className="p-2.5 md:p-3 flex-1">
+              <h3 className="text-base md:text-lg font-900 font-bold text-gray-900 mb-0.5 md:mb-1 font-bold">Entity & infrastructure</h3>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                Legal entity formation, office setup and IT infrastructure run in parallel with the talent pipeline. You&apos;re kept informed at every decision point.
+              </p>
+            </div>
           </div>
-          <div className="border-l-4 border-emerald-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Month 4–6: Integration and ramping</h3>
-            <p className="text-gray-600 text-sm">Your team is onboarded. They&apos;re productive. You&apos;re learning what works and what doesn&apos;t.</p>
-          </div>
-          <div className="border-l-4 border-emerald-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Month 6+: Scale on demand</h3>
-            <p className="text-gray-600 text-sm">Ready to grow to XX people? Keep your centre lean? Pivot the team? We help you do it efficiently.</p>
+
+          <div className="flex flex-row border-b border-gray-100 last:border-0">
+            <div className="w-16 md:w-24 flex-shrink-0 bg-[#2D5BFF]/5 p-2.5 md:p-3 border-r border-gray-100 flex items-start justify-center">
+              <span className="text-[#2D5BFF] font-700 text-sm md:text-base mt-0.5 font-bold">W6–12</span>
+            </div>
+            <div className="p-2.5 md:p-3 flex-1">
+              <h3 className="text-base md:text-lg font-900 font-bold text-gray-900 mb-0.5 md:mb-1 font-bold">Hiring & onboarding</h3>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                Shortlists presented for your approval. Offers, onboarding and first-week integration managed by us. Your first hire is operational before week 12.
+              </p>
+            </div>
           </div>
         </div>
       </section>

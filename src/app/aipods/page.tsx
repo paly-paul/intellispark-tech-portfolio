@@ -16,7 +16,7 @@ export default function AiPODS() {
       eyebrow="Service · AiPODS"
       icon={<Robot weight="bold" size={24} />}
       h1="Small squads. AI-enabled. Built to move fast."
-      h1ClassName="text-[clamp(26px,3.5vw,44px)] font-800 leading-[1.12] tracking-[-0.8px] mb-[18px] max-w-[620px] font-bold"
+      h1ClassName="text-[clamp(26px,3.5vw,44px)] font-900 leading-[1.12] tracking-[-0.8px] mb-[18px] max-w-full"
       intro="AiPODS are focused delivery teams — 3 to 6 people — with AI tooling integrated into every stage of the pipeline. Not bolted on. Designed in. They move faster, maintain higher quality, and take on work that traditional offshore teams can't handle."
       accent="#059669"
       badges={['Kochi, India', 'AI-integrated squads']}

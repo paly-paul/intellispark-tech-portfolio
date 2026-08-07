@@ -19,6 +19,7 @@ export default function ConsolePage({
   children,
 }: ConsolePageProps) {
   const [activeSection, setActiveSection] = useState<string>(navSections[0]?.id || '')
+  const [hoveredTab, setHoveredTab] = useState<string | null>(null)
   const pathname = usePathname()
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -56,18 +57,18 @@ export default function ConsolePage({
         />
 
         <div className="max-w-[1200px] mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-end">
-            <div>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-8 items-start md:items-end justify-between">
+            <div className="flex-1 max-w-3xl">
               <div className="flex items-center gap-2 mb-4 text-xs font-700 text-white/60 uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accent }} />
                 {icon}
                 {eyebrow}
               </div>
               <h1 className={h1ClassName ?? 'text-3xl md:text-4xl font-800 leading-tight mb-4'}>{h1}</h1>
-              <p className="text-white/70 text-base md:text-lg max-w-md leading-relaxed">{intro}</p>
+              <p className="text-white/70 text-base md:text-lg max-w-xl leading-relaxed">{intro}</p>
             </div>
 
-            <div className="flex flex-row md:flex-col flex-wrap gap-3 items-start md:items-end">
+            <div className="flex flex-row md:flex-col flex-wrap gap-3 items-start md:items-end flex-shrink-0">
               {badges.map((badge, idx) => (
                 <div
                   key={idx}
@@ -93,20 +94,33 @@ export default function ConsolePage({
           <div className="md:sticky md:top-[100px] md:max-h-[calc(100vh-120px)] overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
             {/* Sections */}
             <div className="mb-7">
-              <h3 className="text-[10px] font-700 text-gray-400 uppercase tracking-wider mb-4">On this page</h3>
-              <nav className="flex flex-col gap-0.5">
-                {navSections.map((section) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className={`block px-3 py-2 rounded-[7px] text-[13.5px] transition-all border-l-2 ${activeSection === section.id
-                        ? 'font-600 text-navy bg-gray-50 border-navy'
-                        : 'font-500 text-gray-500 hover:text-gray-900 hover:bg-gray-50 border-transparent'
-                      }`}
-                  >
-                    {section.label}
-                  </a>
-                ))}
+              <h3 className="text-[10px] font-700 text-gray-400 uppercase tracking-wider mb-3 md:mb-4">On this page</h3>
+              <nav className="flex flex-row md:flex-col gap-2 md:gap-0.5 overflow-x-auto md:overflow-visible pb-1 md:pb-0 flex-nowrap" style={{ scrollbarWidth: 'none' }}>
+                {navSections.map((section) => {
+                  const isActive = activeSection === section.id;
+                  return (
+                    <a
+                      key={section.id}
+                      href={`#${section.id}`}
+                      onClick={() => setActiveSection(section.id)}
+                      onMouseEnter={() => setHoveredTab(section.id)}
+                      onMouseLeave={() => setHoveredTab(null)}
+                      className={`block px-3 py-2 rounded-[7px] text-[13.5px] transition-all whitespace-nowrap ${isActive
+                          ? 'font-700 bg-gray-100 md:bg-gray-100 md:border-l-2 shadow-sm md:shadow-none'
+                          : 'font-500 text-gray-500 hover:bg-gray-50 md:border-l-2 md:border-transparent'
+                        }`}
+                      style={
+                        isActive
+                          ? { color: accent, borderColor: accent }
+                          : hoveredTab === section.id
+                          ? { color: accent }
+                          : {}
+                      }
+                    >
+                      {section.label}
+                    </a>
+                  );
+                })}
               </nav>
             </div>
 

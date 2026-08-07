@@ -1,20 +1,21 @@
 'use client'
 
-import { Building } from '@phosphor-icons/react'
+import { Building, UsersThree, TrendUp, ChartBar, Brain, CheckCircle, TreeStructure, ChartLineUp, CalendarCheck, ShieldCheck } from '@phosphor-icons/react'
 import ConsolePage from '@/components/templates/ConsolePage'
 
 export default function Enterprise() {
   return (
     <ConsolePage
-      eyebrow="Audience · Enterprise"
+      eyebrow="For · Enterprise"
       icon={<Building weight="bold" size={16} />}
-      h1="Scaling, optimising, or restructuring your India operations — with senior advisory and hands-on delivery."
-      intro="You already have India operations. You want to scale them smarter, fix what&apos;s broken, or restructure for efficiency. We help Fortune 500 teams do exactly that."
-      accent="#2D5BFF"
-      badges={['Enterprise-grade', 'Operational advisory']}
+      h1="Scaling your India presence — or fixing what isn't working."
+      h1ClassName="text-3xl md:text-5xl font-900 font-bold leading-tight mb-4"
+      intro="Enterprise companies come to us in two situations: they're scaling an existing India team and need operational support, or something has gone wrong and they need an honest external perspective. We're experienced with both."
+      accent="#00bfa5"
+      badges={['Kochi, India', 'Scale & optimisation']}
       navSections={[
-        { id: 'scaling', label: 'Scaling operations' },
-        { id: 'fixing', label: 'Fixing what&apos;s broken' },
+        { id: 'scaling', label: 'Scaling what works' },
+        { id: 'fixing', label: 'Fixing what doesn\'t' },
         { id: 'working-with-teams', label: 'Working with your team' },
         { id: 'governance', label: 'Governance' },
       ]}
@@ -25,115 +26,118 @@ export default function Enterprise() {
       ]}
     >
       {/* Section: Scaling operations */}
+      {/* Section: Scaling operations */}
       <section id="scaling" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue uppercase tracking-wider">Scaling operations</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Your India operations need to grow. Do it without the growing pains.</h2>
+          <span className="text-sm font-600 text-[#00bfa5] uppercase tracking-wider">Scaling what works</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">Accelerate hiring without compromising on quality.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          You have a XX-person centre. Now you need XX0. How do you maintain quality, culture, and cost efficiency? We help you scale without losing control.
+        <p className="text-gray-600 text-base leading-relaxed mb-6 max-w-3xl">
+          If your India team is performing well and you need to grow it, we can accelerate the hiring pipeline — including senior and specialist roles — without the quality drop that typically comes with volume-focused recruitment agencies.
         </p>
-        <div className="space-y-3">
-          {[
-            'Leadership structure that works at scale',
-            'Recruiting and onboarding XX+ people without burning out',
-            'Keeping quality and culture as you grow',
-            'Managing cost and headcount efficiency',
-            'Tier-based management (individual contributors → team leads → directors)',
-          ].map((item, idx) => (
-            <div key={idx} className="flex gap-3 p-3 bg-blue-pale rounded-lg border border-blue/20">
-              <span className="text-blue font-700 flex-shrink-0">→</span>
-              <span className="text-gray-900 text-sm">{item}</span>
-            </div>
-          ))}
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-3xl">
+          We&apos;ve built deep relationships with senior talent across Kochi and Kerala that most agencies don&apos;t have access to. And because we understand the work, we can evaluate candidates in ways a generalist recruiter can&apos;t.
+        </p>
+        
+        <div className="flex flex-wrap gap-3">
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <UsersThree className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Senior & specialist hiring</span>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <TrendUp className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Infrastructure scaling</span>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <ChartBar className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Governance at scale</span>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <Brain className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Retention programmes</span>
+          </div>
         </div>
       </section>
 
-      {/* Section: Fixing what's broken */}
+      {/* Section: Fixing what doesn't */}
       <section id="fixing" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue uppercase tracking-wider">Fixing what&apos;s broken</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Your centre isn&apos;t delivering. Let&apos;s fix it.</h2>
+          <span className="text-sm font-600 text-[#00bfa5] uppercase tracking-wider">Fixing what doesn&apos;t</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">Honest diagnostic. Prioritised remediation.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          High attrition. Bad deliverables. Political dysfunction. Communication gaps with HQ. We&apos;ve seen it all. We diagnose the root cause and fix it — not with consultancy fluff, but with hands-on execution.
+        <p className="text-gray-600 text-base leading-relaxed mb-6 max-w-3xl">
+          We take on a small number of GCC diagnostic and remediation engagements each year. If your India team isn&apos;t performing as expected, we&apos;ll give you an honest view of why — including if the root cause is on the parent organisation&apos;s side, not the India team&apos;s.
         </p>
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-3xl">
+          The diagnostic covers people, process, governance and market positioning. Output is a clear picture of what&apos;s working, what isn&apos;t, and a remediation roadmap with defined ownership and timelines.
+        </p>
+        
         <div className="space-y-4">
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Week 1: Diagnosis</h3>
-            <p className="text-sm text-gray-600">
-              We spend time with your team, your leadership, your processes. We identify what&apos;s actually broken.
-            </p>
-          </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Week 2–4: Remediation plan</h3>
-            <p className="text-sm text-gray-600">
-              We propose changes — hiring, process, structure, communication — and timeline for implementation.
-            </p>
-          </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Month 2+: Execution</h3>
-            <p className="text-sm text-gray-600">
-              We stay embedded. You implement. We coach, support, and keep you honest on timelines and results.
-            </p>
-          </div>
+          {[
+            { text: 'High attrition', desc: 'root cause analysis and retention strategy' },
+            { text: 'Compensation below market', desc: 'benchmarking and correction plan' },
+            { text: 'Delivery gaps', desc: 'process review and management structure assessment' },
+            { text: 'Parent org integration issues', desc: 'facilitated alignment workshops' },
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-3">
+              <CheckCircle weight="fill" className="text-[#00bfa5] mt-1 flex-shrink-0" size={20} />
+              <p className="text-gray-600 text-base leading-relaxed">
+                <span className="text-gray-800">{item.text}</span> — {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Section: Working with your team */}
       <section id="working-with-teams" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue uppercase tracking-wider">Working with your team</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">We work alongside your existing leadership. Not instead of them.</h2>
+          <span className="text-sm font-600 text-[#00bfa5] uppercase tracking-wider">Working with your team</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">Additive, not disruptive.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          You have people in place. They may be the problem, or they may be part of the solution. Either way, we work with (or around) them.
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-3xl">
+          Enterprise clients typically have India HR, legal and operations teams already in place. We work alongside them — not around them. Our role is to bring external perspective, specialist market knowledge and execution capacity where it&apos;s needed — without creating a turf conflict with your internal function.
         </p>
-        <div className="bg-blue-pale border border-blue/20 rounded-xl p-6">
-          <ul className="space-y-3">
-            <li className="flex gap-3">
-              <span className="text-blue font-700 flex-shrink-0">✓</span>
-              <span className="text-gray-700 text-sm">We report to your VP of Engineering or Head of Operations, not independently.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-blue font-700 flex-shrink-0">✓</span>
-              <span className="text-gray-700 text-sm">You remain the decision-maker. We advise and execute. You approve.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-blue font-700 flex-shrink-0">✓</span>
-              <span className="text-gray-700 text-sm">If your existing team is strong, we make them stronger. If they&apos;re weak, we help you fix that too.</span>
-            </li>
-          </ul>
+
+        <div className="bg-[#00bfa5]/10 border border-[#00bfa5]/20 rounded-xl p-5 md:p-6 flex flex-col md:flex-row gap-4 items-start">
+          <div className="bg-[#00bfa5]/20 p-2.5 rounded-lg flex-shrink-0">
+            <UsersThree weight="fill" className="text-[#00bfa5]" size={24} />
+          </div>
+          <div>
+            <h3 className="text-[#009e89] font-700 font-bold mb-1">We work with your internal teams, not instead of them</h3>
+            <p className="text-[#008a76] text-sm md:text-base leading-relaxed">
+              Every enterprise engagement starts with a conversation with your existing India operations team. We map what exists, what&apos;s working, and where additional capacity or expertise is genuinely needed.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Section: Governance */}
       <section id="governance" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue uppercase tracking-wider">Governance</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Transparency. Accountability. Results.</h2>
+          <span className="text-sm font-600 text-[#00bfa5] uppercase tracking-wider">Governance</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">Reporting and accountability structures that scale.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          You want to know exactly where you stand. We give you that.
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-3xl">
+          As India teams grow from 20 to 200 people, the governance model needs to grow with them. Structures that worked at small scale become bottlenecks. We&apos;ve seen this pattern enough times to know what to put in place before it becomes a problem.
         </p>
-        <div className="space-y-4">
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Weekly standups</h3>
-            <p className="text-sm text-gray-600">
-              Your leadership team plus our team. What&apos;s moving? What&apos;s stuck? What&apos;s changed this week?
-            </p>
+
+        <div className="flex flex-wrap gap-3">
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <TreeStructure className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Organisation design review</span>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Monthly metrics review</h3>
-            <p className="text-sm text-gray-600">
-              Headcount, attrition, quality metrics, delivery timelines, cost per hire, etc. No surprises.
-            </p>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <ChartLineUp className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Performance framework</span>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Quarterly business review</h3>
-            <p className="text-sm text-gray-600">
-              Are we hitting the goals we set? What&apos;s changed in the business? What needs to adjust?
-            </p>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <CalendarCheck className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Steering cadence setup</span>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <ShieldCheck className="text-[#00bfa5]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Compliance review</span>
           </div>
         </div>
       </section>

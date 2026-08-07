@@ -1,21 +1,22 @@
 'use client'
 
-import { Rocket } from '@phosphor-icons/react'
+import { Rocket, CheckCircle, Brain, GitBranch, Lock, ArrowRight, Cpu, PhoneCall } from '@phosphor-icons/react'
 import ConsolePage from '@/components/templates/ConsolePage'
 
 export default function Startups() {
   return (
     <ConsolePage
-      eyebrow="Audience · Startups"
+      eyebrow="For · Startups"
       icon={<Rocket weight="bold" size={16} />}
-      h1="Build lean, move fast. Hire great people in India — starting small, scaling as you grow."
-      intro="You need to move at startup speed. That means hiring fast, but smart. We help you build a remote-first engineering team in India — starting with one or two strong placements, evolving into a full centre as you scale."
-      accent="#F59E0B"
-      badges={['India access', 'Startup-ready']}
+      h1="Move fast. Don't compromise on quality."
+      h1ClassName="text-3xl md:text-5xl font-900 font-bold leading-tight mb-4"
+      intro="Startups have different constraints from enterprises — tighter budgets, faster timelines and less tolerance for overhead. We offer models that work at your stage, starting lean and building from there."
+      accent="#8b5cf6"
+      badges={['Kochi, India', 'Lean start, scalable']}
       navSections={[
-        { id: 'starting-lean', label: 'Start lean' },
+        { id: 'starting-lean', label: 'Starting lean' },
         { id: 'aipods-for-startups', label: 'AiPODS for startups' },
-        { id: 'founder-direct', label: 'Founder-direct hiring' },
+        { id: 'founder-direct', label: 'Founder-direct' },
         { id: 'path-to-gcc', label: 'Path to GCC' },
       ]}
       related={[
@@ -24,73 +25,85 @@ export default function Startups() {
         { label: 'For Mid-Market', href: '/for/mid-market' },
       ]}
     >
-      {/* Section: Start lean */}
+      {/* Section: Starting lean */}
       <section id="starting-lean" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">Start lean</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">One engineer today. A team of XX tomorrow.</h2>
+          <span className="text-sm font-600 text-[#8b5cf6] uppercase tracking-wider">Starting lean</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">You don&apos;t need a GCC at Series A. You need two great engineers.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          Startups don&apos;t need a full GCC from day one. You need one great hire. Then another. Then a team lead. Then a centre. We help you make each step count.
+        <p className="text-gray-600 text-base leading-relaxed mb-6 max-w-3xl">
+          The GCC setup process is designed for companies ready to commit to a permanent India presence. At the seed or Series A stage, that&apos;s often the wrong model. What you need is one or two excellent people who can work alongside your existing team without slowing it down.
         </p>
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-          <p className="text-gray-900 font-600 mb-2">No minimum commitment. No lock-in.</p>
-          <p className="text-gray-700 text-sm">
-            Hire one person. If it works, hire two more. If it doesn&apos;t, part ways cleanly. This is how you validate the India market without betting the company.
-          </p>
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-3xl">
+          We can place individuals or small teams within 2–4 weeks of brief sign-off, with no minimum commitment and no lock-in.
+        </p>
+        
+        <div className="space-y-4">
+          {[
+            'Single or small-team placements — from 2 weeks of brief sign-off',
+            'No minimum headcount, no lock-in — we\'re not trying to manufacture a commitment',
+            'Post-placement support at 30, 60 and 90 days included',
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-3">
+              <CheckCircle weight="fill" className="text-[#8b5cf6] mt-1 flex-shrink-0" size={20} />
+              <p className="text-gray-600 text-base leading-relaxed">{item}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Section: AiPODS for startups */}
       <section id="aipods-for-startups" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">AiPODS for startups</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Get XX% more done with the same headcount.</h2>
+          <span className="text-sm font-600 text-[#8b5cf6] uppercase tracking-wider">AiPODS for startups</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">A full delivery squad for the cost of two senior hires.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          Don&apos;t have headcount budget? An AiPOD gives you a squad with built-in AI tooling. They can move faster. Deliver more. Cost less than hiring XX people.
+        <p className="text-gray-600 text-base leading-relaxed mb-6 max-w-3xl">
+          Our AiPODS model is particularly well-suited to growth-stage companies that need to ship features quickly without building a full in-house team. A small, AI-enabled squad covers what would typically take twice the headcount — and ramps up in weeks, not months.
         </p>
-        <div className="space-y-3">
-          {[
-            'Feature development on a fixed timeline — 3–6 months',
-            'Platform or infrastructure work when you can&apos;t hire in-house',
-            'Rapid MVP or prototype build',
-            'Hiring flexibility — scale them up or down as needs change',
-          ].map((item, idx) => (
-            <div key={idx} className="flex gap-3 p-4 bg-amber-50 rounded-lg border border-amber-200">
-              <span className="text-amber-700 font-700 flex-shrink-0">✓</span>
-              <span className="text-gray-900 text-sm">{item}</span>
-            </div>
-          ))}
+
+        <div className="flex flex-wrap gap-3 mb-6">
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <Rocket className="text-[#8b5cf6]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Fast ramp — 3-4 weeks</span>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <Cpu className="text-[#8b5cf6]" size={16} />
+            <span className="text-sm font-500 text-gray-800">AI-integrated workflow</span>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <GitBranch className="text-[#8b5cf6]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Embedded in your sprint</span>
+          </div>
+          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2">
+            <Lock className="text-[#8b5cf6]" size={16} />
+            <span className="text-sm font-500 text-gray-800">Full IP ownership</span>
+          </div>
         </div>
+
+        <a href="/aipods" className="inline-flex items-center gap-1 text-[#8b5cf6] font-500 text-base mt-2 hover:underline">
+          Read more about AiPODS <ArrowRight size={16} />
+        </a>
       </section>
 
-      {/* Section: Founder-direct hiring */}
+      {/* Section: Founder-direct */}
       <section id="founder-direct" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">Founder-direct hiring</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">You make the calls. We handle the logistics.</h2>
+          <span className="text-sm font-600 text-[#8b5cf6] uppercase tracking-wider">Founder-direct</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">No account manager layer. You deal with the people doing the work.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          As a founder, you know your culture. You know the people you want. We source them, vet them, but you pick the final team. You stay plugged in at every step.
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-3xl">
+          Startup founders don&apos;t have time for account management theatre. Every Intellispark engagement for a startup has a named lead from our founding team — not an account manager who relays your concerns to someone else. You&apos;ll have a direct line to the person who owns your outcome.
         </p>
-        <div className="space-y-4">
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">First hire</h3>
-            <p className="text-sm text-gray-600">
-              You tell us the role and seniority. We source 3–5 candidates. You interview. You decide. Typical timeline: 2–3 weeks.
-            </p>
+        
+        <div className="bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 rounded-xl p-5 md:p-6 flex flex-col md:flex-row gap-4 items-start">
+          <div className="bg-[#8b5cf6]/20 p-2.5 rounded-lg flex-shrink-0">
+            <PhoneCall weight="fill" className="text-[#8b5cf6]" size={24} />
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Growing to a team</h3>
-            <p className="text-sm text-gray-600">
-              Once you have one great person, they help you hire the next. We source, screen, facilitate. You approve every hire.
-            </p>
-          </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Always onsite in your system</h3>
-            <p className="text-sm text-gray-600">
-              They work in your Slack, your GitHub, your codebase. They&apos;re part of your team from day one.
+          <div>
+            <h3 className="text-[#6d28d9] font-700 font-bold mb-1">Direct access to founding team</h3>
+            <p className="text-[#7c3aed] text-sm md:text-base leading-relaxed">
+              The person you speak to in the initial discovery call is the same person who owns your engagement. We don&apos;t hand off to delivery teams and hope for the best.
             </p>
           </div>
         </div>
@@ -99,28 +112,43 @@ export default function Startups() {
       {/* Section: Path to GCC */}
       <section id="path-to-gcc" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">Path to GCC</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">From first hire to full centre — at your pace.</h2>
+          <span className="text-sm font-600 text-[#8b5cf6] uppercase tracking-wider">Path to GCC</span>
+          <h2 className="text-2xl md:text-3xl font-900 font-bold text-navy mt-3">We design early engagements with growth in mind.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          As you scale, you might move from individual hires to a GCC. No rush. When you&apos;re ready, we help you formalise it.
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-3xl">
+          Many of our startup clients who start with one or two placements eventually choose to build a GCC as they scale. We design early engagements with that trajectory in mind — the foundations we lay now won&apos;t create problems later. There&apos;s no obligation to think that far ahead, but the path is there when you need it.
         </p>
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-          <h3 className="font-700 text-gray-900 mb-4">Your milestone, not ours</h3>
-          <ul className="space-y-2">
-            <li className="flex gap-3">
-              <span className="text-amber-600 font-700 flex-shrink-0">•</span>
-              <span className="text-gray-700 text-sm"><strong>Month 1–6:</strong> Hire 1–3 strong people. They work for you.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-amber-600 font-700 flex-shrink-0">•</span>
-              <span className="text-gray-700 text-sm"><strong>Month 6–12:</strong> Growing to 5–10 people. Time to think about structure.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-amber-600 font-700 flex-shrink-0">•</span>
-              <span className="text-gray-700 text-sm"><strong>Month 12+:</strong> Ready for GCC? We help you formalise entity, hiring, and operations.</span>
-            </li>
-          </ul>
+
+        <div className="border border-gray-100 rounded-xl overflow-hidden bg-white">
+          <div className="flex flex-col md:flex-row border-b border-gray-100">
+            <div className="w-full md:w-28 flex-shrink-0 bg-[#8b5cf6]/5 p-2 md:p-3 border-b md:border-b-0 md:border-r border-[#8b5cf6]/10 flex items-center justify-center md:justify-start">
+              <span className="text-[#8b5cf6] text-sm md:text-base font-700 font-bold">Now</span>
+            </div>
+            <div className="flex-1 p-3 md:p-4">
+              <h3 className="font-700 font-bold text-gray-900 text-sm md:text-base mb-1">1–3 placements or an AiPOD squad</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">Start lean. Validate the model. Integrate into your existing workflows without overhead.</p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row border-b border-gray-100">
+            <div className="w-full md:w-28 flex-shrink-0 bg-[#8b5cf6]/5 p-2 md:p-3 border-b md:border-b-0 md:border-r border-[#8b5cf6]/10 flex items-center justify-center md:justify-start">
+              <span className="text-[#8b5cf6] text-sm md:text-base font-700 font-bold">Series B</span>
+            </div>
+            <div className="flex-1 p-3 md:p-4">
+              <h3 className="font-700 font-bold text-gray-900 text-sm md:text-base mb-1">Team of 8–15 across functions</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">Expand beyond engineering. Add product, QA, operations. Structure becomes more important.</p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row">
+            <div className="w-full md:w-28 flex-shrink-0 bg-[#8b5cf6]/5 p-2 md:p-3 border-b md:border-b-0 md:border-r border-[#8b5cf6]/10 flex items-center justify-center md:justify-start">
+              <span className="text-[#8b5cf6] text-sm md:text-base font-700 font-bold">Scale</span>
+            </div>
+            <div className="flex-1 p-3 md:p-4">
+              <h3 className="font-700 font-bold text-gray-900 text-sm md:text-base mb-1">GCC or dedicated delivery centre</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">Your India team becomes a core part of the org. Entity, infrastructure and governance formalised.</p>
+            </div>
+          </div>
         </div>
       </section>
     </ConsolePage>

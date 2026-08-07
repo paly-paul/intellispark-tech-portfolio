@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Lightning } from '@phosphor-icons/react'
+import { Lightning, Envelope, Phone, MapPin } from '@phosphor-icons/react'
 import ArrowRight from '@/components/icons/ArrowRight'
 
 export default function Footer() {
@@ -67,7 +67,7 @@ export default function Footer() {
 
       {/* Main Footer Grid */}
       <div className="py-16 px-6 md:px-8">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-12 mb-12">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4" aria-label="Intellispark home">
@@ -123,38 +123,51 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Get in Touch Column */}
-          <div>
+          {/* Get in Touch & CTA Column */}
+          <div className="flex flex-col">
             <h4 className="text-sm font-700 text-white mb-4">Get in touch</h4>
-            <div className="space-y-4">
-              <div>
-                <div className="text-xs text-white/50 uppercase tracking-wider font-600 mb-1">Email</div>
-                <a href="mailto:hello@intellispark.tech" className="text-white/70 hover:text-white transition-colors text-sm">
-                  hello@intellispark.tech
-                </a>
+            <div className="space-y-4 mb-6">
+              <div className="flex items-start gap-3">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-2.5 flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                  <Envelope className="text-[#00bfa5]" size={18} weight="fill" />
+                </div>
+                <div className="pt-0.5">
+                  <div className="text-[11px] text-white/50 uppercase tracking-wider font-600 mb-0.5">Email</div>
+                  <a href="mailto:hello@intellispark.tech" className="text-white/80 hover:text-white transition-colors text-sm">
+                    hello@intellispark.tech
+                  </a>
+                </div>
               </div>
-              <div>
-                <div className="text-xs text-white/50 uppercase tracking-wider font-600 mb-1">Phone</div>
-                <a href="tel:+91XXXXXXXXXX" className="text-white/70 hover:text-white transition-colors text-sm">
-                  +91 XX XXXX XXXX
-                </a>
+              <div className="flex items-start gap-3">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-2.5 flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                  <Phone className="text-[#00bfa5]" size={18} weight="fill" />
+                </div>
+                <div className="pt-0.5">
+                  <div className="text-[11px] text-white/50 uppercase tracking-wider font-600 mb-0.5">Phone</div>
+                  <a href="tel:+91XXXXXXXXXX" className="text-white/80 hover:text-white transition-colors text-sm">
+                    +91 XX XXXX XXXX
+                  </a>
+                </div>
               </div>
-              <div>
-                <div className="text-xs text-white/50 uppercase tracking-wider font-600 mb-1">Office</div>
-                <p className="text-white/70 text-sm">Kochi, Kerala, India</p>
+              <div className="flex items-start gap-3">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-2.5 flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                  <MapPin className="text-[#00bfa5]" size={18} weight="fill" />
+                </div>
+                <div className="pt-0.5">
+                  <div className="text-[11px] text-white/50 uppercase tracking-wider font-600 mb-0.5">Office</div>
+                  <p className="text-white/80 text-sm">Kochi, Kerala, India</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* CTA Column */}
-          <div className="flex flex-col justify-between">
-            <div />
-            <Link
-              href="/book-a-call"
-              className="px-6 py-3 bg-blue text-white text-sm font-600 rounded-lg hover:bg-blue-light transition-colors inline-flex items-center gap-2 justify-center"
-            >
-              Book a Call <ArrowRight size={14} />
-            </Link>
+            <div className="mt-auto pt-2">
+              <Link
+                href="/book-a-call"
+                className="px-6 py-2.5 bg-blue text-white text-sm font-600 rounded-lg hover:bg-blue-light transition-colors inline-flex items-center gap-2 justify-center w-full md:w-auto"
+              >
+                Book a Call <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
