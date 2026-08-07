@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import ServicesSection from '@/components/sections/ServicesSection'
 import AudienceSection from '@/components/sections/AudienceSection'
+import WhyKochiTeaserSection from '@/components/sections/WhyKochiTeaserSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection'
 import FAQSection from '@/components/sections/FAQSection'
 import CTASection from '@/components/sections/CTASection'
@@ -100,6 +102,12 @@ export default function Home() {
 
       {/* Audience Section */}
       <AudienceSection />
+
+      {/* Why Kochi Teaser Section */}
+      <WhyKochiTeaserSection />
+
+      {/* How It Works Section */}
+      <HowItWorksSection />
 
       {/* Case Studies Section */}
       <CaseStudiesSection />

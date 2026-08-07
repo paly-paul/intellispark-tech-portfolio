@@ -11,6 +11,7 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
   const servicesDropdownRef = useRef<HTMLDivElement>(null)
+  const [prevPathname, setPrevPathname] = useState(pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +22,13 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
+  // Close dropdowns on route change (adjusting state during render instead
+  // of in an effect, per https://react.dev/learn/you-might-not-need-an-effect)
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname)
     setServicesOpen(false)
     setMobileOpen(false)
-  }, [pathname])
+  }
 
   // Close dropdowns when clicking overlay
   const handleOverlayClick = () => {

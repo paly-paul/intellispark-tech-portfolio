@@ -5,44 +5,105 @@ import { useState } from 'react'
 const caseStudies = [
   {
     id: 1,
-    title: 'Tech Startup Scales from XX to XX Engineers',
-    description: 'How a seed-stage startup built a high-velocity India team in 60 days.',
-    category: 'augmentation',
-    company: 'TechStart Inc',
-    metrics: ['XX engineers hired', 'XX% retention', 'XX days to first deployment'],
+    featured: true,
+    category: 'gcc',
+    tags: [
+      { label: 'GCC Setup', bg: 'bg-blue-pale', text: 'text-blue' },
+      { label: 'Fintech', bg: 'bg-gray-100', text: 'text-gray-600' },
+      { label: 'UK', bg: 'bg-gray-100', text: 'text-gray-600' },
+    ],
+    accent: 'bg-blue',
+    metricColor: 'text-blue',
+    title: 'A 200-person UK fintech needed an engineering GCC — without pulling leadership bandwidth into the build.',
+    desc: "First India entity. No existing local relationships. Leadership couldn't afford to be distracted from a product launch happening in parallel. They needed someone to own the build completely.",
+    metricVal: '14',
+    metricLabel: 'weeks from signed agreement to first hire on the ground',
+    quote: '"Intellispark handled everything we didn\'t know we needed to handle. We were focused on product. They were focused on building our team. Three years later, we have 40 engineers in Kochi."',
+    quoteAttr: 'CTO, UK Fintech (Series C)',
   },
   {
     id: 2,
-    title: 'Enterprise GCC Hits XX Headcount in Year 1',
-    description: 'A Fortune 500 company establishes its India hub with zero compliance issues.',
-    category: 'gcc',
-    company: 'Global Corp',
-    metrics: ['XX-person GCC', 'XX% goal achievement', 'XX% cost savings'],
+    category: 'augmentation',
+    tags: [
+      { label: 'Staff Aug', bg: 'bg-amber-100', text: 'text-amber-600' },
+      { label: 'SaaS', bg: 'bg-gray-100', text: 'text-gray-600' },
+      { label: 'Series B', bg: 'bg-gray-100', text: 'text-gray-600' },
+    ],
+    accent: 'bg-amber-600',
+    metricColor: 'text-amber-600',
+    title: 'A US SaaS company needed to accelerate backend delivery — in weeks, not months.',
+    desc: 'One anchor hire in India, a stalled roadmap, and a board expecting delivery acceleration. They needed three strong engineers placed around their existing hire without disrupting velocity.',
+    metricVal: 'XX%',
+    metricLabel: 'sprint velocity increase within the first quarter post-placement',
   },
   {
     id: 3,
-    title: 'Product Engineering Team Launches XX Features',
-    description: 'A product-first team delivers custom software on time, every time.',
-    category: 'engineering',
-    company: 'Innovation Labs',
-    metrics: ['XX features shipped', 'XX% on-time delivery', 'XX avg. bug fix time'],
+    category: 'optimise',
+    tags: [
+      { label: 'Optimisation', bg: 'bg-teal-light', text: 'text-teal' },
+      { label: 'Financial Services', bg: 'bg-gray-100', text: 'text-gray-600' },
+      { label: 'ANZ', bg: 'bg-gray-100', text: 'text-gray-600' },
+    ],
+    accent: 'bg-teal',
+    metricColor: 'text-teal',
+    title: 'A 40-person Australia GCC delivering below expectations after 3 years of operation.',
+    desc: "High attrition, compensation drift, and weak parent org integration were compounding. Leadership knew something was wrong but couldn't pinpoint the root cause. They needed an honest diagnosis.",
+    metricVal: 'XX%',
+    metricLabel: 'attrition reduction at 12 months post-remediation',
   },
   {
     id: 4,
-    title: 'Underperforming GCC Transformed in XX Months',
-    description: 'A struggling India operation becomes a competitive advantage.',
-    category: 'optimise',
-    company: 'Transform Co',
-    metrics: ['XX% productivity increase', 'XX% attrition improvement', 'XX% cost reduction'],
+    category: 'engineering',
+    tags: [
+      { label: 'Product Eng', bg: 'bg-purple-100', text: 'text-purple-600' },
+      { label: 'Healthtech', bg: 'bg-gray-100', text: 'text-gray-600' },
+      { label: 'UK', bg: 'bg-gray-100', text: 'text-gray-600' },
+    ],
+    accent: 'bg-purple-600',
+    metricColor: 'text-purple-600',
+    title: 'A UK healthtech scaling from MVP to enterprise — needing a full product squad, not just engineers.',
+    desc: "They'd outgrown their founding team's capacity but weren't ready to build a GCC. An embedded product engineering squad gave them full-stack delivery capability without the overhead.",
+    metricVal: '3×',
+    metricLabel: 'release cadence improvement within 6 months of squad onboarding',
+  },
+  {
+    id: 5,
+    category: 'gcc',
+    tags: [
+      { label: 'BOT / COPO', bg: 'bg-teal-light', text: 'text-teal' },
+      { label: 'Professional Services', bg: 'bg-gray-100', text: 'text-gray-600' },
+      { label: 'US', bg: 'bg-gray-100', text: 'text-gray-600' },
+    ],
+    accent: 'bg-teal',
+    metricColor: 'text-teal',
+    title: 'A US professional services firm wanted to test India before committing to a full GCC.',
+    desc: 'Significant internal scepticism about offshore models after a previous poor experience. Leadership needed to prove the model worked before investing at scale. BOT gave them the proof point without the permanent commitment.',
+    metricVal: 'XX',
+    metricLabel: 'months from BOT pilot to full transfer of entity ownership',
+  },
+  {
+    id: 6,
+    category: 'engineering',
+    tags: [
+      { label: 'AiPODS', bg: 'bg-emerald-100', text: 'text-emerald-600' },
+      { label: 'Proptech', bg: 'bg-gray-100', text: 'text-gray-600' },
+      { label: 'ANZ', bg: 'bg-gray-100', text: 'text-gray-600' },
+    ],
+    accent: 'bg-emerald-600',
+    metricColor: 'text-emerald-600',
+    title: 'An Australian proptech at Series A needed to triple engineering output — without tripling headcount.',
+    desc: 'Tight runway, aggressive roadmap, and a board expecting feature parity with a better-funded competitor. An AiPOD squad delivered the output of six engineers with a team of three.',
+    metricVal: '2×',
+    metricLabel: 'features shipped per sprint vs prior quarter',
   },
 ]
 
 const categories = [
   { id: 'all', label: 'All' },
   { id: 'gcc', label: 'GCC Setup' },
-  { id: 'augmentation', label: 'Augmentation' },
-  { id: 'engineering', label: 'Engineering' },
-  { id: 'optimise', label: 'Optimisation' },
+  { id: 'augmentation', label: 'Staff Augmentation' },
+  { id: 'engineering', label: 'Product Engineering' },
+  { id: 'optimise', label: 'GCC Optimisation' },
 ]
 
 export default function CaseStudies() {
@@ -54,9 +115,12 @@ export default function CaseStudies() {
     <div className="pt-[72px] bg-white">
       {/* Hero */}
       <section className="py-16 md:py-24 px-6 md:px-8 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-800 text-navy mb-4">How companies like yours transformed their India operations.</h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">Real results from real teams. These are the stories behind the metrics.</p>
+        <div className="max-w-7xl mx-auto text-center aos">
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Work · Case Studies</span>
+          <h1 className="text-3xl md:text-4xl font-800 text-navy mt-4 mb-4">How we&apos;ve helped companies build their India teams.</h1>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Real engagements, real outcomes. All companies are anonymised unless they&apos;ve given explicit permission to be named.
+          </p>
         </div>
       </section>
 
@@ -82,31 +146,42 @@ export default function CaseStudies() {
 
           {/* Case Studies Grid */}
           <div className="grid md:grid-cols-2 gap-6">
-            {filtered.map((study, idx) => (
+            {filtered.map((study) => (
               <div
                 key={study.id}
-                className="aos group p-8 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all bg-white cursor-pointer"
+                className={`aos group relative overflow-hidden rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all bg-white ${
+                  study.featured ? 'md:col-span-2' : ''
+                }`}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-xs px-3 py-1 bg-blue-pale text-blue rounded-full font-600">
-                    {categories.find((c) => c.id === study.category)?.label}
-                  </div>
-                </div>
-                <h3 className="text-lg font-700 text-navy group-hover:text-blue transition-colors mb-3">
-                  {study.title}
-                </h3>
-                <p className="text-sm text-gray-600 mb-6">{study.description}</p>
-
-                {/* Metrics */}
-                <div className="space-y-2 mb-6 pb-6 border-b border-gray-100">
-                  {study.metrics.map((metric, i) => (
-                    <div key={i} className="text-sm text-gray-600 flex items-center gap-2">
-                      <span className="text-blue font-600">✓</span> {metric}
+                <div className={`h-1 w-full ${study.accent}`} />
+                <div className={`p-8 ${study.featured ? 'grid md:grid-cols-[1.4fr_1fr] gap-8' : ''}`}>
+                  <div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {study.tags.map((tag, i) => (
+                        <span key={i} className={`text-xs px-3 py-1 rounded-full font-600 ${tag.bg} ${tag.text}`}>
+                          {tag.label}
+                        </span>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                    <div className="text-xs font-600 text-gray-400 uppercase tracking-wider mb-2">The challenge</div>
+                    <h3 className={`font-700 text-navy group-hover:text-blue transition-colors mb-3 ${study.featured ? 'text-xl md:text-2xl' : 'text-lg'}`}>
+                      {study.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-6 leading-relaxed">{study.desc}</p>
 
-                <p className="text-xs text-gray-500 font-600">{study.company}</p>
+                    <div className="pt-4 border-t border-gray-100">
+                      <span className={`text-2xl md:text-3xl font-700 ${study.metricColor}`}>{study.metricVal}</span>
+                      <p className="text-sm text-gray-600 mt-1">{study.metricLabel}</p>
+                    </div>
+                  </div>
+
+                  {study.featured && study.quote && (
+                    <div className="bg-navy text-white rounded-xl p-6 flex flex-col justify-center">
+                      <p className="text-sm leading-relaxed mb-4">{study.quote}</p>
+                      <div className="text-xs text-white/60">{study.quoteAttr}</div>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -121,10 +196,10 @@ export default function CaseStudies() {
 
       {/* CTA */}
       <section className="py-20 md:py-32 px-6 md:px-8 bg-navy text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-700 mb-6">Ready to write your story?</h2>
+        <div className="max-w-4xl mx-auto text-center aos">
+          <h2 className="text-3xl md:text-4xl font-700 mb-6">Seen enough? Let&apos;s talk about your situation.</h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8">
-            Let&apos;s talk about how we can help you build or scale your India team.
+            Every engagement starts with a free discovery call. No pitch deck, no obligation.
           </p>
           <a
             href="/book-a-call"

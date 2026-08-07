@@ -13,7 +13,7 @@ export default function AiPODS() {
       accent="#059669"
       badges={['Kochi, India', 'AI-powered teams']}
       navSections={[
-        { id: 'what-is-aipod', label: 'What is an AiPOD' },
+        { id: 'what-is-an-aipod', label: 'What is an AiPOD' },
         { id: 'how-they-work', label: 'How they work' },
         { id: 'best-fit', label: 'Best-fit work' },
         { id: 'getting-started', label: 'Getting started' },
@@ -25,7 +25,7 @@ export default function AiPODS() {
       ]}
     >
       {/* Section: What is an AiPOD */}
-      <section id="what-is-aipod" data-section className="mb-16 aos">
+      <section id="what-is-an-aipod" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">What is an AiPOD</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">A delivery squad with AI tooling woven in — not tacked on.</h2>

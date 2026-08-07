@@ -53,7 +53,7 @@ export default function ConsolePage({
           }}
         />
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-[1200px] mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-end">
             <div>
               <div className="flex items-center gap-2 mb-4 text-xs font-700 text-white/60 uppercase tracking-wider">
@@ -85,9 +85,9 @@ export default function ConsolePage({
       </section>
 
       {/* Console Layout */}
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto md:px-12">
         {/* Sticky Left Rail */}
-        <aside className="w-full md:w-64 md:sticky md:top-[72px] md:h-[calc(100vh-72px)] px-6 md:px-8 py-12 md:py-16 bg-white md:border-r border-gray-200 flex-shrink-0">
+        <aside className="w-full md:w-64 md:sticky md:top-[72px] md:h-[calc(100vh-72px)] px-6 md:px-0 md:pr-8 py-12 md:py-16 bg-white md:border-r border-gray-200 flex-shrink-0">
           <div className="md:sticky md:top-24">
             {/* Sections */}
             <div className="mb-8">
@@ -152,7 +152,7 @@ export default function ConsolePage({
 
         {/* Main Content */}
         <main
-          className="flex-1 px-6 md:px-8 py-12 md:py-16 max-w-4xl"
+          className="flex-1 px-6 md:pl-12 md:pr-0 py-12 md:py-16 max-w-4xl"
           ref={contentRef}
         >
           {children}

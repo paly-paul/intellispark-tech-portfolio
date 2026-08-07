@@ -3,117 +3,125 @@
 import { UsersThree } from '@phosphor-icons/react'
 import ConsolePage from '@/components/templates/ConsolePage'
 
+const roles = [
+  'Software Engineers', 'Backend / Frontend', 'Full Stack', 'Data Engineers', 'ML Engineers',
+  'DevOps / SRE', 'Mobile (iOS & Android)', 'Product Managers', 'QA Engineers',
+  'Technical Architects', 'Business Analysts', 'Operations Leads', 'Finance & Accounting', 'Technical Writers',
+]
+
 export default function StaffAugmentation() {
   return (
     <ConsolePage
       eyebrow="Service · Staff Augmentation"
       icon={<UsersThree weight="bold" size={16} />}
-      h1="Embed vetted talent into your team — fast."
-      intro="You need engineers now. We find, vet, and hire them for you. They join your payroll and report to your leadership. No middlemen, no third-party contractors — they&apos;re your team members."
+      h1="The right people, in your team, fast."
+      intro="Vetted professionals who work as a genuine extension of your team — not contractors who disappear after a sprint. We handle sourcing and screening so you only see candidates worth your time."
       accent="#D97706"
-      badges={['Kochi, India', 'Direct hires']}
+      badges={['Kochi, India', '2–4 week placement']}
       navSections={[
+        { id: 'the-difference', label: "What's different" },
+        { id: 'roles', label: 'Roles we place' },
         { id: 'how-it-works', label: 'How it works' },
-        { id: 'the-process', label: 'The process' },
-        { id: 'your-commitment', label: 'Your commitment' },
-        { id: 'when-to-use', label: 'When to use' },
+        { id: 'post-placement', label: 'Post-placement' },
       ]}
       related={[
-        { label: 'Product Engineering', href: '/product-engineering' },
+        { label: 'GCC Setup', href: '/gcc-setup' },
         { label: 'AiPODS', href: '/aipods' },
         { label: 'For Startups', href: '/for/startups' },
       ]}
     >
+      {/* Section: What's different */}
+      <section id="the-difference" data-section className="mb-16 aos">
+        <div className="mb-6">
+          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">What&apos;s different</span>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Most augmentation fails for one of three reasons. We fix all three.</h2>
+        </div>
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
+          Wrong candidate fit. No cultural alignment. A vendor who disappears after placement. These are the three failure modes we&apos;ve seen repeat across the industry — and they&apos;re all avoidable with the right process.
+        </p>
+        <div className="space-y-3">
+          {[
+            { label: 'On fit:', text: 'multi-stage screening — technical, communication, and a structured culture evaluation before any shortlist' },
+            { label: 'On alignment:', text: 'we spend time with your team to understand how you work before we brief candidates' },
+            { label: 'On support:', text: 'we stay involved post-placement — check-ins at 30, 60 and 90 days, and whenever you need us' },
+            { label: 'On control:', text: 'you make the final call on every hire — we present shortlists, we never place without your approval' },
+          ].map((item, idx) => (
+            <div key={idx} className="flex gap-3 p-4 bg-amber-50 rounded-lg">
+              <span className="text-amber-600 font-700 flex-shrink-0">✓</span>
+              <span className="text-gray-900 text-sm"><strong>{item.label}</strong> {item.text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section: Roles we place */}
+      <section id="roles" data-section className="mb-16 aos">
+        <div className="mb-6">
+          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">Roles we place</span>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Across engineering, product, data and operations.</h2>
+        </div>
+        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
+          Most placements happen within 2–4 weeks of brief sign-off. Senior and specialist roles take longer — we&apos;d rather find the right person than meet an arbitrary deadline.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {roles.map((role, idx) => (
+            <span key={idx} className="px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 font-500">
+              {role}
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* Section: How it works */}
       <section id="how-it-works" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-yellow-600 uppercase tracking-wider">How it works</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Direct hiring with recruitment support.</h2>
+          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">How it works</span>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Simple process. No unnecessary steps.</h2>
+        </div>
+        <div className="space-y-6">
+          <div className="border-l-4 border-amber-600 pl-6 py-2">
+            <h3 className="font-600 text-gray-900 mb-2">Brief — Day 1</h3>
+            <p className="text-gray-600 text-sm">
+              Role requirements, team context, working style, must-haves and nice-to-haves. We go deep here — because clarity at this stage is what makes the shortlist accurate.
+            </p>
+          </div>
+          <div className="border-l-4 border-amber-600 pl-6 py-2">
+            <h3 className="font-600 text-gray-900 mb-2">Screen — Week 1–2</h3>
+            <p className="text-gray-600 text-sm">
+              Technical assessment, communication evaluation, structured culture interview. We typically present 2–3 candidates who have passed all three stages.
+            </p>
+          </div>
+          <div className="border-l-4 border-amber-600 pl-6 py-2">
+            <h3 className="font-600 text-gray-900 mb-2">Place — Week 2–4</h3>
+            <p className="text-gray-600 text-sm">
+              You interview, you decide. Offer, onboarding support, and a structured first-week integration plan included — not optional extras.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Post-placement */}
+      <section id="post-placement" data-section className="mb-16 aos">
+        <div className="mb-6">
+          <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">Post-placement</span>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">We don&apos;t disappear after the contract is signed.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          You tell us what you need. We source, screen, and present only candidates who meet your bar. They&apos;re hired directly into your payroll and become part of your permanent team. We handle the recruitment process; you own the relationship.
+          Our reputation depends on your team&apos;s performance — not the handshake. We stay involved at 30, 60 and 90 days post-placement, and are available whenever you need us. If something isn&apos;t working, we&apos;d rather fix it than lose you as a client.
         </p>
-        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
-          <p className="text-gray-900 font-600 mb-2">Key difference from contractors:</p>
-          <p className="text-gray-700 text-sm">
-            These are permanent employees on your payroll. They&apos;re embedded in your culture, attend your meetings, and grow with your company. They&apos;re not external resources — they&apos;re your team members.
-          </p>
-        </div>
-      </section>
-
-      {/* Section: The process */}
-      <section id="the-process" data-section className="mb-16 aos">
-        <div className="mb-6">
-          <span className="text-sm font-600 text-yellow-600 uppercase tracking-wider">The process</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">From requirement to first day — typically XX days.</h2>
-        </div>
-        <div className="space-y-4">
-          <div className="border-l-4 border-yellow-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Step 1: Requirement Clarity (Days 1-3)</h3>
-            <p className="text-gray-600 text-sm">You share what you need. We ask the hard questions to understand skills, experience level, team fit, and compensation expectations.</p>
+        <div className="grid sm:grid-cols-3 gap-6">
+          <div className="p-6 bg-gray-50 rounded-lg">
+            <div className="text-3xl font-700 text-amber-600 mb-2">XX%</div>
+            <p className="text-sm text-gray-600">12-month retention rate across all placements</p>
           </div>
-          <div className="border-l-4 border-yellow-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Step 2: Sourcing (Days 4-14)</h3>
-            <p className="text-gray-600 text-sm">We source candidates from our network and active market. Initial phone screens happen on our end to save you time.</p>
+          <div className="p-6 bg-gray-50 rounded-lg">
+            <div className="text-3xl font-700 text-amber-600 mb-2">2–4w</div>
+            <p className="text-sm text-gray-600">Typical time from brief to placed candidate</p>
           </div>
-          <div className="border-l-4 border-yellow-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Step 3: Your Interviews (Days 15-25)</h3>
-            <p className="text-gray-600 text-sm">You interview your top choices. We facilitate scheduling, provide feedback, and answer candidate questions.</p>
+          <div className="p-6 bg-gray-50 rounded-lg">
+            <div className="text-3xl font-700 text-amber-600 mb-2">XX</div>
+            <p className="text-sm text-gray-600">Active placements across client teams</p>
           </div>
-          <div className="border-l-4 border-yellow-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Step 4: Offer & Onboarding (Days 26-30)</h3>
-            <p className="text-gray-600 text-sm">You extend the offer. We handle paperwork, visa support if needed, and onboarding logistics so your hire starts focused.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section: Your commitment */}
-      <section id="your-commitment" data-section className="mb-16 aos">
-        <div className="mb-6">
-          <span className="text-sm font-600 text-yellow-600 uppercase tracking-wider">Your commitment</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">What you own when you hire through Intellispark.</h2>
-        </div>
-        <div className="space-y-4">
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Straightforward costs</h3>
-            <p className="text-sm text-gray-600">
-              No markups, no hidden fees. You pay the candidate&apos;s salary plus routine payroll/HR costs. That&apos;s it. No placement fees, no retention bonuses, no surprises.
-            </p>
-          </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Notice periods</h3>
-            <p className="text-sm text-gray-600">
-              Standard India employment law applies. XX days notice for parting ways. No penalties on your side, straightforward separation if needed.
-            </p>
-          </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">You own the relationship</h3>
-            <p className="text-sm text-gray-600">
-              Once hired, they&apos;re your employees. We stay available for HR or compliance questions, but day-to-day management is entirely yours.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section: When to use */}
-      <section id="when-to-use" data-section className="mb-16 aos">
-        <div className="mb-6">
-          <span className="text-sm font-600 text-yellow-600 uppercase tracking-wider">When to use</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Staff Augmentation is perfect if...</h2>
-        </div>
-        <div className="space-y-3">
-          {[
-            'You need individual engineers or small teams quickly',
-            'You want permanent hires, not contractors',
-            'You don&apos;t need a full GCC structure yet',
-            'You&apos;re testing the India market before building a full operation',
-            'You need specific skills for a project or product',
-          ].map((item, idx) => (
-            <div key={idx} className="flex gap-3 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-              <span className="text-yellow-700 font-700 flex-shrink-0">✓</span>
-              <span className="text-gray-900 text-sm">{item}</span>
-            </div>
-          ))}
         </div>
       </section>
     </ConsolePage>
