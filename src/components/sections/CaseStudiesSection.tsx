@@ -2,16 +2,19 @@
 
 import Link from 'next/link'
 import { Users, ChartPolar, Timer, Bank, Cloud, Buildings } from '@phosphor-icons/react'
+import ArrowRight from '@/components/icons/ArrowRight'
 
 const outcomes = [
-  { icon: Users, val: 'XX+', label: 'Engineers placed in 18 months' },
-  { icon: ChartPolar, val: 'XX%', label: 'Year-1 retention rate' },
-  { icon: Timer, val: 'XXwks', label: 'From brief to first hire' },
+  { icon: Users, val: 'XX', unit: '+', label: 'Engineers placed in 18 months' },
+  { icon: ChartPolar, val: 'XX', unit: '%', label: 'Year-1 retention rate' },
+  { icon: Timer, val: 'XX', unit: 'wks', label: 'From brief to first hire' },
 ]
 
 const cases = [
   {
     href: '/case-studies/mid-market-fintech-gcc',
+    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+    imgAlt: 'Fintech office',
     icon: Bank,
     industry: 'Fintech',
     company: 'Mid-market · 200–500 employees · Australia',
@@ -25,6 +28,8 @@ const cases = [
   },
   {
     href: '/case-studies/saas-startup-staff-aug',
+    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80',
+    imgAlt: 'Engineering team collaborating',
     icon: Cloud,
     industry: 'SaaS',
     company: 'Startup · 50–100 employees · United Kingdom',
@@ -38,6 +43,8 @@ const cases = [
   },
   {
     href: '/case-studies/enterprise-bot-transition',
+    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
+    imgAlt: 'Enterprise office',
     icon: Buildings,
     industry: 'Enterprise Tech',
     company: 'Enterprise · 1,000+ employees · United States',
@@ -53,76 +60,99 @@ const cases = [
 
 export default function CaseStudiesSection() {
   return (
-    <section className="py-20 md:py-32 px-6 md:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-end mb-14 aos">
+    <section className="proof aos" aria-labelledby="proof-title">
+      <div className="proof__inner">
+        <div className="proof__header">
           <div>
-            <span className="text-sm font-600 text-blue uppercase tracking-wider">Client stories</span>
-            <h2 className="text-3xl md:text-4xl font-700 text-navy mt-3">Real teams. Real outcomes.</h2>
+            <span className="proof__eyebrow">Client stories</span>
+            <h2 id="proof-title" className="proof__title">
+              Real teams.<br />Real outcomes.
+            </h2>
           </div>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="proof__sub">
             We&apos;re proud of what our clients have built. Here are a few of their stories — told in their own words and numbers.
           </p>
         </div>
 
-        {/* Featured testimonial */}
-        <div className="aos bg-navy text-white rounded-3xl p-8 md:p-12 mb-8">
-          <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-3xl">
-            &ldquo;We&apos;d spoken to three other vendors before Intellispark. The difference was that they actually listened to what we were trying to build — not just how many seats they could fill. Eighteen months later, our Kochi team is the most stable and productive we have globally.&rdquo;
-          </p>
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-sm font-700">VP</div>
-            <div>
-              <div className="font-600 text-sm">VP of Engineering</div>
-              <div className="text-xs text-white/50">Series B SaaS company · United Kingdom</div>
+        <blockquote
+          className="proof__quote aos"
+          aria-label="Client testimonial"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80')",
+          }}
+        >
+          <div className="quote__body">
+            <p className="quote__text">
+              &ldquo;We&apos;d spoken to three other vendors before Intellispark. The difference was that they actually listened to what we were trying to build — not just how many seats they could fill. Eighteen months later, our Kochi team is the most stable and productive we have globally.&rdquo;
+            </p>
+            <div className="quote__attribution">
+              <div className="quote__avatar">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
+                  alt="VP of Engineering"
+                />
+              </div>
+              <div>
+                <div className="quote__name">VP of Engineering</div>
+                <div className="quote__role">Series B SaaS company · United Kingdom</div>
+              </div>
             </div>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/10">
+
+          <div className="quote__outcomes" aria-label="Key outcomes">
             {outcomes.map((o, idx) => {
               const Icon = o.icon
               return (
-                <div key={idx} className="flex items-center gap-3">
-                  <Icon weight="duotone" size={28} className="text-teal flex-shrink-0" />
+                <div key={idx} className="outcome-pill">
+                  <Icon weight="duotone" size={28} className="outcome-pill__icon" />
                   <div>
-                    <div className="text-xl font-700">{o.val}</div>
-                    <div className="text-xs text-white/50">{o.label}</div>
+                    <div className="outcome-pill__num">
+                      {o.val}
+                      {o.unit ? <span className="outcome-pill__unit">{o.unit}</span> : null}
+                    </div>
+                    <div className="outcome-pill__label">{o.label}</div>
                   </div>
                 </div>
               )
             })}
           </div>
-        </div>
+        </blockquote>
 
-        {/* Case study cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {cases.map((c) => {
+        <div className="proof__cases">
+          {cases.map((c, idx) => {
             const Icon = c.icon
             return (
               <Link
                 key={c.href}
                 href={c.href}
-                className="aos group rounded-2xl border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-lg transition-all bg-white flex flex-col"
+                className={`aos case-card case-card--${idx + 1} group`}
+                aria-label={`Case study: ${c.title}`}
               >
-                <div className="aspect-[3/2] bg-gradient-to-br from-blue-pale to-teal-light" />
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-1.5 text-xs font-700 text-blue uppercase tracking-wide mb-2">
+                <div
+                  className="case-card__img"
+                  style={{ backgroundImage: `url('${c.img}')` }}
+                  role="img"
+                  aria-label={c.imgAlt}
+                />
+                <div className="case-card__body">
+                  <div className="case-card__industry">
                     <Icon weight="fill" size={14} /> {c.industry}
                   </div>
-                  <div className="text-xs text-gray-500 mb-3">{c.company}</div>
-                  <h3 className="text-base font-700 text-navy group-hover:text-blue transition-colors mb-3 leading-snug">
-                    {c.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">{c.desc}</p>
-                  <div className="grid grid-cols-3 gap-2 mb-5 pt-4 border-t border-gray-100">
+                  <div className="case-card__company">{c.company}</div>
+                  <h3 className="case-card__title">{c.title}</h3>
+                  <p className="case-card__desc">{c.desc}</p>
+                  <div className="case-card__metrics">
                     {c.metrics.map((m, i) => (
-                      <div key={i}>
-                        <div className="text-sm font-700 text-navy">{m.val}</div>
-                        <div className="text-[11px] text-gray-500 leading-tight mt-0.5">{m.label}</div>
+                      <div key={i} className="metric">
+                        <div className="metric__num">{m.val}</div>
+                        <div className="metric__label">{m.label}</div>
                       </div>
                     ))}
                   </div>
-                  <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-600 text-blue group-hover:gap-2.5 transition-all">
-                    Read the story →
+                  <span className="case-card__link">
+                    Read the story <ArrowRight size={13} />
                   </span>
                 </div>
               </Link>
@@ -130,23 +160,16 @@ export default function CaseStudiesSection() {
           })}
         </div>
 
-        {/* Footer strip */}
-        <div className="aos flex flex-col sm:flex-row items-center justify-between gap-6 bg-gray-50 rounded-2xl p-6 md:p-8">
-          <p className="text-gray-700">
-            <strong className="text-navy">Want to see if we&apos;ve worked with companies like yours?</strong> We&apos;re happy to share relevant experience on a call.
+        <div className="proof__footer aos">
+          <p className="proof__footer-text">
+            <strong>Want to see if we&apos;ve worked with companies like yours?</strong> We&apos;re happy to share relevant experience on a call.
           </p>
-          <div className="flex gap-3 flex-shrink-0">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-gray-900 font-600 rounded-lg hover:bg-white transition-colors whitespace-nowrap"
-            >
-              View all case studies →
+          <div className="proof__footer-actions">
+            <Link href="/case-studies" className="btn-ghost">
+              View all case studies <ArrowRight size={13} />
             </Link>
-            <Link
-              href="/book-a-call"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors whitespace-nowrap"
-            >
-              Book a Call →
+            <Link href="/book-a-call" className="btn-primary">
+              Book a Call <ArrowRight size={13} />
             </Link>
           </div>
         </div>

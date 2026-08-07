@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type ReactNode } from 'react'
-import { Plus } from '@phosphor-icons/react'
+import { ArrowRight, Plus } from '@phosphor-icons/react'
 
 const faqs: { question: string; answer: ReactNode }[] = [
   {
@@ -55,36 +55,41 @@ export default function FAQSection() {
 
   return (
     <section className="py-20 md:py-32 px-6 md:px-8 bg-gray-50">
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-16 aos text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-sm font-600 text-teal uppercase tracking-wider">Questions?</span>
+      <div className="max-w-7xl mx-auto faq__inner">
+        <div className="faq__left aos">
+          <span className="faq__eyebrow">FAQ</span>
+          <h2 className="faq__title">Questions we hear most often.</h2>
+          <p className="faq__sub">
+            Honest answers to the things companies actually want to know before getting started.
+          </p>
+          <div className="faq__nudge">
+            <p>
+              Still have questions? We&apos;re happy to talk through your specific situation — no obligation, no pressure.
+            </p>
+            <a href="/book-a-call" className="btn-primary">
+              Book a Call <ArrowRight size={14} />
+            </a>
           </div>
-          <h2 className="text-3xl md:text-4xl font-700 text-navy">Frequently asked questions.</h2>
         </div>
 
-        <div className="space-y-3">
+        <div className="faq__accordion aos">
           {faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className="aos bg-white rounded-lg border border-gray-200 overflow-hidden transition-all"
-            >
+            <div key={idx} className={`faq-item ${openIdx === idx ? 'open' : ''}`}>
               <button
+                type="button"
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                className="w-full px-6 py-4 flex items-start justify-between hover:bg-gray-50 transition-colors text-left"
+                className="faq-item__btn"
+                aria-expanded={openIdx === idx}
               >
-                <span className="font-600 text-gray-900 text-base leading-relaxed">{faq.question}</span>
-                <Plus
-                  weight="bold"
-                  size={20}
-                  className={`flex-shrink-0 mt-0.5 transition-transform ${openIdx === idx ? 'rotate-45' : ''}`}
-                />
+                <span className="faq-item__question">{faq.question}</span>
+                <span className="faq-item__icon">
+                  <Plus weight="bold" size={12} />
+                </span>
               </button>
-              {openIdx === idx && (
-                <div className="px-6 pb-4 pt-0 text-gray-600 text-base leading-relaxed border-t border-gray-100">
-                  {faq.answer}
-                </div>
-              )}
+
+              <div className="faq-item__body">
+                <div className="faq-item__answer">{faq.answer}</div>
+              </div>
             </div>
           ))}
         </div>
