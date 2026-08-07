@@ -87,3 +87,9 @@
 .transition-smooth {
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* Floating hero metric cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
