@@ -9,6 +9,7 @@ export default function ConsolePage({
   eyebrow,
   icon,
   h1,
+  h1ClassName,
   intro,
   accent,
   badges,
@@ -61,11 +62,11 @@ export default function ConsolePage({
                 {icon}
                 {eyebrow}
               </div>
-              <h1 className="text-3xl md:text-4xl font-800 leading-tight mb-4">{h1}</h1>
+              <h1 className={h1ClassName ?? 'text-3xl md:text-4xl font-800 leading-tight mb-4'}>{h1}</h1>
               <p className="text-white/70 text-base md:text-lg max-w-md leading-relaxed">{intro}</p>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-row md:flex-col flex-wrap gap-3 items-start md:items-end">
               {badges.map((badge, idx) => (
                 <div
                   key={idx}
@@ -87,24 +88,20 @@ export default function ConsolePage({
       {/* Console Layout */}
       <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto md:px-12">
         {/* Sticky Left Rail */}
-        <aside className="w-full md:w-64 md:sticky md:top-[72px] md:h-[calc(100vh-72px)] px-6 md:px-0 md:pr-8 py-12 md:py-16 bg-white md:border-r border-gray-200 flex-shrink-0">
-          <div className="md:sticky md:top-24">
+        <aside className="w-full md:w-64 px-6 md:px-0 md:pr-8 py-12 md:py-16 bg-white md:border-r border-gray-200 flex-shrink-0 relative">
+          <div className="md:sticky md:top-[100px] md:max-h-[calc(100vh-120px)] overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
             {/* Sections */}
-            <div className="mb-8">
-              <h3 className="text-xs font-700 text-gray-600 uppercase tracking-wider mb-4">On this page</h3>
-              <nav className="space-y-1">
+            <div className="mb-7">
+              <h3 className="text-[10px] font-700 text-gray-400 uppercase tracking-wider mb-4">On this page</h3>
+              <nav className="flex flex-col gap-0.5">
                 {navSections.map((section) => (
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className={`block px-3 py-2 rounded-lg text-sm transition-all ${
-                      activeSection === section.id
-                        ? 'font-600 text-white'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                    style={{
-                      backgroundColor: activeSection === section.id ? accent : 'transparent',
-                    }}
+                    className={`block px-3 py-2 rounded-[7px] text-[13.5px] transition-all border-l-2 ${activeSection === section.id
+                        ? 'font-600 text-navy bg-gray-50 border-navy'
+                        : 'font-500 text-gray-500 hover:text-gray-900 hover:bg-gray-50 border-transparent'
+                      }`}
                   >
                     {section.label}
                   </a>
@@ -113,10 +110,10 @@ export default function ConsolePage({
             </div>
 
             {/* CTAs */}
-            <div className="space-y-2 mb-8 pb-8 border-b border-gray-200">
+            <div className="flex flex-col gap-2 mb-6 pb-6 border-b border-gray-200">
               <Link
                 href="/book-a-call"
-                className="block w-full px-4 py-2.5 text-white text-center text-sm font-600 rounded-lg transition-colors"
+                className="flex items-center justify-center gap-1.5 w-full px-4 py-2 text-white text-center text-[13.5px] font-600 rounded-[9px] transition-transform hover:-translate-y-[1px]"
                 style={{
                   backgroundColor: accent,
                   boxShadow: `0 2px 12px ${accent}44`,
@@ -126,7 +123,7 @@ export default function ConsolePage({
               </Link>
               <Link
                 href="/case-studies"
-                className="block w-full px-4 py-2.5 text-center text-sm font-600 rounded-lg border border-gray-200 text-gray-900 hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-center gap-1.5 w-full px-4 py-2 text-center text-[13.5px] font-600 rounded-[9px] bg-gray-100 text-gray-700 hover:bg-gray-200 transition-transform hover:-translate-y-[1px]"
               >
                 See our work
               </Link>
@@ -134,13 +131,13 @@ export default function ConsolePage({
 
             {/* Related Pages */}
             <div>
-              <h3 className="text-xs font-700 text-gray-600 uppercase tracking-wider mb-4">Related</h3>
-              <div className="space-y-2">
+              <h3 className="text-[10px] font-700 text-gray-400 uppercase tracking-wider mb-2.5">Related</h3>
+              <div className="flex flex-col gap-1">
                 {related.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    className="block text-[12.5px] py-1 text-gray-500 hover:text-blue-600 transition-colors"
                   >
                     {link.label}
                   </Link>
