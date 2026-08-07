@@ -2,11 +2,17 @@
 
 import Link from 'next/link'
 import { Plant, Buildings, Lightning, Wrench, CheckCircle } from '@phosphor-icons/react'
+import ArrowRight from '@/components/icons/ArrowRight'
 
 const segments = [
   {
     href: '/for/mid-market',
-    theme: { icon: '#2D5BFF', iconBg: '#EEF2FF', accent: 'text-blue', dot: 'bg-blue' },
+    theme: {
+      icon: '#2D5BFF',
+      iconBg: '#EEF2FF',
+      accent: 'text-blue',
+      topBar: 'bg-gradient-to-r from-blue to-blue-light',
+    },
     icon: Plant,
     who: 'Mid-market · First-timer',
     title: 'Exploring India for the first time',
@@ -19,7 +25,12 @@ const segments = [
   },
   {
     href: '/for/enterprise',
-    theme: { icon: '#00B8A9', iconBg: '#E6FBF9', accent: 'text-teal', dot: 'bg-teal' },
+    theme: {
+      icon: '#00B8A9',
+      iconBg: '#E6FBF9',
+      accent: 'text-teal',
+      topBar: 'bg-gradient-to-r from-teal to-cyan-400',
+    },
     icon: Buildings,
     who: 'Enterprise · Scaling',
     title: 'Scaling an existing India presence',
@@ -32,7 +43,12 @@ const segments = [
   },
   {
     href: '/for/startups',
-    theme: { icon: '#6366F1', iconBg: '#EEEDFF', accent: 'text-indigo-500', dot: 'bg-indigo-500' },
+    theme: {
+      icon: '#6366F1',
+      iconBg: '#EEEDFF',
+      accent: 'text-indigo-500',
+      topBar: 'bg-gradient-to-r from-indigo-500 to-violet-500',
+    },
     icon: Lightning,
     who: 'Startup · Moving Fast',
     title: 'Building a remote team quickly',
@@ -45,7 +61,12 @@ const segments = [
   },
   {
     href: '/for/gcc-optimise',
-    theme: { icon: '#D97706', iconBg: '#FFFBEB', accent: 'text-amber-600', dot: 'bg-amber-600' },
+    theme: {
+      icon: '#D97706',
+      iconBg: '#FFFBEB',
+      accent: 'text-amber-600',
+      topBar: 'bg-gradient-to-r from-amber-500 to-yellow-400',
+    },
     icon: Wrench,
     who: 'GCC Owner · Optimising',
     title: 'Getting more from your GCC',
@@ -60,56 +81,63 @@ const segments = [
 
 export default function AudienceSection() {
   return (
-    <section className="py-20 md:py-32 px-6 md:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-end mb-14 aos">
+    <section className="bg-gray-50 px-6 py-20 md:px-8 md:py-[100px]">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-14 grid items-end gap-8 md:grid-cols-2 aos">
           <div>
-            <span className="text-sm font-600 text-teal uppercase tracking-wider">Who we work with</span>
-            <h2 className="text-3xl md:text-4xl font-700 text-navy mt-3">Every company&apos;s India journey looks different.</h2>
+            <div className="mb-4 inline-flex items-center gap-2 text-sm font-600 uppercase tracking-[0.8px] text-teal">
+              <span className="h-0.5 w-5 rounded-full bg-teal" />
+              Who we work with
+            </div>
+            <h2 className="text-3xl font-700 leading-tight text-navy md:text-4xl">
+              Every company&apos;s<br />
+              India journey looks different.
+            </h2>
           </div>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="max-w-[420px] text-base leading-relaxed text-gray-600">
             We&apos;ve worked with first-timers who had no idea where to start, and seasoned teams looking to do things better. Tell us where you are, and we&apos;ll meet you there.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {segments.map((seg, idx) => {
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {segments.map((seg) => {
             const Icon = seg.icon
             return (
               <Link
                 key={seg.href}
                 href={seg.href}
-                className="aos group relative flex flex-col p-6 rounded-2xl border border-gray-200 bg-gray-50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                className="aos group relative flex flex-col overflow-hidden rounded-[20px] border border-gray-200 bg-gray-50 p-6 transition-all duration-200 hover:-translate-y-2 hover:border-transparent hover:bg-white hover:shadow-[0_24px_56px_rgba(0,0,0,0.10)]"
               >
+                <div className={`absolute inset-x-0 top-0 h-1 ${seg.theme.topBar}`} />
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
                   style={{ backgroundColor: seg.theme.iconBg, color: seg.theme.icon }}
                 >
                   <Icon weight="duotone" size={24} />
                 </div>
-                <div className={`text-xs font-700 uppercase tracking-wider mb-2 ${seg.theme.accent}`}>{seg.who}</div>
-                <h3 className="text-lg font-700 text-navy mb-3 leading-snug">{seg.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-5">{seg.desc}</p>
-                <ul className="space-y-1.5 mb-6">
+                <div className={`mb-2 text-xs font-700 uppercase tracking-[0.7px] ${seg.theme.accent}`}>{seg.who}</div>
+                <h3 className="mb-3 text-lg font-700 leading-snug text-navy">{seg.title}</h3>
+                <p className="mb-5 flex-1 text-sm leading-relaxed text-gray-600">{seg.desc}</p>
+                <ul className="mb-6 space-y-1.5">
                   {seg.concerns.map((c, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-gray-700 leading-relaxed">
-                      <CheckCircle weight="fill" size={15} className={`flex-shrink-0 mt-0.5 ${seg.theme.accent}`} />
+                    <li key={i} className="flex items-start gap-2 text-xs leading-relaxed text-gray-700">
+                      <CheckCircle weight="fill" size={15} className={`mt-0.5 flex-shrink-0 ${seg.theme.accent}`} />
                       {c}
                     </li>
                   ))}
                 </ul>
-                <span className={`mt-auto inline-flex items-center gap-1.5 text-sm font-600 ${seg.theme.accent} group-hover:gap-2.5 transition-all`}>
-                  See how we help →
+                <span className={`mt-auto inline-flex items-center gap-1.5 text-sm font-600 ${seg.theme.accent} transition-all group-hover:gap-2.5`}>
+                  See how we help <ArrowRight size={13} />
                 </span>
               </Link>
             )
           })}
         </div>
 
-        <div className="mt-12 aos flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+        <div className="mt-12 flex flex-col items-center justify-center gap-2 text-center aos">
           <span className="text-gray-600">Not sure which fits you?</span>
-          <Link href="/book-a-call" className="text-blue font-600 hover:text-blue-light transition-colors">
-            Book a Call and we&apos;ll figure it out together →
+          <Link href="/book-a-call" className="inline-flex items-center gap-1.5 font-600 text-blue transition-colors hover:text-blue-light">
+            Book a Call and we&apos;ll figure it out together <ArrowRight size={13} />
           </Link>
         </div>
       </div>

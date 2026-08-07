@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Star, ArrowsClockwise, UsersThree, CodeBlock, Robot, Sparkle, Check } from '@phosphor-icons/react'
+import ArrowRight from '@/components/icons/ArrowRight'
 
 const regularServices = [
   {
@@ -56,39 +57,47 @@ const regularServices = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 md:py-32 px-6 md:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-end mb-16 aos">
+    <section className="bg-white px-6 py-20 md:px-8 md:py-[100px]">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 grid items-end gap-8 md:grid-cols-2 aos">
           <div>
-            <span className="text-sm font-600 text-blue uppercase tracking-wider">What we do</span>
-            <h2 className="text-3xl md:text-4xl font-700 text-navy mt-3">Everything you need to build in India.</h2>
+            <div className="mb-4 inline-flex items-center gap-2 text-sm font-600 uppercase tracking-[0.8px] text-blue">
+              <span className="h-0.5 w-5 rounded-full bg-blue" />
+              What we do
+            </div>
+            <h2 className="text-3xl font-700 leading-tight text-navy md:text-4xl">Everything you need to build in India.</h2>
           </div>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="max-w-[420px] text-base leading-relaxed text-gray-600">
             From setting up your first offshore team to running a fully governed Global Capability Centre — we offer the right model for where you are today, with room to grow.
           </p>
         </div>
 
-        <div className="border border-gray-200 rounded-3xl overflow-hidden bg-white grid md:grid-cols-2">
-          {/* Featured: GCC Setup — full width */}
+        <div className="grid overflow-hidden rounded-[24px] border border-gray-200 bg-white md:grid-cols-2">
           <Link
             href="/gcc-setup"
-            className="aos group md:col-span-2 flex flex-col md:flex-row items-center gap-8 md:gap-14 p-8 md:p-10 border-b border-gray-200 bg-gradient-to-r from-white to-blue-pale/40 hover:bg-gray-50 transition-colors"
+            className="aos group flex flex-col items-center gap-8 border-b border-gray-200 bg-gradient-to-r from-white to-blue-pale/40 p-8 transition-colors hover:bg-gray-50 md:col-span-2 md:flex-row md:gap-14 md:p-10"
           >
-            <div className="w-full md:w-[38%] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl">
-              <div className="aspect-[4/3] bg-gradient-to-br from-blue-pale to-teal-light" />
+            <div className="w-full flex-shrink-0 overflow-hidden rounded-2xl shadow-xl md:w-[38%]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80"
+                alt="Modern collaborative office space"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+              />
             </div>
             <div className="flex-1">
-              <div className="inline-flex items-center gap-1.5 bg-blue-pale text-blue text-xs font-700 uppercase tracking-wide px-2.5 py-1 rounded-full mb-3">
+              <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-blue-pale px-2.5 py-1 text-xs font-700 uppercase tracking-wide text-blue">
                 <Star weight="fill" size={12} /> Most popular
               </div>
-              <div className="text-xs font-700 text-blue uppercase tracking-wider mb-2">GCC Setup</div>
-              <h3 className="text-xl md:text-2xl font-700 text-navy mb-3 leading-snug">
+              <div className="mb-2 text-xs font-700 uppercase tracking-wider text-blue">GCC Setup</div>
+              <h3 className="mb-3 text-xl font-700 leading-snug text-navy md:text-2xl">
                 Global Capability Centre — done right, from day one.
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-5">
+              <p className="mb-5 text-sm leading-relaxed text-gray-600">
                 We handle the end-to-end complexity of establishing your GCC in Kochi — legal entity formation, talent acquisition, infrastructure, governance — so you can focus on your business, not the setup.
               </p>
-              <ul className="space-y-2 mb-6">
+              <ul className="mb-6 space-y-2">
                 {[
                   'Entity formation, compliance & statutory registrations',
                   'End-to-end hiring: sourcing, screening, onboarding',
@@ -96,102 +105,85 @@ export default function ServicesSection() {
                   'Ongoing HR, payroll & governance support post-launch',
                 ].map((cap, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <Check weight="bold" size={16} className="flex-shrink-0 mt-0.5 text-blue" />
+                    <Check weight="bold" size={16} className="mt-0.5 flex-shrink-0 text-blue" />
                     {cap}
                   </li>
                 ))}
               </ul>
-              <span className="inline-flex items-center gap-1.5 text-sm font-600 text-blue group-hover:gap-2.5 transition-all">
-                Learn more →
+              <span className="inline-flex items-center gap-1.5 text-sm font-600 text-blue transition-all group-hover:gap-2.5">
+                Learn more <ArrowRight size={13} />
               </span>
             </div>
           </Link>
 
-          {/* Regular cards */}
           {regularServices.map((svc, idx) => {
             const Icon = svc.icon
             return (
               <Link
                 key={svc.href}
                 href={svc.href}
-                className={`aos group p-8 md:p-9 hover:bg-gray-50 transition-colors border-gray-200 ${
-                  idx < regularServices.length - 1 ? 'md:border-r' : ''
-                } border-b`}
+                className={`aos group border-b border-gray-200 p-8 transition-colors hover:bg-gray-50 md:p-9 ${idx < regularServices.length - 1 ? 'md:border-r' : ''}`}
               >
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-                  style={{ backgroundColor: svc.iconBg, color: svc.iconColor }}
-                >
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl" style={{ backgroundColor: svc.iconBg, color: svc.iconColor }}>
                   <Icon weight="duotone" size={28} />
                 </div>
-                <div className={`text-xs font-700 uppercase tracking-wider mb-2 ${svc.tagColor}`}>{svc.tag}</div>
-                <h3 className="text-lg font-700 text-navy mb-2.5 leading-snug">{svc.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-5">{svc.desc}</p>
-                <ul className="space-y-2 mb-6">
+                <div className={`mb-2 text-xs font-700 uppercase tracking-wider ${svc.tagColor}`}>{svc.tag}</div>
+                <h3 className="mb-2.5 text-lg font-700 leading-snug text-navy">{svc.title}</h3>
+                <p className="mb-5 text-sm leading-relaxed text-gray-600">{svc.desc}</p>
+                <ul className="mb-6 space-y-2">
                   {svc.caps.map((cap, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-[13px] text-gray-700">
-                      <Check weight="bold" size={15} className={`flex-shrink-0 mt-0.5 ${svc.tagColor}`} />
+                      <Check weight="bold" size={15} className={`mt-0.5 flex-shrink-0 ${svc.tagColor}`} />
                       {cap}
                     </li>
                   ))}
                 </ul>
-                <span className={`inline-flex items-center gap-1.5 text-sm font-600 ${svc.linkColor} group-hover:gap-2.5 transition-all`}>
-                  Learn more →
+                <span className={`inline-flex items-center gap-1.5 text-sm font-600 ${svc.linkColor} transition-all group-hover:gap-2.5`}>
+                  Learn more <ArrowRight size={13} />
                 </span>
               </Link>
             )
           })}
 
-          {/* Featured: AiPODS — full width bottom */}
-          <Link
-            href="/aipods"
-            className="aos group md:col-span-2 p-8 md:p-10 hover:bg-gray-50 transition-colors"
-          >
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-              style={{ backgroundColor: '#ECFDF5', color: '#059669' }}
-            >
+          <Link href="/aipods" className="aos group p-8 transition-colors hover:bg-gray-50 md:col-span-2 md:p-10">
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl" style={{ backgroundColor: '#ECFDF5', color: '#059669' }}>
               <Robot weight="duotone" size={28} />
             </div>
-            <div className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-600 text-xs font-700 uppercase tracking-wide px-2.5 py-1 rounded-full mb-3">
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-700 uppercase tracking-wide text-emerald-600">
               <Sparkle weight="fill" size={12} /> New offering
             </div>
-            <div className="text-xs font-700 text-emerald-600 uppercase tracking-wider mb-2">AiPODS</div>
-            <h3 className="text-lg md:text-xl font-700 text-navy mb-3 leading-snug max-w-2xl">
+            <div className="mb-2 text-xs font-700 uppercase tracking-wider text-emerald-600">AiPODS</div>
+            <h3 className="mb-3 max-w-2xl text-lg font-700 leading-snug text-navy md:text-xl">
               AI-powered delivery squads for the teams building tomorrow.
             </h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-5 max-w-2xl">
+            <p className="mb-5 max-w-2xl text-sm leading-relaxed text-gray-600">
               Purpose-built offshore pods that combine senior engineers with embedded AI tooling — designed for companies who want to move faster without cutting corners on quality.
             </p>
-            <ul className="space-y-2 mb-6 max-w-2xl">
+            <ul className="mb-6 max-w-2xl space-y-2">
               {[
                 'Pre-configured AI toolchains: code review, test generation, documentation',
                 'Senior-led squads with built-in AI fluency',
                 'Outcome-focused delivery, not hours logged',
               ].map((cap, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                  <Check weight="bold" size={16} className="flex-shrink-0 mt-0.5 text-emerald-600" />
+                  <Check weight="bold" size={16} className="mt-0.5 flex-shrink-0 text-emerald-600" />
                   {cap}
                 </li>
               ))}
             </ul>
-            <span className="inline-flex items-center gap-1.5 text-sm font-600 text-emerald-600 group-hover:gap-2.5 transition-all">
-              Learn more about AiPODS →
+            <span className="inline-flex items-center gap-1.5 text-sm font-600 text-emerald-600 transition-all group-hover:gap-2.5">
+              Learn more about AiPODS <ArrowRight size={13} />
             </span>
           </Link>
         </div>
 
-        {/* CTA strip */}
-        <div className="aos mt-12 bg-white border border-gray-200 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="aos mt-12 flex flex-col items-center justify-between gap-6 rounded-[20px] border border-gray-200 bg-white p-8 sm:flex-row">
           <div>
-            <h3 className="text-lg font-700 text-navy mb-1">Not sure which model fits your situation?</h3>
+            <h3 className="mb-1 text-lg font-700 text-navy">Not sure which model fits your situation?</h3>
             <p className="text-sm text-gray-600">We&apos;ll ask a few questions and help you figure out the right approach — no pressure, no pitch.</p>
           </div>
-          <Link
-            href="/book-a-call"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors whitespace-nowrap"
-          >
-            Book a Call →
+          <Link href="/book-a-call" className="inline-flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue px-6 py-3 font-600 text-white transition-colors hover:bg-blue-light">
+            Book a Call <ArrowRight size={14} />
           </Link>
         </div>
       </div>
