@@ -27,7 +27,7 @@ export default function Enterprise() {
       {/* Section: Scaling operations */}
       <section id="scaling" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">Scaling operations</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Scaling operations</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Your India operations need to grow. Do it without the growing pains.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
@@ -41,8 +41,8 @@ export default function Enterprise() {
             'Managing cost and headcount efficiency',
             'Tier-based management (individual contributors → team leads → directors)',
           ].map((item, idx) => (
-            <div key={idx} className="flex gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
-              <span className="text-blue-600 font-700 flex-shrink-0">→</span>
+            <div key={idx} className="flex gap-3 p-3 bg-blue-pale rounded-lg border border-blue/20">
+              <span className="text-blue font-700 flex-shrink-0">→</span>
               <span className="text-gray-900 text-sm">{item}</span>
             </div>
           ))}
@@ -52,7 +52,7 @@ export default function Enterprise() {
       {/* Section: Fixing what's broken */}
       <section id="fixing" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">Fixing what&apos;s broken</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Fixing what&apos;s broken</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Your centre isn&apos;t delivering. Let&apos;s fix it.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
@@ -83,24 +83,24 @@ export default function Enterprise() {
       {/* Section: Working with your team */}
       <section id="working-with-teams" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">Working with your team</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Working with your team</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">We work alongside your existing leadership. Not instead of them.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           You have people in place. They may be the problem, or they may be part of the solution. Either way, we work with (or around) them.
         </p>
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <div className="bg-blue-pale border border-blue/20 rounded-xl p-6">
           <ul className="space-y-3">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-700 flex-shrink-0">✓</span>
+              <span className="text-blue font-700 flex-shrink-0">✓</span>
               <span className="text-gray-700 text-sm">We report to your VP of Engineering or Head of Operations, not independently.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-700 flex-shrink-0">✓</span>
+              <span className="text-blue font-700 flex-shrink-0">✓</span>
               <span className="text-gray-700 text-sm">You remain the decision-maker. We advise and execute. You approve.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-700 flex-shrink-0">✓</span>
+              <span className="text-blue font-700 flex-shrink-0">✓</span>
               <span className="text-gray-700 text-sm">If your existing team is strong, we make them stronger. If they&apos;re weak, we help you fix that too.</span>
             </li>
           </ul>
@@ -110,7 +110,7 @@ export default function Enterprise() {
       {/* Section: Governance */}
       <section id="governance" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">Governance</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Governance</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Transparency. Accountability. Results.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">

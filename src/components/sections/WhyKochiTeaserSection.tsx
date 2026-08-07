@@ -45,79 +45,95 @@ const compareRows = [
 
 export default function WhyKochiTeaserSection() {
   return (
-    <section className="py-20 md:py-32 px-6 md:px-8 bg-gray-50" aria-labelledby="kochi-title">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-10 items-start mb-16 aos">
+    <section className="relative overflow-hidden bg-navy text-white px-6 py-20 md:px-8 md:py-[120px]" aria-labelledby="kochi-title">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1593693397690-362cb9666c6c?auto=format&fit=crop&w=1920&q=80')" }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,15,30,0.96)_0%,rgba(10,15,30,0.88)_100%)]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,184,169,0.15),transparent_55%)] opacity-40" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="mb-16 grid items-end gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] aos">
           <div>
-            <span className="text-sm font-600 text-teal uppercase tracking-wider">Why Kochi</span>
-            <h2 id="kochi-title" className="text-3xl md:text-4xl font-700 text-navy mt-3 leading-tight">
-              India&apos;s most liveable tech city is also its <em className="not-italic text-teal">best-kept secret.</em>
+            <div className="mb-4 inline-flex items-center gap-2 text-sm font-600 uppercase tracking-[0.8px] text-teal">
+              <span className="h-0.5 w-5 rounded-full bg-teal" />
+              Why Kochi
+            </div>
+            <h2 id="kochi-title" className="text-3xl font-700 leading-[1.15] text-white md:text-[clamp(30px,3.2vw,44px)]">
+              India&apos;s most liveable<br />
+              tech city is also its<br />
+              <em className="not-italic bg-gradient-to-r from-teal to-blue-light bg-clip-text text-transparent">best-kept secret.</em>
             </h2>
           </div>
-          <div>
-            <p className="text-gray-600 leading-relaxed mb-6">
+
+          <div className="pb-1">
+            <p className="mb-6 max-w-xl text-base leading-relaxed text-white/70">
               While Bangalore and Hyderabad get the headlines, Kochi offers something quietly different — a deep talent pool, significantly lower costs, and a quality of life that keeps your team happy and stable for the long haul.
             </p>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="flex flex-wrap gap-8">
               <div>
-                <div className="text-2xl font-700 text-navy">XX<span className="text-sm">%</span></div>
-                <p className="text-xs text-gray-600 mt-1">Lower cost than Bangalore</p>
+                <div className="text-2xl font-700 text-white">XX<span className="text-sm text-teal">%</span></div>
+                <p className="mt-1 text-xs text-white/50">Lower cost than Bangalore</p>
               </div>
               <div>
-                <div className="text-2xl font-700 text-navy">XX<span className="text-sm">k+</span></div>
-                <p className="text-xs text-gray-600 mt-1">Tech graduates annually</p>
+                <div className="text-2xl font-700 text-white">XX<span className="text-sm text-teal">k+</span></div>
+                <p className="mt-1 text-xs text-white/50">Tech graduates annually</p>
               </div>
               <div>
-                <div className="text-2xl font-700 text-navy">XX<span className="text-sm">%</span></div>
-                <p className="text-xs text-gray-600 mt-1">Lower attrition vs. metro avg.</p>
+                <div className="text-2xl font-700 text-white">XX<span className="text-sm text-teal">%</span></div>
+                <p className="mt-1 text-xs text-white/50">Lower attrition vs. metro avg.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="mb-16 grid gap-6 md:grid-cols-3">
           {pillars.map((p, idx) => (
-            <div key={idx} className="aos bg-white rounded-xl p-6 md:p-8 border border-gray-200">
-              <div className="text-xs font-600 text-gray-400 mb-2">{p.num}</div>
-              <div className="text-2xl mb-3">{p.icon}</div>
-              <h3 className="text-lg font-700 text-navy mb-3">{p.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">{p.desc}</p>
-              <ul className="space-y-2">
+            <div key={idx} className="aos rounded-[24px] border border-white/10 bg-white/5 p-8 backdrop-blur-sm md:p-10">
+              <div className="mb-2 text-xs font-600 uppercase tracking-[0.7px] text-white/40">{p.num}</div>
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-[18px] bg-teal/15 text-teal text-2xl">
+                {p.icon}
+              </div>
+              <h3 className="mb-3 text-lg font-700 leading-snug text-white">{p.title}</h3>
+              <p className="mb-4 text-sm leading-relaxed text-white/70">{p.desc}</p>
+              <div className="space-y-3 border-t border-white/10 pt-4">
                 {p.points.map((point, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-gray-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal mt-1.5 flex-shrink-0" />
-                    {point}
-                  </li>
+                  <div key={i} className="flex gap-2 text-sm text-white/70">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-teal" />
+                    <span>{point}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="aos bg-white rounded-2xl border border-gray-200 overflow-hidden">
-          <div className="px-6 md:px-8 py-6 border-b border-gray-200">
-            <h3 className="text-lg font-700 text-navy">How Kochi compares</h3>
-            <p className="text-sm text-gray-600 mt-1">A straightforward look at what matters when choosing your India location.</p>
+        <div className="aos overflow-hidden rounded-[24px] border border-white/10 bg-white/5">
+          <div className="border-b border-white/10 px-6 py-6 md:px-8">
+            <h3 className="text-lg font-700 text-white">How Kochi compares</h3>
+            <p className="mt-1 text-sm text-white/60">A straightforward look at what matters when choosing your India location.</p>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm" aria-label="City comparison table">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-white/10 text-left text-white/50">
                   <th className="px-6 py-3 font-600">Factor</th>
                   <th className="px-4 py-3 font-700 text-teal">Kochi</th>
-                  <th className="px-4 py-3 font-600 hidden sm:table-cell">Bangalore</th>
-                  <th className="px-4 py-3 font-600 hidden sm:table-cell">Hyderabad</th>
+                  <th className="hidden px-4 py-3 font-600 sm:table-cell">Bangalore</th>
+                  <th className="hidden px-4 py-3 font-600 sm:table-cell">Hyderabad</th>
                   <th className="px-4 py-3 font-600">Mumbai</th>
                 </tr>
               </thead>
               <tbody>
                 {compareRows.map((row, idx) => (
-                  <tr key={idx} className="border-b border-gray-100 last:border-0">
-                    <td className="px-6 py-3 text-gray-900 font-500">{row.label}</td>
+                  <tr key={idx} className="border-b border-white/10 last:border-0">
+                    <td className="px-6 py-3 font-500 text-white">{row.label}</td>
                     <td className="px-4 py-3 font-600 text-teal">{row.kochi}</td>
-                    <td className="px-4 py-3 text-gray-600 hidden sm:table-cell">{row.bangalore}</td>
-                    <td className="px-4 py-3 text-gray-600 hidden sm:table-cell">{row.hyderabad}</td>
-                    <td className="px-4 py-3 text-gray-600">{row.mumbai}</td>
+                    <td className="hidden px-4 py-3 text-white/60 sm:table-cell">{row.bangalore}</td>
+                    <td className="hidden px-4 py-3 text-white/60 sm:table-cell">{row.hyderabad}</td>
+                    <td className="px-4 py-3 text-white/60">{row.mumbai}</td>
                   </tr>
                 ))}
               </tbody>

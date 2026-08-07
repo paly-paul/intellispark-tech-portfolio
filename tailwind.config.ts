@@ -10,8 +10,13 @@ const config: Config = {
     extend: {
       colors: {
         teal: '#00B8A9',
+        'teal-light': '#E6FBF9',
         blue: '#2D5BFF',
+        'blue-light': '#5B82FF',
+        'blue-pale': '#EEF2FF',
         navy: '#0A0F1E',
+        'navy-mid': '#0F1628',
+        'navy-card': '#131929',
         'gray-50': '#F8F9FA',
       },
       fontFamily: {
