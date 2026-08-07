@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { MapPin } from '@phosphor-icons/react'
 import type { ConsolePageProps, NavSection } from '@/lib/types'
 
 export default function ConsolePage({
@@ -70,13 +71,13 @@ export default function ConsolePage({
               {badges.map((badge, idx) => (
                 <div
                   key={idx}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-500 text-white w-fit"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-500 text-white w-fit bg-white/5"
                   style={{
                     borderColor: `${accent}40`,
                     color: accent,
                   }}
                 >
-                  <span>📍</span>
+                  <MapPin weight="fill" size={16} />
                   {badge}
                 </div>
               ))}

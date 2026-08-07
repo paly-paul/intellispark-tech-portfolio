@@ -9,6 +9,7 @@ export default function ServiceDelivery() {
       eyebrow="Service · Service Delivery Centres"
       icon={<MapPin weight="bold" size={16} />}
       h1="Dedicated service delivery centres for ongoing operations, managed services, and back-office functions."
+      h1ClassName="text-3xl md:text-[44px] font-900 leading-[1.1] mb-6 font-bold"
       intro="Scalable from 10 to 200+ seats. Full control over hiring, culture, and operations — with our support. Own the team. Own the results."
       accent="#2D5BFF"
       badges={['Kochi, India', 'Scalable ops']}
@@ -28,7 +29,7 @@ export default function ServiceDelivery() {
       <section id="what-you-get" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-blue uppercase tracking-wider">What you get</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">A purpose-built operations centre. Under your command.</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">A purpose-built operations centre. Under your command.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           A dedicated service delivery centre (SDC) is your operations hub in India. Your hire, your rules, our expertise. We handle entity formation, compliance, and hiring. You make the decisions.
@@ -53,7 +54,7 @@ export default function ServiceDelivery() {
       <section id="functions" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-blue uppercase tracking-wider">Functions we support</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">SDCs work best for...</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">SDCs work best for...</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           Any role that doesn&apos;t require on-site presence or timezone presence in your headquarters. We&apos;ve built centres for:
@@ -71,7 +72,7 @@ export default function ServiceDelivery() {
       <section id="scale" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-blue uppercase tracking-wider">Scaling</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Grow from 10 to 200+ seats without the operational headache.</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">Grow from 10 to 200+ seats without the operational headache.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           Whether you need to ramp from 10 to 50 people or manage a centre with 200+, we handle recruitment, training, and operations. You approve hires. You set standards. We execute.
@@ -96,7 +97,7 @@ export default function ServiceDelivery() {
       <section id="governance" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-blue uppercase tracking-wider">Governance</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">You stay in control. We handle the complexity.</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">You stay in control. We handle the complexity.</h2>
         </div>
         <div className="bg-blue-pale border border-blue/20 rounded-xl p-6">
           <h3 className="font-700 text-gray-900 mb-4">Your SDC, your rules</h3>

@@ -16,7 +16,7 @@ export default function AiPODS() {
       eyebrow="Service · AiPODS"
       icon={<Robot weight="bold" size={24} />}
       h1="Small squads. AI-enabled. Built to move fast."
-      h1ClassName="text-[clamp(26px,3.5vw,44px)] font-800 leading-[1.12] tracking-[-0.8px] mb-[18px] max-w-[620px]"
+      h1ClassName="text-[clamp(26px,3.5vw,44px)] font-800 leading-[1.12] tracking-[-0.8px] mb-[18px] max-w-[620px] font-bold"
       intro="AiPODS are focused delivery teams — 3 to 6 people — with AI tooling integrated into every stage of the pipeline. Not bolted on. Designed in. They move faster, maintain higher quality, and take on work that traditional offshore teams can't handle."
       accent="#059669"
       badges={['Kochi, India', 'AI-integrated squads']}
@@ -36,7 +36,7 @@ export default function AiPODS() {
       <section id="what-is-an-aipod" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">What is an AiPOD</span>
-          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight">A delivery squad with AI tooling woven in — not tacked on.</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">A delivery squad with AI tooling woven in — not tacked on.</h2>
         </div>
         <div className="text-gray-600 text-[15.5px] leading-relaxed mb-8 max-w-[640px]">
           <p>An AiPOD is a cross-functional squad of 3–6 people, purpose-built around a specific delivery need. Every member works with AI tooling as a standard part of their workflow — not as an occasional assist. The result is a team that can do what would typically require twice the headcount.</p>
@@ -62,7 +62,7 @@ export default function AiPODS() {
       <section id="how-they-work" data-section className="mb-16 aos pt-14 border-t border-gray-100">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">How they work</span>
-          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight">AI in every stage of delivery — not just in the IDE.</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">AI in every stage of delivery — not just in the IDE.</h2>
         </div>
         <div className="text-gray-600 text-[15.5px] leading-relaxed mb-6 max-w-[640px]">
           <p>AiPODS don't just use AI for code generation. The tooling spans requirement analysis, test generation, documentation, code review assistance and deployment validation. The squad is trained to use these tools as a workflow — not as shortcuts.</p>
@@ -92,7 +92,7 @@ export default function AiPODS() {
       <section id="best-fit" data-section className="mb-16 aos pt-14 border-t border-gray-100">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">Best-fit work</span>
-          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight">Not every problem needs an AiPOD. Here's where they excel.</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">Not every problem needs an AiPOD. Here's where they excel.</h2>
         </div>
         <div className="text-gray-600 text-[15.5px] leading-relaxed mb-6 max-w-[640px]">
           <p>AiPODS work best on clearly-scoped, iterative work where speed of delivery directly drives business value. If the work requires deep creative or strategic judgment at every step, a traditional squad may be more appropriate — and we'll tell you that.</p>
@@ -121,7 +121,7 @@ export default function AiPODS() {
       <section id="getting-started" data-section className="mb-16 aos pt-14 border-t border-gray-100">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">Getting started</span>
-          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight">The first step is a conversation, not a commitment.</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">The first step is a conversation, not a commitment.</h2>
         </div>
         <div className="text-gray-600 text-[15.5px] leading-relaxed mb-8 max-w-[640px] space-y-3.5">
           <p>We spend time with you to understand the delivery problem before recommending an AiPOD structure. If the model isn't the right fit for what you need, we'll say so — and suggest a better alternative.</p>

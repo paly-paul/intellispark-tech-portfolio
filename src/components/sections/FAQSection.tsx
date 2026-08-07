@@ -58,7 +58,7 @@ export default function FAQSection() {
       <div className="max-w-7xl mx-auto faq__inner">
         <div className="faq__left aos">
           <span className="faq__eyebrow">FAQ</span>
-          <h2 className="faq__title">Questions we hear most often.</h2>
+          <h2 className="faq__title font-bold font-900">Questions we hear most often.</h2>
           <p className="faq__sub">
             Honest answers to the things companies actually want to know before getting started.
           </p>

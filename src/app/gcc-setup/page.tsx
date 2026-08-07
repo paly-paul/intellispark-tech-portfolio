@@ -9,6 +9,7 @@ export default function GCCSetup() {
       eyebrow="Service · GCC Setup"
       icon={<Buildings weight="bold" size={16} />}
       h1="Build your Global Capability Centre — without the complexity."
+      h1ClassName="text-3xl md:text-[44px] font-900 leading-[1.1] mb-6 font-bold"
       intro="A GCC done right becomes a core part of how your company operates. We manage every detail of the build — entity, team, infrastructure and governance — so your leadership stays focused on the business."
       accent="#2D5BFF"
       badges={['Kochi, India', 'End-to-end setup']}

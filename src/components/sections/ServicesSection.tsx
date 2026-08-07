@@ -65,7 +65,7 @@ export default function ServicesSection() {
               <span className="h-0.5 w-5 rounded-full bg-blue" />
               What we do
             </div>
-            <h2 className="text-3xl font-700 leading-tight text-navy md:text-4xl">Everything you need to build in India.</h2>
+            <h2 className="text-3xl font-900 font-bold leading-tight text-navy md:text-4xl">Everything you need to build in India.</h2>
           </div>
           <p className="max-w-[420px] text-base leading-relaxed text-gray-600">
             From setting up your first offshore team to running a fully governed Global Capability Centre — we offer the right model for where you are today, with room to grow.

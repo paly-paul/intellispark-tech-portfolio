@@ -45,7 +45,7 @@ export default function Home() {
               GCC & Talent Solutions · Kochi, India
             </div>
 
-            <h1 className="hero__headline aos aos-delay-1">
+            <h1 className="hero__headline aos aos-delay-1 font-bold font-900">
               A thoughtful way
               <br />
               to build your team

@@ -9,6 +9,7 @@ export default function BotCopo() {
       eyebrow="Service · BOT / COPO"
       icon={<ArrowsClockwise weight="bold" size={16} />}
       h1="Start with us running everything. Take over when you're ready."
+      h1ClassName="text-3xl md:text-[44px] font-900 font-bold leading-[1.1] tracking-tight mb-6 font-bold"
       intro="The BOT model lets you build a world-class India team without making irreversible commitments on day one. We operate on your behalf during the build phase — you take control at a milestone that makes sense for your business."
       accent="#00B8A9"
       badges={['Kochi, India', 'Flexible ownership']}
@@ -28,7 +29,7 @@ export default function BotCopo() {
       <section id="the-model" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-teal uppercase tracking-wider">The model</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Build. Operate. Transfer — at a pace that suits you.</h2>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 font-bold">Build. Operate. Transfer — at a pace that suits you.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           BOT is a structured path to ownership, not a permanent outsourcing arrangement. We carry the operational weight while the team matures and integrates — then ownership transfers cleanly when you&apos;re ready to run it yourself.
@@ -37,21 +38,21 @@ export default function BotCopo() {
           <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-lg">
             <div className="text-lg font-900 text-teal flex-shrink-0 w-6">B</div>
             <div>
-              <h3 className="font-700 text-gray-900 mb-1">Build — Months 1–3</h3>
+              <h3 className="font-700 text-gray-900 mb-1 font-bold">Build — Months 1–3</h3>
               <p className="text-sm text-gray-600">We design the team structure, source talent to your specification, establish legal entity and infrastructure. You approve hires, we run the process.</p>
             </div>
           </div>
           <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-lg">
             <div className="text-lg font-900 text-teal flex-shrink-0 w-6">O</div>
             <div>
-              <h3 className="font-700 text-gray-900 mb-1">Operate — Months 3–18</h3>
+              <h3 className="font-700 text-gray-900 mb-1 font-bold">Operate — Months 3–18</h3>
               <p className="text-sm text-gray-600">We run HR, payroll, compliance and day-to-day operations. You direct the work. The team reports into your org chart, not ours. Full accountability on our side.</p>
             </div>
           </div>
           <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-lg">
             <div className="text-lg font-900 text-teal flex-shrink-0 w-6">T</div>
             <div>
-              <h3 className="font-700 text-gray-900 mb-1">Transfer — At a pre-agreed milestone</h3>
+              <h3 className="font-700 text-gray-900 mb-1 font-bold  ">Transfer — At a pre-agreed milestone</h3>
               <p className="text-sm text-gray-600">Ownership moves to you — entity, contracts, relationships, documentation. The handover is designed from day one, so there are no surprises at the transfer point.</p>
             </div>
           </div>
@@ -59,10 +60,10 @@ export default function BotCopo() {
       </section>
 
       {/* Section: COPO variant */}
-      <section id="copo-variant" data-section className="mb-16 aos">
+      <section id="copo-variant" data-section className="mb-10 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-teal uppercase tracking-wider">COPO variant</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Co-ownership for companies that want a long-term advisory partner.</h2>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 font-bold">Co-ownership for companies that want a long-term advisory partner.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           In the COPO model, Intellispark retains a minority stake through the operate phase. This aligns our incentives directly with your team&apos;s performance — not just the placement. It suits companies that want ongoing advisory involvement after transfer, rather than a clean exit.
@@ -82,10 +83,10 @@ export default function BotCopo() {
       </section>
 
       {/* Section: Who it's for */}
-      <section id="who-its-for" data-section className="mb-16 aos">
+      <section id="who-its-for" data-section className="mb-10 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-teal uppercase tracking-wider">Who it&apos;s for</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Right for companies that are serious, but cautious.</h2>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 font-bold">Right for companies that are serious, but cautious.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           BOT and COPO are not for everyone. They work best when you want the long-term upside of a GCC without taking on the full operational burden before you&apos;re confident the model works for your business.
@@ -102,7 +103,7 @@ export default function BotCopo() {
       <section id="transition" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-teal uppercase tracking-wider">Transition</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">The handover is designed in from day one — not figured out at the end.</h2>
+          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 font-bold">The handover is designed in from day one — not figured out at the end.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           Most BOT arrangements fail at the transfer point because it wasn&apos;t properly planned at the start. We document every process, contract and relationship in a way that makes transition clean — whether that&apos;s month 18 or month 36.

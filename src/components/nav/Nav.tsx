@@ -123,16 +123,10 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 h-[72px] z-[1000] transition-colors transition-shadow duration-250 ${
-          scrolled
-<<<<<<< HEAD
-            ? 'border-b border-gray-200 shadow-lg bg-white'
-            : 'border-b border-transparent bg-white'
-=======
-            ? 'border-b border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.05)] backdrop-blur-[14px]'
-            : 'border-b border-transparent backdrop-blur-[14px]'
->>>>>>> origin/main
-        }`}
+        className={`fixed top-0 left-0 right-0 h-[72px] z-[1000] transition-colors transition-shadow duration-250 ${scrolled
+          ? 'border-b border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.05)] backdrop-blur-[14px]'
+          : 'border-b border-transparent backdrop-blur-[14px]'
+          }`}
         style={{
           background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.92)',
         }}
@@ -181,12 +175,8 @@ export default function Nav() {
                       <Link
                         key={service.href}
                         href={service.href}
-<<<<<<< HEAD
-                        className="flex gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
-=======
                         role="menuitem"
                         className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
->>>>>>> origin/main
                       >
                         <div
                           className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
