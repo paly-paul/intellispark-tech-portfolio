@@ -27,7 +27,7 @@ export default function ServiceDelivery() {
       {/* Section: What you get */}
       <section id="what-you-get" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">What you get</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">What you get</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">A purpose-built operations centre. Under your command.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
@@ -41,8 +41,8 @@ export default function ServiceDelivery() {
             'Transparent headcount and cost tracking.',
             'Full flexibility to grow, adjust, or wind down.',
           ].map((item, idx) => (
-            <div key={idx} className="flex gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
-              <span className="text-blue-600 font-700 flex-shrink-0">✓</span>
+            <div key={idx} className="flex gap-3 p-3 bg-blue-pale rounded-lg border border-blue/20">
+              <span className="text-blue font-700 flex-shrink-0">✓</span>
               <span className="text-gray-900 text-sm">{item}</span>
             </div>
           ))}
@@ -52,7 +52,7 @@ export default function ServiceDelivery() {
       {/* Section: Functions we support */}
       <section id="functions" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">Functions we support</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Functions we support</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">SDCs work best for...</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
@@ -70,7 +70,7 @@ export default function ServiceDelivery() {
       {/* Section: Scaling */}
       <section id="scale" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">Scaling</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Scaling</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Grow from 10 to 200+ seats without the operational headache.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
@@ -95,26 +95,26 @@ export default function ServiceDelivery() {
       {/* Section: Governance */}
       <section id="governance" data-section className="mb-16 aos">
         <div className="mb-6">
-          <span className="text-sm font-600 text-blue-600 uppercase tracking-wider">Governance</span>
+          <span className="text-sm font-600 text-blue uppercase tracking-wider">Governance</span>
           <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">You stay in control. We handle the complexity.</h2>
         </div>
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <div className="bg-blue-pale border border-blue/20 rounded-xl p-6">
           <h3 className="font-700 text-gray-900 mb-4">Your SDC, your rules</h3>
           <ul className="space-y-2">
             <li className="flex gap-3">
-              <span className="text-blue-600 font-700 flex-shrink-0">→</span>
+              <span className="text-blue font-700 flex-shrink-0">→</span>
               <span className="text-gray-700 text-sm">You approve and manage the director/manager of the centre.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-700 flex-shrink-0">→</span>
+              <span className="text-blue font-700 flex-shrink-0">→</span>
               <span className="text-gray-700 text-sm">You set performance KPIs and quality standards.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-700 flex-shrink-0">→</span>
+              <span className="text-blue font-700 flex-shrink-0">→</span>
               <span className="text-gray-700 text-sm">Weekly or monthly reporting on headcount, costs, and metrics.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-blue-600 font-700 flex-shrink-0">→</span>
+              <span className="text-blue font-700 flex-shrink-0">→</span>
               <span className="text-gray-700 text-sm">We handle HR, compliance, and operations. You focus on strategy.</span>
             </li>
           </ul>
