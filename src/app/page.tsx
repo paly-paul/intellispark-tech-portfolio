@@ -38,6 +38,7 @@ export default function Home() {
                 <em className="text-teal not-italic">in India.</em>
               </h1>
 
+              {/* Title */}
               <p className="text-lg text-gray-600 max-w-md leading-relaxed aos aos-delay-2">
                 Whether you&apos;re exploring a GCC for the first time or scaling an existing India presence, we take the time to understand your goals — and help you get there without unnecessary risk or guesswork.
               </p>
