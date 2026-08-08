@@ -123,11 +123,10 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 h-[72px] z-[1000] transition-colors transition-shadow duration-250 ${
-          scrolled
-            ? 'border-b border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.05)] backdrop-blur-[14px]'
-            : 'border-b border-transparent backdrop-blur-[14px]'
-        }`}
+        className={`fixed top-0 left-0 right-0 h-[72px] z-[1000] transition-colors transition-shadow duration-250 ${scrolled
+          ? 'border-b border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.05)] backdrop-blur-[14px]'
+          : 'border-b border-transparent backdrop-blur-[14px]'
+          }`}
         style={{
           background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.92)',
         }}
@@ -165,7 +164,7 @@ export default function Nav() {
 
               {servicesOpen && (
                 <div
-                  className="absolute top-12 left-0 w-96 bg-white border border-gray-200 rounded-lg shadow-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2"
+                  className="absolute top-[52px] left-1/2 -translate-x-1/2 w-[600px] bg-white border border-gray-200 rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-x-8 gap-y-4 animate-in fade-in slide-in-from-top-2"
                   ref={servicesDropdownRef}
                   role="menu"
                   aria-labelledby="servicesBtn"
@@ -180,14 +179,14 @@ export default function Nav() {
                         className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
                       >
                         <div
-                          className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                           style={{ backgroundColor: service.bgColor, color: service.textColor }}
                         >
-                          <Icon weight="fill" size={18} />
+                          <Icon weight="fill" size={20} />
                         </div>
-                        <div className="text-left">
-                          <div className="text-sm font-600 text-gray-900 group-hover:text-blue">{service.title}</div>
-                          <div className="text-xs text-gray-600 line-clamp-2">{service.desc}</div>
+                        <div className="text-left flex-1">
+                          <div className="text-[14.5px] font-600 text-gray-900 group-hover:text-blue mb-1">{service.title}</div>
+                          <div className="text-[13px] text-gray-500 leading-snug">{service.desc}</div>
                         </div>
                       </Link>
                     )

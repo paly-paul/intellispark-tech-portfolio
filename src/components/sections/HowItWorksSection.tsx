@@ -69,7 +69,7 @@ export default function HowItWorksSection() {
         <div className="mb-16 grid items-end gap-8 md:grid-cols-2 aos">
           <div>
             <div className="hiw__eyebrow">How it works</div>
-            <h2 id="hiw-title" className="text-3xl font-700 leading-tight text-navy md:text-4xl">
+            <h2 id="hiw-title" className="text-3xl font-900 font-bold leading-tight text-navy md:text-4xl">
               From first conversation to a team that&apos;s yours.
             </h2>
           </div>

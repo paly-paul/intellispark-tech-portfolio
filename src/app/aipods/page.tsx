@@ -1,17 +1,25 @@
 'use client'
 
-import { Robot } from '@phosphor-icons/react'
+import {
+  Robot,
+  UserCircleGear,
+  Code,
+  TestTube,
+  MagnifyingGlassPlus,
+  CheckCircle
+} from '@phosphor-icons/react'
 import ConsolePage from '@/components/templates/ConsolePage'
 
 export default function AiPODS() {
   return (
     <ConsolePage
       eyebrow="Service · AiPODS"
-      icon={<Robot weight="bold" size={16} />}
-      h1="A delivery squad with AI tooling woven in — not tacked on."
-      intro="Small, focused teams combining domain expertise with integrated AI tooling to deliver more, faster. 3–6 person cross-functional squads built for your specific needs."
+      icon={<Robot weight="bold" size={24} />}
+      h1="Small squads. AI-enabled. Built to move fast."
+      h1ClassName="text-[clamp(26px,3.5vw,44px)] font-900 leading-[1.12] tracking-[-0.8px] mb-[18px] max-w-full"
+      intro="AiPODS are focused delivery teams — 3 to 6 people — with AI tooling integrated into every stage of the pipeline. Not bolted on. Designed in. They move faster, maintain higher quality, and take on work that traditional offshore teams can't handle."
       accent="#059669"
-      badges={['Kochi, India', 'AI-powered teams']}
+      badges={['Kochi, India', 'AI-integrated squads']}
       navSections={[
         { id: 'what-is-an-aipod', label: 'What is an AiPOD' },
         { id: 'how-they-work', label: 'How they work' },
@@ -21,101 +29,117 @@ export default function AiPODS() {
       related={[
         { label: 'Product Engineering', href: '/product-engineering' },
         { label: 'Staff Augmentation', href: '/staff-augmentation' },
-        { label: 'For Enterprise', href: '/for/enterprise' },
+        { label: 'For Startups', href: '/for/startups' },
       ]}
     >
       {/* Section: What is an AiPOD */}
       <section id="what-is-an-aipod" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">What is an AiPOD</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">A delivery squad with AI tooling woven in — not tacked on.</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">A delivery squad with AI tooling woven in — not tacked on.</h2>
         </div>
-        <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
-          An AiPOD is a cross-functional squad of 3–6 people, purpose-built around a specific delivery need. Every member works with AI tooling as a standard part of their workflow — not as an occasional assist. The result is a team that can do what would typically require twice the headcount.
-        </p>
-        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-          <p className="text-gray-900 font-600 mb-2">Not consultants. Not vendors. Your embedded team.</p>
-          <p className="text-gray-700 text-sm">
-            They work inside your systems, follow your processes, and own outcomes. AI tooling is integrated into their daily workflow — from design through deployment. This isn&apos;t about replacing people. It&apos;s about amplifying them.
-          </p>
+        <div className="text-gray-600 text-[15.5px] leading-relaxed mb-8 max-w-[640px]">
+          <p>An AiPOD is a cross-functional squad of 3–6 people, purpose-built around a specific delivery need. Every member works with AI tooling as a standard part of their workflow — not as an occasional assist. The result is a team that can do what would typically require twice the headcount.</p>
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-6">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-500 bg-gray-100 text-gray-800 border border-gray-200">
+            <UserCircleGear weight="bold" className="text-emerald-600 text-sm" /> Tech Lead
+          </span>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-500 bg-gray-100 text-gray-800 border border-gray-200">
+            <Code weight="bold" className="text-emerald-600 text-sm" /> 2–3 Engineers
+          </span>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-500 bg-gray-100 text-gray-800 border border-gray-200">
+            <TestTube weight="bold" className="text-emerald-600 text-sm" /> QA Engineer
+          </span>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-500 bg-gray-100 text-gray-800 border border-gray-200">
+            <MagnifyingGlassPlus weight="bold" className="text-emerald-600 text-sm" /> Domain Analyst
+          </span>
         </div>
       </section>
 
       {/* Section: How they work */}
-      <section id="how-they-work" data-section className="mb-16 aos">
+      <section id="how-they-work" data-section className="mb-16 aos pt-14 border-t border-gray-100">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">How they work</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">From briefing to delivery in XX weeks.</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">AI in every stage of delivery — not just in the IDE.</h2>
         </div>
-        <div className="space-y-4">
-          <div className="border-l-4 border-emerald-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Week 1: Understand your need</h3>
-            <p className="text-gray-600 text-sm">We get to know your domain, your constraints, and your tech stack. We propose the squad composition.</p>
-          </div>
-          <div className="border-l-4 border-emerald-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Week 2-3: Ramp and integration</h3>
-            <p className="text-gray-600 text-sm">Your AiPOD gets full access, learns your codebase, and integrates their tools into your systems. They&apos;re productive from day one.</p>
-          </div>
-          <div className="border-l-4 border-emerald-500 pl-6 py-3">
-            <h3 className="font-700 text-gray-900 mb-2">Week 4+: Delivery at scale</h3>
-            <p className="text-gray-600 text-sm">Your squad owns delivery. You see progress through your standard reporting — they&apos;re not separate from your team, they&apos;re an extension of it.</p>
-          </div>
+        <div className="text-gray-600 text-[15.5px] leading-relaxed mb-6 max-w-[640px]">
+          <p>AiPODS don't just use AI for code generation. The tooling spans requirement analysis, test generation, documentation, code review assistance and deployment validation. The squad is trained to use these tools as a workflow — not as shortcuts.</p>
         </div>
+
+        <ul className="flex flex-col gap-2.5 mt-6">
+          <li className="flex items-start gap-3 text-[15px] text-gray-700 leading-relaxed">
+            <CheckCircle weight="fill" className="text-emerald-600 text-[17px] flex-shrink-0 mt-[1px]" />
+            <span>Requirement analysis and breakdown — AI-assisted, human-validated</span>
+          </li>
+          <li className="flex items-start gap-3 text-[15px] text-gray-700 leading-relaxed">
+            <CheckCircle weight="fill" className="text-emerald-600 text-[17px] flex-shrink-0 mt-[1px]" />
+            <span>Code generation with mandatory human review gates</span>
+          </li>
+          <li className="flex items-start gap-3 text-[15px] text-gray-700 leading-relaxed">
+            <CheckCircle weight="fill" className="text-emerald-600 text-[17px] flex-shrink-0 mt-[1px]" />
+            <span>Automated test generation and coverage validation</span>
+          </li>
+          <li className="flex items-start gap-3 text-[15px] text-gray-700 leading-relaxed">
+            <CheckCircle weight="fill" className="text-emerald-600 text-[17px] flex-shrink-0 mt-[1px]" />
+            <span>Documentation kept current as part of the delivery cycle</span>
+          </li>
+        </ul>
       </section>
 
       {/* Section: Best-fit work */}
-      <section id="best-fit" data-section className="mb-16 aos">
+      <section id="best-fit" data-section className="mb-16 aos pt-14 border-t border-gray-100">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">Best-fit work</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">AiPODS excel at...</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">Not every problem needs an AiPOD. Here's where they excel.</h2>
         </div>
-        <div className="space-y-3">
+        <div className="text-gray-600 text-[15.5px] leading-relaxed mb-6 max-w-[640px]">
+          <p>AiPODS work best on clearly-scoped, iterative work where speed of delivery directly drives business value. If the work requires deep creative or strategic judgment at every step, a traditional squad may be more appropriate — and we'll tell you that.</p>
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-6">
           {[
-            'Feature development with clear acceptance criteria',
-            'Infrastructure and platform work — APIs, microservices, data pipelines',
-            'Testing, refactoring, and technical debt paydown',
-            'Documentation and knowledge transfer',
-            'Rapid prototyping and MVP delivery',
-            'Backend systems, data platforms, tooling',
-          ].map((item, idx) => (
-            <div key={idx} className="flex gap-3 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
-              <span className="text-emerald-700 font-700 flex-shrink-0">✓</span>
-              <span className="text-gray-900 text-sm">{item}</span>
-            </div>
+            'Feature development sprints',
+            'API integration work',
+            'Data pipeline builds',
+            'Content & document processing',
+            'QA automation',
+            'Rapid prototyping',
+            'Internal tooling',
+            'Backlog acceleration',
+            'Legacy migration support'
+          ].map((tag, idx) => (
+            <span key={idx} className="px-3.5 py-1.5 bg-gray-50 border border-gray-200 rounded-md text-[13px] font-500 text-gray-700">
+              {tag}
+            </span>
           ))}
         </div>
       </section>
 
       {/* Section: Getting started */}
-      <section id="getting-started" data-section className="mb-16 aos">
+      <section id="getting-started" data-section className="mb-16 aos pt-14 border-t border-gray-100">
         <div className="mb-6">
           <span className="text-sm font-600 text-emerald-600 uppercase tracking-wider">Getting started</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">How to bring in your first AiPOD.</h2>
+          <h2 className="text-[clamp(20px,2vw,27px)] font-800 text-navy mt-3 leading-snug tracking-tight font-bold">The first step is a conversation, not a commitment.</h2>
         </div>
-        <div className="space-y-4">
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Step 1: Define the need</h3>
-            <p className="text-sm text-gray-600">
-              You tell us what you want to build or fix. We discuss scope, timeline, and who should be on the squad. This takes one conversation.
-            </p>
+        <div className="text-gray-600 text-[15.5px] leading-relaxed mb-8 max-w-[640px] space-y-3.5">
+          <p>We spend time with you to understand the delivery problem before recommending an AiPOD structure. If the model isn't the right fit for what you need, we'll say so — and suggest a better alternative.</p>
+          <p>Most AiPOD squads can be up and running within 3–4 weeks of brief sign-off. The ramp-up is faster than a traditional hire cycle precisely because the tooling infrastructure is already in place.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7">
+          <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
+            <div className="text-3xl font-800 text-emerald-600 mb-1 tracking-tight">3–4w</div>
+            <div className="text-[12.5px] text-gray-500 leading-snug">Squad operational from brief sign-off</div>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Step 2: Squad assembly</h3>
-            <p className="text-sm text-gray-600">
-              We source and propose the right people for your domain and tech stack. You approve — or we find someone better.
-            </p>
+          <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
+            <div className="text-3xl font-800 text-emerald-600 mb-1 tracking-tight">3–6</div>
+            <div className="text-[12.5px] text-gray-500 leading-snug">Typical squad size</div>
           </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Step 3: Ramp and deliver</h3>
-            <p className="text-sm text-gray-600">
-              Your AiPOD integrates into your systems and starts delivery. You manage them as you would any internal team.
-            </p>
-          </div>
-          <div className="p-6 bg-white border border-gray-200 rounded-lg">
-            <h3 className="font-700 text-gray-900 mb-3">Step 4: Scale or wind down</h3>
-            <p className="text-sm text-gray-600">
-              After the engagement, you can keep them, extend them, hire them permanently, or wind down cleanly. It&apos;s your choice.
-            </p>
+          <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
+            <div className="text-3xl font-800 text-emerald-600 mb-1 tracking-tight">XX%</div>
+            <div className="text-[12.5px] text-gray-500 leading-snug">Throughput improvement vs traditional model</div>
           </div>
         </div>
       </section>

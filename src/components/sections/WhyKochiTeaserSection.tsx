@@ -61,7 +61,7 @@ export default function WhyKochiTeaserSection() {
               <span className="h-0.5 w-5 rounded-full bg-teal" />
               Why Kochi
             </div>
-            <h2 id="kochi-title" className="text-3xl font-700 leading-[1.15] text-white md:text-[clamp(30px,3.2vw,44px)]">
+            <h2 id="kochi-title" className="text-3xl font-900 font-bold leading-[1.15] text-white md:text-[clamp(30px,3.2vw,44px)]">
               India&apos;s most liveable<br />
               tech city is also its<br />
               <em className="not-italic bg-gradient-to-r from-teal to-blue-light bg-clip-text text-transparent">best-kept secret.</em>

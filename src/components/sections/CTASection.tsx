@@ -18,7 +18,7 @@ export default function CTASection() {
       <div className="cta-strip__inner">
         <div className="cta-strip__copy aos">
           <span className="cta-strip__eyebrow">Let&apos;s talk</span>
-          <h2 id="cta-title" className="cta-strip__title">
+          <h2 id="cta-title" className="cta-strip__title font-bold font-900">
             Thinking about building a team in India?<br />
             <em>Start with a conversation.</em>
           </h2>

@@ -9,6 +9,7 @@ export default function ProductEngineering() {
       eyebrow="Service · Product Engineering"
       icon={<Code weight="bold" size={16} />}
       h1="Custom software built for scale, by a team that stays."
+      h1ClassName="text-3xl md:text-[44px] font-900 leading-[1.1] mb-6 font-bold"
       intro="Dedicated squads who design, build and evolve software products as a fully embedded delivery partner — not a project vendor. You own the code, the IP and the roadmap."
       accent="#7C3AED"
       badges={['Kochi, India', 'Dedicated squads']}
@@ -27,7 +28,7 @@ export default function ProductEngineering() {
       {/* How we engage */}
       <section id="how-we-engage" data-section className="mb-16 aos">
         <span className="text-sm font-600 text-purple-600 uppercase tracking-wider">How we engage</span>
-        <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 mb-6">Long-term delivery partner. Not a build-and-exit vendor.</h2>
+        <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 mb-6 font-bold">Long-term delivery partner. Not a build-and-exit vendor.</h2>
         <p className="text-gray-600 leading-relaxed mb-6 max-w-2xl">
           We don&apos;t take on projects where we hand over a build and disappear. Product engineering works best when we understand your domain, your users and your constraints deeply — and that understanding takes time to build and should compound, not reset.
         </p>
@@ -49,7 +50,7 @@ export default function ProductEngineering() {
       {/* What we build */}
       <section id="what-we-build" data-section className="mb-16 aos">
         <span className="text-sm font-600 text-purple-600 uppercase tracking-wider">What we build</span>
-        <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 mb-6">Full-stack capability across modern product domains.</h2>
+        <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 mb-6 font-bold">Full-stack capability across modern product domains.</h2>
         <p className="text-gray-600 leading-relaxed mb-6 max-w-2xl">
           Our teams have delivered across a wide range of product types and technology stacks. If your stack isn&apos;t listed, ask — the chances are we&apos;ve worked with it.
         </p>
@@ -72,7 +73,7 @@ export default function ProductEngineering() {
       {/* Quality standards */}
       <section id="quality" data-section className="mb-16 aos">
         <span className="text-sm font-600 text-purple-600 uppercase tracking-wider">Quality standards</span>
-        <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 mb-6">Engineering quality is not optional. It&apos;s how we work.</h2>
+        <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 mb-6 font-bold">Engineering quality is not optional. It&apos;s how we work.</h2>
         <p className="text-gray-600 leading-relaxed mb-8 max-w-2xl">
           Our teams operate with explicit standards on code review, test coverage, documentation and deployment practices — and we&apos;re transparent about where we stand against those standards at all times. You&apos;ll never find out there&apos;s a problem in production before we do.
         </p>
@@ -88,7 +89,7 @@ export default function ProductEngineering() {
       {/* IP & handoff */}
       <section id="handoff" data-section className="mb-16 aos">
         <span className="text-sm font-600 text-purple-600 uppercase tracking-wider">IP & handoff</span>
-        <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3 mb-6">You own everything. Always.</h2>
+        <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 mb-6 font-bold">You own everything. Always.</h2>
         <p className="text-gray-600 leading-relaxed mb-6 max-w-2xl">
           IP ownership, codebase, documentation, credentials — all yours from day one. If you ever want to move the team in-house or switch to a different partner, we actively support that transition rather than making it difficult.
         </p>

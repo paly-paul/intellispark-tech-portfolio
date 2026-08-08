@@ -89,7 +89,7 @@ export default function AudienceSection() {
               <span className="h-0.5 w-5 rounded-full bg-teal" />
               Who we work with
             </div>
-            <h2 className="text-3xl font-700 leading-tight text-navy md:text-4xl">
+            <h2 className="text-3xl font-900 font-bold leading-tight text-navy md:text-4xl">
               Every company&apos;s<br />
               India journey looks different.
             </h2>

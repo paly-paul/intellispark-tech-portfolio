@@ -65,7 +65,7 @@ export default function CaseStudiesSection() {
         <div className="proof__header">
           <div>
             <span className="proof__eyebrow">Client stories</span>
-            <h2 id="proof-title" className="proof__title">
+            <h2 id="proof-title" className="proof__title font-bold font-900">
               Real teams.<br />Real outcomes.
             </h2>
           </div>

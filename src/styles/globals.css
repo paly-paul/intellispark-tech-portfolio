@@ -640,6 +640,19 @@
 .case-card--2::before { background: linear-gradient(90deg, var(--blue), #5B82FF); }
 .case-card--3::before { background: linear-gradient(90deg, #6366F1, #8B5CF6); }
 
+.case-card--1 .case-card__industry {
+  background-color: rgba(0, 191, 165, 0.1); /* var(--teal) / 10% */
+  color: var(--teal);
+}
+.case-card--2 .case-card__industry {
+  background-color: var(--blue);
+  color: white;
+}
+.case-card--3 .case-card__industry {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366F1;
+}
+
 .case-card__industry {
   display: inline-flex;
   align-items: center;

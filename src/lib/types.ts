@@ -14,6 +14,7 @@ export interface ConsolePageProps {
   eyebrow: string
   icon: ReactNode
   h1: string
+  h1ClassName?: string
   intro: string
   accent: string
   badges: string[]

@@ -3,12 +3,14 @@
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { MapPin } from '@phosphor-icons/react'
 import type { ConsolePageProps, NavSection } from '@/lib/types'
 
 export default function ConsolePage({
   eyebrow,
   icon,
   h1,
+  h1ClassName,
   intro,
   accent,
   badges,
@@ -17,6 +19,7 @@ export default function ConsolePage({
   children,
 }: ConsolePageProps) {
   const [activeSection, setActiveSection] = useState<string>(navSections[0]?.id || '')
+  const [hoveredTab, setHoveredTab] = useState<string | null>(null)
   const pathname = usePathname()
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -54,28 +57,28 @@ export default function ConsolePage({
         />
 
         <div className="max-w-[1200px] mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-end">
-            <div>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-8 items-start md:items-end justify-between">
+            <div className="flex-1 max-w-3xl">
               <div className="flex items-center gap-2 mb-4 text-xs font-700 text-white/60 uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accent }} />
                 {icon}
                 {eyebrow}
               </div>
-              <h1 className="text-3xl md:text-4xl font-800 leading-tight mb-4">{h1}</h1>
-              <p className="text-white/70 text-base md:text-lg max-w-md leading-relaxed">{intro}</p>
+              <h1 className={h1ClassName ?? 'text-3xl md:text-4xl font-800 leading-tight mb-4'}>{h1}</h1>
+              <p className="text-white/70 text-base md:text-lg max-w-xl leading-relaxed">{intro}</p>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-row md:flex-col flex-wrap gap-3 items-start md:items-end flex-shrink-0">
               {badges.map((badge, idx) => (
                 <div
                   key={idx}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-500 text-white w-fit"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-500 text-white w-fit bg-white/5"
                   style={{
                     borderColor: `${accent}40`,
                     color: accent,
                   }}
                 >
-                  <span>📍</span>
+                  <MapPin weight="fill" size={16} />
                   {badge}
                 </div>
               ))}
@@ -87,36 +90,45 @@ export default function ConsolePage({
       {/* Console Layout */}
       <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto md:px-12">
         {/* Sticky Left Rail */}
-        <aside className="w-full md:w-64 md:sticky md:top-[72px] md:h-[calc(100vh-72px)] px-6 md:px-0 md:pr-8 py-12 md:py-16 bg-white md:border-r border-gray-200 flex-shrink-0">
-          <div className="md:sticky md:top-24">
+        <aside className="w-full md:w-64 px-6 md:px-0 md:pr-8 py-12 md:py-16 bg-white md:border-r border-gray-200 flex-shrink-0 relative">
+          <div className="md:sticky md:top-[100px] md:max-h-[calc(100vh-120px)] overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
             {/* Sections */}
-            <div className="mb-8">
-              <h3 className="text-xs font-700 text-gray-600 uppercase tracking-wider mb-4">On this page</h3>
-              <nav className="space-y-1">
-                {navSections.map((section) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className={`block px-3 py-2 rounded-lg text-sm transition-all ${
-                      activeSection === section.id
-                        ? 'font-600 text-white'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                    style={{
-                      backgroundColor: activeSection === section.id ? accent : 'transparent',
-                    }}
-                  >
-                    {section.label}
-                  </a>
-                ))}
+            <div className="mb-7">
+              <h3 className="text-[10px] font-700 text-gray-400 uppercase tracking-wider mb-3 md:mb-4">On this page</h3>
+              <nav className="flex flex-row md:flex-col gap-2 md:gap-0.5 overflow-x-auto md:overflow-visible pb-1 md:pb-0 flex-nowrap" style={{ scrollbarWidth: 'none' }}>
+                {navSections.map((section) => {
+                  const isActive = activeSection === section.id;
+                  return (
+                    <a
+                      key={section.id}
+                      href={`#${section.id}`}
+                      onClick={() => setActiveSection(section.id)}
+                      onMouseEnter={() => setHoveredTab(section.id)}
+                      onMouseLeave={() => setHoveredTab(null)}
+                      className={`block px-3 py-2 rounded-[7px] text-[13.5px] transition-all whitespace-nowrap ${isActive
+                          ? 'font-700 bg-gray-100 md:bg-gray-100 md:border-l-2 shadow-sm md:shadow-none'
+                          : 'font-500 text-gray-500 hover:bg-gray-50 md:border-l-2 md:border-transparent'
+                        }`}
+                      style={
+                        isActive
+                          ? { color: accent, borderColor: accent }
+                          : hoveredTab === section.id
+                          ? { color: accent }
+                          : {}
+                      }
+                    >
+                      {section.label}
+                    </a>
+                  );
+                })}
               </nav>
             </div>
 
             {/* CTAs */}
-            <div className="space-y-2 mb-8 pb-8 border-b border-gray-200">
+            <div className="flex flex-col gap-2 mb-6 pb-6 border-b border-gray-200">
               <Link
                 href="/book-a-call"
-                className="block w-full px-4 py-2.5 text-white text-center text-sm font-600 rounded-lg transition-colors"
+                className="flex items-center justify-center gap-1.5 w-full px-4 py-2 text-white text-center text-[13.5px] font-600 rounded-[9px] transition-transform hover:-translate-y-[1px]"
                 style={{
                   backgroundColor: accent,
                   boxShadow: `0 2px 12px ${accent}44`,
@@ -126,7 +138,7 @@ export default function ConsolePage({
               </Link>
               <Link
                 href="/case-studies"
-                className="block w-full px-4 py-2.5 text-center text-sm font-600 rounded-lg border border-gray-200 text-gray-900 hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-center gap-1.5 w-full px-4 py-2 text-center text-[13.5px] font-600 rounded-[9px] bg-gray-100 text-gray-700 hover:bg-gray-200 transition-transform hover:-translate-y-[1px]"
               >
                 See our work
               </Link>
@@ -134,13 +146,13 @@ export default function ConsolePage({
 
             {/* Related Pages */}
             <div>
-              <h3 className="text-xs font-700 text-gray-600 uppercase tracking-wider mb-4">Related</h3>
-              <div className="space-y-2">
+              <h3 className="text-[10px] font-700 text-gray-400 uppercase tracking-wider mb-2.5">Related</h3>
+              <div className="flex flex-col gap-1">
                 {related.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    className="block text-[12.5px] py-1 text-gray-500 hover:text-blue-600 transition-colors"
                   >
                     {link.label}
                   </Link>

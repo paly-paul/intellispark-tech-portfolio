@@ -15,6 +15,7 @@ export default function StaffAugmentation() {
       eyebrow="Service · Staff Augmentation"
       icon={<UsersThree weight="bold" size={16} />}
       h1="The right people, in your team, fast."
+      h1ClassName="text-3xl md:text-[44px] font-900 leading-[1.1] mb-6 font-bold"
       intro="Vetted professionals who work as a genuine extension of your team — not contractors who disappear after a sprint. We handle sourcing and screening so you only see candidates worth your time."
       accent="#D97706"
       badges={['Kochi, India', '2–4 week placement']}
@@ -34,7 +35,7 @@ export default function StaffAugmentation() {
       <section id="the-difference" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">What&apos;s different</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Most augmentation fails for one of three reasons. We fix all three.</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">Most augmentation fails for one of three reasons. We fix all three.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           Wrong candidate fit. No cultural alignment. A vendor who disappears after placement. These are the three failure modes we&apos;ve seen repeat across the industry — and they&apos;re all avoidable with the right process.
@@ -58,7 +59,7 @@ export default function StaffAugmentation() {
       <section id="roles" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">Roles we place</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Across engineering, product, data and operations.</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">Across engineering, product, data and operations.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           Most placements happen within 2–4 weeks of brief sign-off. Senior and specialist roles take longer — we&apos;d rather find the right person than meet an arbitrary deadline.
@@ -76,7 +77,7 @@ export default function StaffAugmentation() {
       <section id="how-it-works" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">How it works</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">Simple process. No unnecessary steps.</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">Simple process. No unnecessary steps.</h2>
         </div>
         <div className="space-y-6">
           <div className="border-l-4 border-amber-600 pl-6 py-2">
@@ -104,7 +105,7 @@ export default function StaffAugmentation() {
       <section id="post-placement" data-section className="mb-16 aos">
         <div className="mb-6">
           <span className="text-sm font-600 text-amber-600 uppercase tracking-wider">Post-placement</span>
-          <h2 className="text-2xl md:text-3xl font-700 text-navy mt-3">We don&apos;t disappear after the contract is signed.</h2>
+          <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 font-bold">We don&apos;t disappear after the contract is signed.</h2>
         </div>
         <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-2xl">
           Our reputation depends on your team&apos;s performance — not the handshake. We stay involved at 30, 60 and 90 days post-placement, and are available whenever you need us. If something isn&apos;t working, we&apos;d rather fix it than lose you as a client.
