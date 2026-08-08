@@ -88,7 +88,7 @@ export default function ServiceDelivery() {
             <p className="text-xs md:text-sm text-gray-500 leading-snug">Maximum current capacity</p>
           </div>
           <div className="p-4 bg-gray-50 border border-gray-100 rounded-lg w-full md:w-[260px] flex-shrink-0">
-            <div className="text-2xl md:text-3xl font-900 font-bold text-[#2D5BFF] mb-1">XX wks</div>
+            <div className="text-2xl md:text-3xl font-900 font-bold text-[#2D5BFF] mb-1">8 wks</div>
             <p className="text-xs md:text-sm text-gray-500 leading-snug">Typical pilot-to-operational timeline</p>
           </div>
         </div>

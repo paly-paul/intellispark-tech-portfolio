@@ -138,7 +138,7 @@ export default function AiPODS() {
             <div className="text-[12.5px] text-gray-500 leading-snug">Typical squad size</div>
           </div>
           <div className="p-5 bg-gray-50 rounded-xl border border-gray-100">
-            <div className="text-3xl font-800 text-emerald-600 mb-1 tracking-tight">XX%</div>
+            <div className="text-3xl font-800 text-emerald-600 mb-1 tracking-tight">30%</div>
             <div className="text-[12.5px] text-gray-500 leading-snug">Throughput improvement vs traditional model</div>
           </div>
         </div>

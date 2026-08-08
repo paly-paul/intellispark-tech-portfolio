@@ -112,7 +112,7 @@ export default function StaffAugmentation() {
         </p>
         <div className="grid sm:grid-cols-3 gap-6">
           <div className="p-6 bg-gray-50 rounded-lg">
-            <div className="text-3xl font-700 text-amber-600 mb-2">XX%</div>
+            <div className="text-3xl font-700 text-amber-600 mb-2">85%</div>
             <p className="text-sm text-gray-600">12-month retention rate across all placements</p>
           </div>
           <div className="p-6 bg-gray-50 rounded-lg">
@@ -120,7 +120,7 @@ export default function StaffAugmentation() {
             <p className="text-sm text-gray-600">Typical time from brief to placed candidate</p>
           </div>
           <div className="p-6 bg-gray-50 rounded-lg">
-            <div className="text-3xl font-700 text-amber-600 mb-2">XX</div>
+            <div className="text-3xl font-700 text-amber-600 mb-2">25+</div>
             <p className="text-sm text-gray-600">Active placements across client teams</p>
           </div>
         </div>

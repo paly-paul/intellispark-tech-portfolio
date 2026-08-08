@@ -5,9 +5,9 @@ import { Users, ChartPolar, Timer, Bank, Cloud, Buildings } from '@phosphor-icon
 import ArrowRight from '@/components/icons/ArrowRight'
 
 const outcomes = [
-  { icon: Users, val: 'XX', unit: '+', label: 'Engineers placed in 18 months' },
-  { icon: ChartPolar, val: 'XX', unit: '%', label: 'Year-1 retention rate' },
-  { icon: Timer, val: 'XX', unit: 'wks', label: 'From brief to first hire' },
+  { icon: Users, val: '50', unit: '+', label: 'Engineers placed in 18 months' },
+  { icon: ChartPolar, val: '90', unit: '%', label: 'Year-1 retention rate' },
+  { icon: Timer, val: '3', unit: 'wks', label: 'From brief to first hire' },
 ]
 
 const cases = [
@@ -21,9 +21,9 @@ const cases = [
     title: 'Setting up a first GCC in under 90 days — without a dedicated India team.',
     desc: 'A growing Australian fintech needed to scale their engineering capacity quickly but had no experience operating in India. They came to us with a tight timeline and significant concerns about compliance and quality control.',
     metrics: [
-      { val: 'XX', label: 'Days to first hire' },
-      { val: 'XX', label: 'Engineers onboarded in 6 months' },
-      { val: 'XX%', label: 'Cost saving vs. onshore' },
+      { val: '14', label: 'Days to first hire' },
+      { val: '25+', label: 'Engineers onboarded in 6 months' },
+      { val: '30%', label: 'Cost saving vs. onshore' },
     ],
   },
   {
@@ -36,9 +36,9 @@ const cases = [
     title: 'Doubling engineering velocity without doubling the UK payroll.',
     desc: 'A London-based SaaS startup was burning through their Series A runway on expensive onshore hires. They needed senior engineers fast, with no tolerance for the ramp-up time typical of offshore arrangements.',
     metrics: [
-      { val: 'XX', label: 'Weeks to first deployment' },
-      { val: 'XX%', label: 'Reduction in cost per engineer' },
-      { val: 'XX', label: 'Features shipped in quarter 1' },
+      { val: '3', label: 'Weeks to first deployment' },
+      { val: '25%', label: 'Reduction in cost per engineer' },
+      { val: '12+', label: 'Features shipped in quarter 1' },
     ],
   },
   {
@@ -51,9 +51,9 @@ const cases = [
     title: 'Transitioning from a managed vendor to full GCC ownership — without disruption.',
     desc: 'A US enterprise had an underperforming offshore arrangement and wanted to take direct ownership of their India team. The challenge: transition cleanly without losing institutional knowledge or productivity.',
     metrics: [
-      { val: 'XX', label: 'Month BOT transition period' },
-      { val: 'XX%', label: 'Staff retained through transition' },
-      { val: 'XX%', label: 'Productivity improvement post-transfer' },
+      { val: '3', label: 'Month BOT transition period' },
+      { val: '90%', label: 'Staff retained through transition' },
+      { val: '20%', label: 'Productivity improvement post-transfer' },
     ],
   },
 ]
