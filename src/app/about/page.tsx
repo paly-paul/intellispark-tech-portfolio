@@ -41,7 +41,7 @@ const journey = [
   },
   {
     year: 'Today',
-    title: 'XX+ active engagements across US, UK and ANZ.',
+    title: '10+ active engagements across US, UK and ANZ.',
     desc: 'Growing team, same principles. Still based in Kochi. Still taking fewer engagements than we could.',
   },
 ]
@@ -92,7 +92,7 @@ export default function About() {
                 <p className="text-[13px] text-white/50 leading-relaxed max-w-[95%]">Target markets — time zones and working styles we know well</p>
               </div>
               <div className="pt-5 border-t border-white/10">
-                <div className="text-[24px] md:text-[26px] font-800 tracking-tight leading-none mb-1.5">XX<span className="text-teal">+</span></div>
+                <div className="text-[24px] md:text-[26px] font-800 tracking-tight leading-none mb-1.5">10<span className="text-teal">+</span></div>
                 <p className="text-[13px] text-white/50 leading-relaxed max-w-[95%]">Engagements delivered across GCC, augmentation and engineering</p>
               </div>
             </div>

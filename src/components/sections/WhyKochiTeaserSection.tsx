@@ -16,7 +16,7 @@ const pillars = [
     title: 'Real Cost Advantage',
     desc: 'Compared to Bangalore or Hyderabad, Kochi offers meaningfully lower salary bands, real estate costs and operational overhead — without compromising on talent quality.',
     points: [
-      'XX–XX% lower total employment cost vs. comparable Bangalore roles',
+      '20–30% lower total employment cost vs. comparable Bangalore roles',
       'Office space at a fraction of metro city rates',
       'Lower cost of living means your compensation goes further',
     ],
@@ -74,15 +74,15 @@ export default function WhyKochiTeaserSection() {
             </p>
             <div className="flex flex-wrap gap-8">
               <div>
-                <div className="text-2xl font-700 text-white">XX<span className="text-sm text-teal">%</span></div>
+                <div className="text-2xl font-700 text-white">30<span className="text-sm text-teal">%</span></div>
                 <p className="mt-1 text-xs text-white/50">Lower cost than Bangalore</p>
               </div>
               <div>
-                <div className="text-2xl font-700 text-white">XX<span className="text-sm text-teal">k+</span></div>
+                <div className="text-2xl font-700 text-white">25<span className="text-sm text-teal">k+</span></div>
                 <p className="mt-1 text-xs text-white/50">Tech graduates annually</p>
               </div>
               <div>
-                <div className="text-2xl font-700 text-white">XX<span className="text-sm text-teal">%</span></div>
+                <div className="text-2xl font-700 text-white">15<span className="text-sm text-teal">%</span></div>
                 <p className="mt-1 text-xs text-white/50">Lower attrition vs. metro avg.</p>
               </div>
             </div>

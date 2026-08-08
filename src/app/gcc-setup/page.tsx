@@ -154,15 +154,15 @@ export default function GCCSetup() {
         </p>
         <div className="grid md:grid-cols-2 gap-3 md:gap-4">
           <div className="p-4 bg-gray-50 border border-gray-100 rounded-lg">
-            <div className="text-2xl md:text-3xl font-700 text-[#2D5BFF] mb-1">XX%</div>
+            <div className="text-2xl md:text-3xl font-700 text-[#2D5BFF] mb-1">20%</div>
             <p className="text-xs md:text-sm text-gray-500">Lower cost vs comparable Bengaluru team</p>
           </div>
           <div className="p-4 bg-gray-50 border border-gray-100 rounded-lg">
-            <div className="text-2xl md:text-3xl font-700 text-[#2D5BFF] mb-1">XX%</div>
+            <div className="text-2xl md:text-3xl font-700 text-[#2D5BFF] mb-1">15%</div>
             <p className="text-xs md:text-sm text-gray-500">Lower attrition vs national benchmark</p>
           </div>
           <div className="p-4 bg-gray-50 border border-gray-100 rounded-lg">
-            <div className="text-2xl md:text-3xl font-700 text-[#2D5BFF] mb-1">XX wks</div>
+            <div className="text-2xl md:text-3xl font-700 text-[#2D5BFF] mb-1">2 wks</div>
             <p className="text-xs md:text-sm text-gray-500">Average time to first hire from brief</p>
           </div>
         </div>

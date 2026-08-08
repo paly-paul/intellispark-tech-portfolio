@@ -3,15 +3,15 @@
 import { MapPin } from '@phosphor-icons/react'
 
 const heroStats = [
-  { val: 'XX', suffix: '%', label: 'Lower cost vs comparable Bengaluru team' },
-  { val: 'XX', suffix: '%', label: 'Lower attrition than national GCC benchmark' },
-  { val: 'XX', suffix: 'K+', label: 'Tech graduates produced annually in Kerala' },
-  { val: 'XX', suffix: '+', label: 'Global companies already operating from Kochi' },
+  { val: '25', suffix: '%', label: 'Lower cost vs comparable Bengaluru team' },
+  { val: '18', suffix: '%', label: 'Lower attrition than national GCC benchmark' },
+  { val: '100', suffix: 'K+', label: 'Tech graduates produced annually in Kerala' },
+  { val: '50', suffix: '+', label: 'Global companies already operating from Kochi' },
 ]
 
 const compareRows = [
-  { label: 'Salary cost (relative)', kochi: 'Lower by XX%', bengaluru: 'Benchmark', hyderabad: '5–10% below Bengaluru' },
-  { label: 'Annual attrition rate', kochi: 'XX% (lower)', bengaluru: '25–35%', hyderabad: '20–28%' },
+  { label: 'Salary cost (relative)', kochi: 'Lower by 20%', bengaluru: 'Benchmark', hyderabad: '5–10% below Bengaluru' },
+  { label: 'Annual attrition rate', kochi: '18% (lower)', bengaluru: '25–35%', hyderabad: '20–28%' },
   { label: 'Office cost per seat', kochi: 'Significantly lower', bengaluru: 'High', hyderabad: 'Moderate' },
   { label: 'English proficiency', kochi: 'Very high', bengaluru: 'High', hyderabad: 'High' },
   { label: 'Talent pool depth', kochi: 'Strong (growing)', bengaluru: 'Very deep', hyderabad: 'Deep' },
@@ -73,13 +73,13 @@ export default function KochiAdvantage() {
             <div className="space-y-4">
               <div className="bg-white border border-gray-200 rounded-xl p-4 md:px-6 md:py-4 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                 <div className="text-3xl md:text-[36px] font-900 text-navy font-bold flex-shrink-0 tracking-tight">
-                  XX<span className="text-teal">%</span>
+                  70<span className="text-teal">%</span>
                 </div>
                 <p className="text-gray-600 text-base leading-relaxed">English proficiency rate among Kochi tech workforce</p>
               </div>
               <div className="bg-white border border-gray-200 rounded-xl p-4 md:px-6 md:py-4 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                 <div className="text-3xl md:text-[36px] font-900 text-navy font-bold flex-shrink-0 tracking-tight">
-                  XX<span className="text-teal">K</span>
+                  75<span className="text-teal">K</span>
                 </div>
                 <p className="text-gray-600 text-base leading-relaxed">Active tech professionals in Greater Kochi</p>
               </div>
@@ -116,13 +116,13 @@ export default function KochiAdvantage() {
             <div className="space-y-4">
               <div className="bg-white border border-gray-200 rounded-xl p-4 md:px-6 md:py-4 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                 <div className="text-3xl md:text-[36px] font-900 text-navy font-bold flex-shrink-0 tracking-tight">
-                  XX<span className="text-teal">%</span>
+                  20<span className="text-teal">%</span>
                 </div>
                 <p className="text-gray-600 text-base leading-relaxed">Average salary cost saving vs Bengaluru for equivalent roles</p>
               </div>
               <div className="bg-white border border-gray-200 rounded-xl p-4 md:px-6 md:py-4 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                 <div className="text-3xl md:text-[36px] font-900 text-navy font-bold flex-shrink-0 tracking-tight">
-                  XX<span className="text-teal">%</span>
+                  35<span className="text-teal">%</span>
                 </div>
                 <p className="text-gray-600 text-base leading-relaxed">Lower office cost per seat vs Bengaluru Grade A space</p>
               </div>

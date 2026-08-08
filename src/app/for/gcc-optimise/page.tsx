@@ -173,13 +173,13 @@ export default function GCCOptimise() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
           <div className="bg-gray-50 rounded-lg p-4">
-            <h3 className="text-2xl md:text-3xl font-900 font-bold text-[#00bfa5] mb-1">XX%</h3>
+            <h3 className="text-2xl md:text-3xl font-900 font-bold text-[#00bfa5] mb-1">18%</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Average attrition reduction at 12 months
             </p>
           </div>
           <div className="bg-gray-50 rounded-lg p-4">
-            <h3 className="text-2xl md:text-3xl font-900 font-bold text-[#00bfa5] mb-1">XX%</h3>
+            <h3 className="text-2xl md:text-3xl font-900 font-bold text-[#00bfa5] mb-1">30%</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Delivery throughput improvement post-process changes
             </p>

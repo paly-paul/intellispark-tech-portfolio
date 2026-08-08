@@ -75,10 +75,10 @@ export default function Home() {
               <p className="trust-label">Trusted by companies across the US, UK &amp; ANZ</p>
               <div className="trust-stats">
                 {[
-                  { val: 'XX', unit: 'days', label: 'Avg. GCC launch time' },
-                  { val: 'XX', unit: '+', label: 'Professionals placed' },
-                  { val: 'XX', unit: '%', label: 'Cost vs. onshore teams' },
-                  { val: 'XX', unit: '+', label: 'Global clients' },
+                  { val: '14', unit: 'days', label: 'Avg. GCC launch time' },
+                  { val: '50', unit: '+', label: 'Professionals placed' },
+                  { val: '40', unit: '%', label: 'Cost vs. onshore teams' },
+                  { val: '15', unit: '+', label: 'Global clients' },
                 ].map((stat, idx) => (
                   <div key={idx} className="trust-stat">
                     <div className="trust-stat__number">
