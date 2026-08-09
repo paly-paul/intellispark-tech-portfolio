@@ -134,10 +134,7 @@ export default function Nav() {
         <div className="h-full flex items-center justify-between px-6 md:px-8 max-w-7xl mx-auto">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0" aria-label="Intellispark home">
-            <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-teal to-blue rounded">
-              <Lightning weight="bold" size={18} className="text-white" />
-            </div>
-            <span className="text-lg font-bold text-gray-900">Intellispark</span>
+            <img src="/logo-white.png" alt="Intellispark Logo" className="h-16 w-auto object-contain mix-blend-multiply" />
           </Link>
 
           {/* Desktop Links */}
