@@ -12,7 +12,7 @@ const outcomes = [
 
 const cases = [
   {
-    href: '/case-studies/mid-market-fintech-gcc',
+    href: '/case-studies',
     img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
     imgAlt: 'Fintech office',
     icon: Bank,
@@ -27,7 +27,7 @@ const cases = [
     ],
   },
   {
-    href: '/case-studies/saas-startup-staff-aug',
+    href: '/case-studies',
     img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80',
     imgAlt: 'Engineering team collaborating',
     icon: Cloud,
@@ -42,7 +42,7 @@ const cases = [
     ],
   },
   {
-    href: '/case-studies/enterprise-bot-transition',
+    href: '/case-studies',
     img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
     imgAlt: 'Enterprise office',
     icon: Buildings,
@@ -125,7 +125,7 @@ export default function CaseStudiesSection() {
             const Icon = c.icon
             return (
               <Link
-                key={c.href}
+                key={idx}
                 href={c.href}
                 className={`aos case-card case-card--${idx + 1} group`}
                 aria-label={`Case study: ${c.title}`}

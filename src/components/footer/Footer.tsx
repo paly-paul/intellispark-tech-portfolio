@@ -18,26 +18,10 @@ export default function Footer() {
     }
   }
 
-  const socialLinks = [
-    {
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/company/intellispark',
-      path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
-    },
-    {
-      name: 'Twitter / X',
-      url: 'https://twitter.com/intellispark',
-      path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z',
-    },
-    {
-      name: 'YouTube',
-      url: 'https://youtube.com/@intellispark',
-      path: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
-    },
-  ]
+
 
   return (
-    <footer className="bg-navy text-white" role="contentinfo">
+    <footer className="bg-[#0A0B0A] text-white" role="contentinfo">
       {/* Newsletter Section */}
       <div className="border-b border-white/15 py-16 px-6 md:px-8">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
@@ -70,31 +54,13 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4" aria-label="Intellispark home">
-              <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-teal to-blue rounded">
-                <Lightning weight="bold" size={18} className="text-white" />
-              </div>
-              <span className="text-lg font-700 text-white">Intellispark</span>
+            <Link href="/" className="flex items-center gap-2 flex-shrink-0 mb-4" aria-label="Intellispark home">
+              <img src="/logo-black.png" alt="Intellispark Logo" className="h-20 w-auto object-contain" />
             </Link>
             <p className="text-white/70 text-sm mb-6">
               Helping global companies build thoughtful, high-performing teams in Kochi, India.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center hover:bg-blue transition-colors"
-                  aria-label={link.name}
-                >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="text-white">
-                    <path d={link.path} />
-                  </svg>
-                </a>
-              ))}
-            </div>
+
           </div>
 
           {/* Services Column */}
@@ -134,7 +100,8 @@ export default function Footer() {
                 <div className="pt-0.5">
                   <div className="text-[11px] text-white/50 uppercase tracking-wider font-600 mb-0.5">Email</div>
                   <a href="mailto:hello@intellispark.tech" className="text-white/80 hover:text-white transition-colors text-sm">
-                    hello@intellispark.tech
+                    talkto@intellispark.tech
+
                   </a>
                 </div>
               </div>
@@ -144,8 +111,8 @@ export default function Footer() {
                 </div>
                 <div className="pt-0.5">
                   <div className="text-[11px] text-white/50 uppercase tracking-wider font-600 mb-0.5">Phone</div>
-                  <a href="tel:+91XXXXXXXXXX" className="text-white/80 hover:text-white transition-colors text-sm">
-                    +91 XX XXXX XXXX
+                  <a href="tel:+919846517517" className="text-white/80 hover:text-white transition-colors text-sm">
+                    +91-9846-517-517
                   </a>
                 </div>
               </div>

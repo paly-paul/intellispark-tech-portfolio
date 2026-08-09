@@ -1,27 +1,6 @@
 'use client'
 
-const values = [
-  {
-    num: '01',
-    title: 'Honesty before helpfulness.',
-    body: "If we don't think we can deliver what you need, we'll tell you — before you've committed anything. This costs us revenue in the short term. It's also the reason clients come back.",
-  },
-  {
-    num: '02',
-    title: 'We stay after the handshake.',
-    body: 'Most of the problems in the offshore industry happen post-placement. Our support doesn&apos;t end when the contract is signed — it continues through the 30, 60 and 90-day marks, and beyond.',
-  },
-  {
-    num: '03',
-    title: 'Smaller means better.',
-    body: "We're deliberately small. We take on fewer clients than we could, because quality of work matters more to us than scale of revenue. Every client gets senior attention — not account management.",
-  },
-  {
-    num: '04',
-    title: 'Local knowledge is not transferable.',
-    body: "We're based in Kochi. We know the talent market, the regulatory environment, and the cultural nuances from the inside. That's not a claim a remote advisory firm can make.",
-  },
-]
+import { Buildings, Code, Sun, Link, ArrowUpRight } from '@phosphor-icons/react'
 
 const journey = [
   {
@@ -43,24 +22,6 @@ const journey = [
     year: 'Today',
     title: '10+ active engagements across US, UK and ANZ.',
     desc: 'Growing team, same principles. Still based in Kochi. Still taking fewer engagements than we could.',
-  },
-]
-
-const team = [
-  {
-    name: 'Founder · CEO',
-    role: 'LEADERSHIP',
-    bio: 'Background and bio to be added. Leads client relationships and strategic direction.',
-  },
-  {
-    name: 'Co-founder · Head of Talent',
-    role: 'TALENT & PLACEMENT',
-    bio: 'Leads all sourcing, screening and post-placement support. Deep network across Kochi tech community.',
-  },
-  {
-    name: 'Head of Operations',
-    role: 'GCC & DELIVERY',
-    bio: 'Owns the operational delivery of GCC builds — entity, infrastructure, compliance and governance.',
   },
 ]
 
@@ -124,31 +85,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-24 md:py-32 px-6 md:px-8 bg-navy" id="values">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16 md:mb-20 aos text-center">
-            <span className="text-[13px] font-700 text-teal uppercase tracking-widest">How we work</span>
-            <h2 className="text-3xl md:text-[44px] font-800 text-white mt-4 tracking-tight">Four principles that guide every engagement.</h2>
-          </div>
 
-          <div className="grid md:grid-cols-2 rounded-[24px] border border-white/10 overflow-hidden bg-white/[0.02]">
-            {values.map((v, idx) => (
-              <div
-                key={v.num}
-                className={`aos p-8 md:p-12 hover:bg-white/[0.02] transition-colors ${idx === 0 ? 'border-b border-white/10 md:border-r' :
-                  idx === 1 ? 'border-b border-white/10' :
-                    idx === 2 ? 'border-b md:border-b-0 border-white/10 md:border-r' : ''
-                  }`}
-              >
-                <div className="text-[13px] font-700 text-white/30 mb-5">{v.num}</div>
-                <h3 className="text-xl md:text-[22px] font-800 text-white mb-4 tracking-tight">{v.title}</h3>
-                <p className="text-[15px] text-white/50 leading-relaxed max-w-[95%]">{v.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Journey / Timeline Section */}
       <section className="py-20 md:py-32 px-6 md:px-8 bg-gray-50" id="journey">
@@ -183,29 +120,220 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 md:py-32 px-6 md:px-8 bg-gray-50" id="team">
+      {/* We Are Section */}
+      <section className="bg-white" id="we-are">
+        <div className="max-w-7xl mx-auto px-12 md:px-14 pt-24 pb-14 border-b border-gray-100">
+          <div className="flex items-center gap-2 text-[11px] font-700 uppercase tracking-[1px] text-blue mb-3.5 before:block before:w-5 before:h-[2px] before:bg-blue before:rounded-full">
+            How we operate
+          </div>
+          <h2 className="text-[32px] md:text-[52px] font-800 text-navy tracking-tight">We are&hellip;</h2>
+        </div>
+
+        {/* Value 1: Honest */}
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] border-b border-gray-100 aos">
+          <div className="relative overflow-hidden bg-[#0D1428]">
+            <div className="absolute inset-0">
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&auto=format&fit=crop"
+                alt="Two professionals in a direct conversation"
+                loading="lazy"
+                className="w-full h-full object-cover mix-blend-luminosity opacity-[0.55]"
+              />
+              <div className="absolute bottom-7 left-8 text-[11px] font-800 tracking-[2px] text-white/25 uppercase">01</div>
+            </div>
+          </div>
+          <div className="p-16 flex flex-col justify-center bg-white">
+            <h3 className="text-[36px] md:text-[60px] font-800 text-navy tracking-tight leading-none mb-6">
+              Honest<span className="text-blue">.</span>
+            </h3>
+            <p className="text-[16px] text-gray-600 leading-relaxed max-w-[480px]">
+              We lead with honesty — even when it costs us the engagement. If we don't think we're the right fit for what you need, we'll say so before you've committed anything. We'd rather lose a deal than let a client go into the wrong arrangement with their eyes closed. In an industry that runs on pitch decks, we think honesty is a genuine differentiator — and a moral requirement.
+            </p>
+          </div>
+        </div>
+
+        {/* Value 2: Accountable */}
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] border-b border-gray-100 aos">
+          <div className="p-16 flex flex-col justify-center bg-gray-50 order-2 md:order-1">
+            <h3 className="text-[36px] md:text-[60px] font-800 text-navy tracking-tight leading-none mb-6">
+              Accountable<span className="text-teal">.</span>
+            </h3>
+            <p className="text-[16px] text-gray-600 leading-relaxed max-w-[480px]">
+              Every engagement has a named person from our founding team who owns the outcome personally. Not an account manager who relays your concerns. Not a delivery layer who wasn't in the room when the brief was agreed. The person you speak to at the start is the person responsible at the end. This is the only model that makes accountability real.
+            </p>
+          </div>
+          <div className="relative overflow-hidden bg-[#0D1428] order-1 md:order-2">
+            <div className="absolute inset-0">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format&fit=crop"
+                alt="Team working together in an open office"
+                loading="lazy"
+                className="w-full h-full object-cover mix-blend-luminosity opacity-[0.55]"
+              />
+              <div className="absolute bottom-7 left-8 text-[11px] font-800 tracking-[2px] text-white/25 uppercase">02</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Value 3: Local */}
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] border-b border-gray-100 aos">
+          <div className="relative overflow-hidden bg-[#0D1428]">
+            <div className="absolute inset-0">
+              <img
+                src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80&auto=format&fit=crop"
+                alt="Kochi waterfront at dusk"
+                loading="lazy"
+                className="w-full h-full object-cover mix-blend-luminosity opacity-[0.55]"
+              />
+              <div className="absolute bottom-7 left-8 text-[11px] font-800 tracking-[2px] text-white/25 uppercase">03</div>
+            </div>
+          </div>
+          <div className="p-16 flex flex-col justify-center bg-white">
+            <h3 className="text-[36px] md:text-[60px] font-800 text-navy tracking-tight leading-none mb-6">
+              Local<span className="text-[#D97706]">.</span>
+            </h3>
+            <p className="text-[16px] text-gray-600 leading-relaxed max-w-[480px]">
+              We are based in Kochi. Not remotely advising on Kochi from a city somewhere else — physically present, with relationships in the market, first-hand knowledge of how the talent landscape has shifted over the past decade, and a network built from years of being here. Local knowledge in this business is not something you can replicate from a distance, and we don't pretend otherwise.
+            </p>
+          </div>
+        </div>
+
+        {/* Value 4: Deliberate */}
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] border-b border-gray-100 aos">
+          <div className="p-16 flex flex-col justify-center bg-gray-50 order-2 md:order-1">
+            <h3 className="text-[36px] md:text-[60px] font-800 text-navy tracking-tight leading-none mb-6">
+              Deliberate<span className="text-[#7C3AED]">.</span>
+            </h3>
+            <p className="text-[16px] text-gray-600 leading-relaxed max-w-[480px]">
+              We take on fewer engagements than we could. This is a choice. Quality of work matters more to us than scale of revenue, and the two are in tension at a certain size. We don't spread ourselves across 40 clients and hope the model holds. Every client gets the attention their decision deserves — because choosing an India partner is a significant, long-term commitment, and we treat it that way.
+            </p>
+          </div>
+          <div className="relative overflow-hidden bg-[#0D1428] order-1 md:order-2">
+            <div className="absolute inset-0">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format&fit=crop"
+                alt="Professional reviewing documents carefully"
+                loading="lazy"
+                className="w-full h-full object-cover mix-blend-luminosity opacity-[0.55]"
+              />
+              <div className="absolute bottom-7 left-8 text-[11px] font-800 tracking-[2px] text-white/25 uppercase">04</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Value 5: Invested */}
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] aos">
+          <div className="relative overflow-hidden bg-[#0D1428]">
+            <div className="absolute inset-0">
+              <img
+                src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&q=80&auto=format&fit=crop"
+                alt="Long-term partnership meeting"
+                loading="lazy"
+                className="w-full h-full object-cover mix-blend-luminosity opacity-[0.55]"
+              />
+              <div className="absolute bottom-7 left-8 text-[11px] font-800 tracking-[2px] text-white/25 uppercase">05</div>
+            </div>
+          </div>
+          <div className="p-16 flex flex-col justify-center bg-white">
+            <h3 className="text-[36px] md:text-[60px] font-800 text-navy tracking-tight leading-none mb-6">
+              Invested<span className="text-[#059669]">.</span>
+            </h3>
+            <p className="text-[16px] text-gray-600 leading-relaxed max-w-[480px]">
+              Our measure of success is your team's performance at 12 months — not the contract signature. Most of the problems in offshore engagements happen post-placement, when the vendor has already moved on to the next deal. We stay involved: check-ins at 30, 60 and 90 days, and available whenever you need us. Our reputation depends on your outcome, and we operate accordingly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* The Group Section */}
+      <section className="py-24 md:py-32 px-6 md:px-8 bg-navy text-white" id="group">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 aos">
-            <span className="text-sm font-600 text-teal uppercase tracking-wider">The team</span>
-            <h2 className="text-2xl md:text-3xl font-900 text-navy mt-3 mb-3 font-bold">  The people behind the work.</h2>
-            <p className="text-gray-600 max-w-2xl">
-              Team bios are being finalised and will be published here shortly. In the meantime, the best way to meet us is a conversation.
+          <div className="text-center mb-16 md:mb-20 aos">
+            <span className="text-[11px] font-700 text-teal uppercase tracking-widest">The Group</span>
+            <h2 className="text-[28px] md:text-[36px] font-900 text-white mt-4 tracking-tight font-bold">Part of a broader ecosystem — built in Kochi.</h2>
+            <p className="text-[16px] text-white/70 leading-relaxed max-w-3xl mx-auto mt-6">
+              Intellispark operates alongside three sister organisations whose work directly strengthens what we offer our clients. Together, we bring capabilities that no standalone GCC advisory firm can match.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, idx) => (
-              <div key={idx} className="aos bg-white rounded-xl p-8 text-center border border-gray-200">
-                <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-3 flex items-center justify-center text-gray-300 text-3xl">
-                  👤
-                </div>
-                <p className="text-xs text-gray-400 mb-4">Photo coming soon</p>
-                <h3 className="text-lg font-700 text-navy">{member.name}</h3>
-                <p className="text-sm text-blue font-600 mb-3">{member.role}</p>
-                <p className="text-sm text-gray-600">{member.bio}</p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {/* Hyarch Projects */}
+            <div className="flex flex-col bg-[#1A1F2D] rounded-xl p-6 border border-white/5 relative overflow-hidden group hover:border-white/10 transition-colors aos">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[#D97706]"></div>
+              <div className="w-12 h-12 rounded-lg bg-[#FEF3C7] text-[#D97706] flex items-center justify-center text-2xl mb-6">
+                <Buildings weight="bold" />
               </div>
-            ))}
+              <h3 className="text-[20px] font-800 text-white mb-1">Hyarch Projects LLP</h3>
+              <div className="text-[11px] font-700 uppercase tracking-wider text-[#D97706] mb-4">Construction &amp; Architecture</div>
+              <p className="text-[14px] text-white/70 leading-relaxed mb-6">
+                Established since the 1970s, Hyarch is a full-service construction and architecture firm with a track record spanning commercial offices, institutional buildings and interior fitouts across Kerala. Their expertise covers design, civil and structural engineering, MEP systems, and interior delivery.
+              </p>
+              <p className="text-[13px] text-white/40 leading-relaxed mb-8">
+                <strong className="text-white/55 font-600">GCC alignment:</strong> When a client needs to establish physical office infrastructure in Kochi — fit-out, new build, or space planning — Hyarch brings decades of local execution capability. No third-party contractor dependency for our clients&apos; physical setup.
+              </p>
+
+              <div className="flex items-center justify-between border-t border-white/5 pt-6 mt-auto">
+                <div className="flex items-center gap-2 text-[12px] text-white/50">
+                  <Link weight="bold" />
+                  <span>GCC office infrastructure</span>
+                </div>
+                <a href="https://www.hyarchprojects.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[13px] font-600 text-[#D97706] hover:opacity-80 transition-opacity">
+                  Visit site <ArrowUpRight weight="bold" />
+                </a>
+              </div>
+            </div>
+
+            {/* Mecnize */}
+            <div className="flex flex-col bg-[#1A1F2D] rounded-xl p-6 border border-white/5 relative overflow-hidden group hover:border-white/10 transition-colors aos aos-delay-1">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-blue"></div>
+              <div className="w-12 h-12 rounded-lg bg-[#EFF6FF] text-blue flex items-center justify-center text-2xl mb-6">
+                <Code weight="bold" />
+              </div>
+              <h3 className="text-[20px] font-800 text-white mb-1">Mecnize Software Solutions</h3>
+              <div className="text-[11px] font-700 uppercase tracking-wider text-blue mb-4">Software Development &amp; HR Tech</div>
+              <p className="text-[14px] text-white/70 leading-relaxed mb-6">
+                Based in Kochi, Mecnize is a software development firm specialising in web applications, e-commerce, custom enterprise software, and — critically for Intellispark clients — HR office automation and payroll systems built specifically for recruitment and staffing operations.
+              </p>
+              <p className="text-[13px] text-white/40 leading-relaxed mb-8">
+                <strong className="text-white/55 font-600">GCC alignment:</strong> Mecnize&apos;s HR automation products directly support the back-office processes of GCCs we build — candidate management, payroll, document workflows. They also extend our tech talent sourcing pipeline for engineering placements.
+              </p>
+
+              <div className="flex items-center justify-between border-t border-white/5 pt-6 mt-auto">
+                <div className="flex items-center gap-2 text-[12px] text-white/50">
+                  <Link weight="bold" />
+                  <span>HR automation &amp; tech talent</span>
+                </div>
+                <a href="https://mecnize.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[13px] font-600 text-blue hover:opacity-80 transition-opacity">
+                  Visit site <ArrowUpRight weight="bold" />
+                </a>
+              </div>
+            </div>
+
+            {/* Crore Concepts */}
+            <div className="flex flex-col bg-[#1A1F2D] rounded-xl p-6 border border-white/5 relative overflow-hidden group hover:border-white/10 transition-colors aos aos-delay-2">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[#059669]"></div>
+              <div className="w-12 h-12 rounded-lg bg-[#ECFDF5] text-[#059669] flex items-center justify-center text-2xl mb-6">
+                <Sun weight="bold" />
+              </div>
+              <h3 className="text-[20px] font-800 text-white mb-1">Crore Concepts</h3>
+              <div className="text-[11px] font-700 uppercase tracking-wider text-[#059669] mb-4">Solar Engineering &amp; Clean Energy</div>
+              <p className="text-[14px] text-white/70 leading-relaxed mb-6">
+                Based in Kochi, Crore Concepts designs and manufactures solar module mounting structures for residential, commercial and utility-scale applications. Their work spans rooftop installations to large-scale solar farms, with a focus on engineering precision and sustainable design.
+              </p>
+              <p className="text-[13px] text-white/40 leading-relaxed mb-8">
+                <strong className="text-white/55 font-600">GCC alignment:</strong> Increasingly, global companies evaluate India operations through an ESG lens. Crore Concepts enables Intellispark clients to build GCCs with solar-powered or sustainability-credentialed facilities — a differentiator that matters to boards and sustainability teams.
+              </p>
+
+              <div className="flex items-center justify-between border-t border-white/5 pt-6 mt-auto">
+                <div className="flex items-center gap-2 text-[12px] text-white/50">
+                  <Link weight="bold" />
+                  <span>Sustainable GCC facilities</span>
+                </div>
+                <a href="https://croreconcepts.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[13px] font-600 text-[#059669] hover:opacity-80 transition-opacity">
+                  Visit site <ArrowUpRight weight="bold" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
