@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Star, ArrowsClockwise, UsersThree, CodeBlock, Robot, Sparkle, Check } from '@phosphor-icons/react'
 import ArrowRight from '@/components/icons/ArrowRight'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const regularServices = [
   {
@@ -182,9 +183,9 @@ export default function ServicesSection() {
             <h3 className="mb-1 text-lg font-700 text-navy">Not sure which model fits your situation?</h3>
             <p className="text-sm text-gray-600">We&apos;ll ask a few questions and help you figure out the right approach — no pressure, no pitch.</p>
           </div>
-          <Link href="/book-a-call" className="inline-flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue px-6 py-3 font-600 text-white transition-colors hover:bg-blue-light">
+          <BookACallLink location="services_section" className="inline-flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue px-6 py-3 font-600 text-white transition-colors hover:bg-blue-light">
             Book a Call <ArrowRight size={14} />
-          </Link>
+          </BookACallLink>
         </div>
       </div>
     </section>

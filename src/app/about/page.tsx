@@ -1,6 +1,7 @@
 'use client'
 
 import { Buildings, Code, Sun, Link, ArrowUpRight } from '@phosphor-icons/react'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const journey = [
   {
@@ -345,12 +346,12 @@ export default function About() {
           <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8 font-size: 16px;">
             Thirty minutes. No pitch deck. We&apos;ll tell you honestly whether we&apos;re the right fit for what you need.
           </p>
-          <a
-            href="/book-a-call"
+          <BookACallLink
+            location="about_cta"
             className="inline-flex items-center gap-2 px-8 py-3 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors"
           >
             Book a Call →
-          </a>
+          </BookACallLink>
         </div>
       </section>
     </div>

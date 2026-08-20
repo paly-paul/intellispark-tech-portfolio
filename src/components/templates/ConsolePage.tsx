@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { MapPin } from '@phosphor-icons/react'
 import type { ConsolePageProps, NavSection } from '@/lib/types'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 export default function ConsolePage({
   eyebrow,
@@ -126,8 +127,8 @@ export default function ConsolePage({
 
             {/* CTAs */}
             <div className="flex flex-col gap-2 mb-6 pb-6 border-b border-gray-200">
-              <Link
-                href="/book-a-call"
+              <BookACallLink
+                location="console_sidebar"
                 className="flex items-center justify-center gap-1.5 w-full px-4 py-2 text-white text-center text-[13.5px] font-600 rounded-[9px] transition-transform hover:-translate-y-[1px]"
                 style={{
                   backgroundColor: accent,
@@ -135,7 +136,7 @@ export default function ConsolePage({
                 }}
               >
                 Book a Call →
-              </Link>
+              </BookACallLink>
               <Link
                 href="/case-studies"
                 className="flex items-center justify-center gap-1.5 w-full px-4 py-2 text-center text-[13.5px] font-600 rounded-[9px] bg-gray-100 text-gray-700 hover:bg-gray-200 transition-transform hover:-translate-y-[1px]"

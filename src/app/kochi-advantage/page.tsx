@@ -1,6 +1,7 @@
 'use client'
 
 import { MapPin } from '@phosphor-icons/react'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const heroStats = [
   { val: '25', suffix: '%', label: 'Lower cost vs comparable Bengaluru team' },
@@ -196,12 +197,12 @@ export default function KochiAdvantage() {
           <p className="text-gray-500 text-lg max-w-2xl mx-auto mb-8 font-500">
             We model the cost comparison and talent landscape for your specific function and seniority profile — using real market data, not estimates. No commitment required.
           </p>
-          <a
-            href="/book-a-call"
+          <BookACallLink
+            location="kochi_advantage_cta"
             className="inline-flex items-center gap-2 px-8 py-3 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors"
           >
             Book a discovery call →
-          </a>
+          </BookACallLink>
         </div>
       </section>
     </div>

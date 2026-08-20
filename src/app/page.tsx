@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ArrowRight from '@/components/icons/ArrowRight'
+import BookACallLink from '@/components/analytics/BookACallLink'
 import ServicesSection from '@/components/sections/ServicesSection'
 import AudienceSection from '@/components/sections/AudienceSection'
 import WhyKochiTeaserSection from '@/components/sections/WhyKochiTeaserSection'
@@ -58,13 +59,13 @@ export default function Home() {
             </p>
 
             <div className="hero__ctas aos aos-delay-3">
-              <a
-                href="/book-a-call"
+              <BookACallLink
+                location="hero"
                 className="btn-hero-primary"
               >
                 Book a Call
                 <ArrowRight size={16} />
-              </a>
+              </BookACallLink>
               <a href="/case-studies" className="btn-hero-secondary">
                 See how it works
                 <ArrowRight size={15} />

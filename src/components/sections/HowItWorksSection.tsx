@@ -1,4 +1,5 @@
 import ArrowRight from '@/components/icons/ArrowRight'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const phases = [
   {
@@ -142,9 +143,9 @@ export default function HowItWorksSection() {
           <p>
             <strong>Ready to take the first step?</strong> The discovery call is free, and there&apos;s no obligation.
           </p>
-          <a href="/book-a-call" className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-blue px-6 py-3 font-600 text-white transition-colors hover:bg-blue-light">
+          <BookACallLink location="how_it_works" className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-blue px-6 py-3 font-600 text-white transition-colors hover:bg-blue-light">
             Book a Call <ArrowRight size={15} />
-          </a>
+          </BookACallLink>
         </div>
       </div>
     </section>

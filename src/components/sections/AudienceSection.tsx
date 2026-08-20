@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Plant, Buildings, Lightning, Wrench, CheckCircle } from '@phosphor-icons/react'
 import ArrowRight from '@/components/icons/ArrowRight'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const segments = [
   {
@@ -136,9 +137,9 @@ export default function AudienceSection() {
 
         <div className="mt-12 flex flex-col items-center justify-center gap-2 text-center aos">
           <span className="text-gray-600">Not sure which fits you?</span>
-          <Link href="/book-a-call" className="inline-flex items-center gap-1.5 font-600 text-blue transition-colors hover:text-blue-light">
+          <BookACallLink location="audience_section" className="inline-flex items-center gap-1.5 font-600 text-blue transition-colors hover:text-blue-light">
             Book a Call and we&apos;ll figure it out together <ArrowRight size={13} />
-          </Link>
+          </BookACallLink>
         </div>
       </div>
     </section>

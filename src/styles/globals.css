@@ -1342,6 +1342,71 @@
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ── SUCCESS POPUP ── */
+@keyframes successBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes successPopupIn {
+  from { opacity: 0; transform: scale(0.92) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes successProgressShrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Loops on the same 1.1s cadence as the message dot: pops right as it arrives, then rests for the remainder of each cycle. */
+@keyframes statusIconBump {
+  0%, 40%, 100% { transform: translate(-50%, -50%) scale(1); }
+  20% { transform: translate(-50%, -50%) scale(1.18); }
+}
+
+/* Same cadence, synced to the message stalling instead of arriving (error state). */
+@keyframes statusIconShake {
+  0%, 35%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  8% { transform: translate(-50%, -50%) rotate(-10deg); }
+  18% { transform: translate(-50%, -50%) rotate(8deg); }
+  28% { transform: translate(-50%, -50%) rotate(-4deg); }
+}
+
+@keyframes successTextIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-backdrop-in {
+  animation: successBackdropIn 0.2s ease-out both;
+}
+
+.success-popup-in {
+  animation: successPopupIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.success-progress {
+  width: 100%;
+  animation-name: successProgressShrink;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.success-text-in {
+  opacity: 0;
+  animation: successTextIn 0.4s ease-out both;
+}
+
+.status-icon-bump {
+  transform: translate(-50%, -50%);
+  animation: statusIconBump 2.2s ease-out 1.93s infinite;
+}
+
+.status-icon-shake {
+  transform: translate(-50%, -50%);
+  animation: statusIconShake 2.2s ease-out 1.93s infinite;
+}
+
 /* Floating hero metric cards */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
