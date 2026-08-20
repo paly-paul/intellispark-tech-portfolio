@@ -149,9 +149,24 @@ export function contactAdminEmail(data: ContactSubmission) {
     ${ctaButton(`Reply to ${name}`, `mailto:${email}`)}
   `
 
+  const text = [
+    'New Book a Call request',
+    '',
+    `Name: ${name}`,
+    `Company: ${company}`,
+    `Email: ${email}`,
+    `Company size: ${companySize || 'Not specified'}`,
+    '',
+    'Message:',
+    message,
+    '',
+    `Reply directly to this email to respond to ${name}.`,
+  ].join('\n')
+
   return {
     subject: `New Book a Call request — ${company}`,
     html: shell(body, `New lead: ${name} from ${company}`),
+    text,
   }
 }
 
@@ -199,9 +214,27 @@ export function contactAckEmail(data: Pick<ContactSubmission, 'name'>) {
     <p style="margin:28px 0 0; font-size:14px; color:${COLORS.gray900};">— The Intellispark team</p>
   `
 
+  const text = [
+    `Thanks for reaching out, ${data.name}.`,
+    '',
+    "We've received your message and someone from our team will get back to you within 24 hours.",
+    '',
+    'What happens next:',
+    '1. We review your goals and timeline',
+    '2. We reply with a few times for a 30-minute call',
+    '3. An honest conversation — no pitch deck, no pressure',
+    '',
+    "In the meantime, feel free to reply directly to this email if you'd like to add anything.",
+    '',
+    'Visit us: https://intellispark.tech',
+    '',
+    '— The Intellispark team',
+  ].join('\n')
+
   return {
     subject: 'We received your message — Intellispark Technologies',
     html: shell(body, "We've received your message and will be in touch within 24 hours."),
+    text,
   }
 }
 
@@ -219,6 +252,7 @@ export function newsletterAdminEmail(email: string) {
   return {
     subject: 'New newsletter subscriber',
     html: shell(body, `New subscriber: ${email}`),
+    text: `New newsletter subscriber\n\nEmail: ${email}`,
   }
 }
 
@@ -235,8 +269,23 @@ export function newsletterAckEmail(email: string) {
     <p style="margin:16px 0 0; font-size:12.5px; color:${COLORS.gray600};">Didn't sign up for this? You can ignore this email or let us know at <a href="mailto:talkto@intellispark.tech" style="color:${COLORS.blue};">talkto@intellispark.tech</a>.</p>
   `
 
+  const text = [
+    "You're subscribed.",
+    '',
+    "Thanks for signing up. You'll get occasional insights on talent, GCC operations, and what's changing in the India market — nothing more, no spam.",
+    '',
+    'Explore our work: https://intellispark.tech/case-studies',
+    '',
+    '— The Intellispark team',
+    '',
+    "Didn't sign up for this? You can ignore this email or let us know at talkto@intellispark.tech.",
+  ].join('\n')
+
   return {
     subject: "You're subscribed — Intellispark Technologies",
     html: shell(body, `Confirmed: ${email} is subscribed to Intellispark updates.`),
+    text,
+    // Recognized by spam filters as a sign of legitimate, compliant bulk mail.
+    headers: { 'List-Unsubscribe': '<mailto:talkto@intellispark.tech?subject=unsubscribe>' },
   }
 }
