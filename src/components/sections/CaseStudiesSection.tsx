@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Users, ChartPolar, Timer, Bank, Cloud, Buildings } from '@phosphor-icons/react'
 import ArrowRight from '@/components/icons/ArrowRight'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const outcomes = [
   { icon: Users, val: '50', unit: '+', label: 'Engineers placed in 18 months' },
@@ -168,9 +169,9 @@ export default function CaseStudiesSection() {
             <Link href="/case-studies" className="btn-ghost">
               View all case studies <ArrowRight size={13} />
             </Link>
-            <Link href="/book-a-call" className="btn-primary">
+            <BookACallLink location="case_studies_section" className="btn-primary">
               Book a Call <ArrowRight size={13} />
-            </Link>
+            </BookACallLink>
           </div>
         </div>
       </div>

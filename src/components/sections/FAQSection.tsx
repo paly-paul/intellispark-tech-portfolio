@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Plus } from '@phosphor-icons/react'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const faqs: { question: string; answer: ReactNode }[] = [
   {
@@ -11,7 +12,7 @@ const faqs: { question: string; answer: ReactNode }[] = [
       <div className="space-y-3">
         <p>The honest answer is: it depends on your model, team size, and the roles you&apos;re hiring for. We don&apos;t have a one-size-fits-all price because we don&apos;t think that&apos;s the right approach.</p>
         <p>What we can tell you is that a typical GCC setup through Intellispark — including entity formation, initial hires, and first 90 days of operations — is structured so that the total investment is recovered within the first 12–18 months through the cost differential versus onshore hiring.</p>
-        <p>We&apos;ll give you a detailed, itemised cost estimate after our first discovery call — before you make any commitment. <Link href="/book-a-call" className="text-blue font-600 hover:underline">Book a call</Link> to get started.</p>
+        <p>We&apos;ll give you a detailed, itemised cost estimate after our first discovery call — before you make any commitment. <BookACallLink location="faq_inline" className="text-blue font-600 hover:underline">Book a call</BookACallLink> to get started.</p>
       </div>
     ),
   },
@@ -73,9 +74,9 @@ export default function FAQSection() {
             <p>
               Still have questions? We&apos;re happy to talk through your specific situation — no obligation, no pressure.
             </p>
-            <a href="/book-a-call" className="btn-primary">
+            <BookACallLink location="faq_cta" className="btn-primary">
               Book a Call <ArrowRight size={14} />
-            </a>
+            </BookACallLink>
           </div>
         </div>
 

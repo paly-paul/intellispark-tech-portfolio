@@ -1,6 +1,25 @@
 'use client'
 
 import { useState } from 'react'
+import { trackEvent } from '@/lib/analytics'
+import StatusPopup from '@/components/ui/StatusPopup'
+import { isValidEmail } from '@/lib/validators'
+
+type FieldName = 'name' | 'company' | 'email' | 'message'
+
+const REQUIRED_MESSAGES: Record<FieldName, string> = {
+  name: 'Please enter your name.',
+  company: 'Please enter your company.',
+  email: 'Please enter your email.',
+  message: 'Please tell us about your goals.',
+}
+
+function validateField(name: FieldName, value: string): string | null {
+  const trimmed = value.trim()
+  if (!trimmed) return REQUIRED_MESSAGES[name]
+  if (name === 'email' && !isValidEmail(trimmed)) return 'Please enter a valid email address.'
+  return null
+}
 
 export default function BookACallForm() {
   const [formData, setFormData] = useState({
@@ -10,28 +29,76 @@ export default function BookACallForm() {
     companySize: '',
     message: '',
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<FieldName, string>>>({})
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+
+    if (name in REQUIRED_MESSAGES) {
+      const field = name as FieldName
+      if (fieldErrors[field] && !validateField(field, value)) {
+        setFieldErrors((prev) => ({ ...prev, [field]: undefined }))
+      }
+    }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // For now, just show success message
-    // In production, this would submit to an API endpoint
-    setSubmitted(true)
-    setTimeout(() => {
-      setFormData({ name: '', company: '', email: '', companySize: '', message: '' })
-      setSubmitted(false)
-    }, 3000)
+  const handleFieldBlur = (field: FieldName) => {
+    setFieldErrors((prev) => ({ ...prev, [field]: validateField(field, formData[field]) ?? undefined }))
   }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (submitting) return
+
+    const nextErrors: Partial<Record<FieldName, string>> = {}
+    ;(Object.keys(REQUIRED_MESSAGES) as FieldName[]).forEach((field) => {
+      const error = validateField(field, formData[field])
+      if (error) nextErrors[field] = error
+    })
+
+    if (Object.keys(nextErrors).length > 0) {
+      setFieldErrors(nextErrors)
+      return
+    }
+
+    setSubmitting(true)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error || 'Something went wrong. Please try again.')
+      }
+
+      trackEvent('book_a_call', { location: 'form_submit' })
+      setFormData({ name: '', company: '', email: '', companySize: '', message: '' })
+      setFieldErrors({})
+      setShowSuccess(true)
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  const fieldClass = (field: FieldName) =>
+    `w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none ${
+      fieldErrors[field] ? 'border-red-400 focus:border-red-500' : 'border-gray-300 focus:border-blue'
+    }`
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} noValidate className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
-        <div>
+        <div className="relative">
           <label htmlFor="name" className="block text-sm font-600 text-gray-900 mb-2">
             Name *
           </label>
@@ -41,12 +108,19 @@ export default function BookACallForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue transition-colors"
+            onBlur={() => handleFieldBlur('name')}
+            aria-invalid={!!fieldErrors.name}
+            aria-describedby={fieldErrors.name ? 'name-error' : undefined}
+            className={fieldClass('name')}
             placeholder="Your name"
           />
+          {fieldErrors.name && (
+            <p id="name-error" role="alert" className="absolute left-0 top-full mt-1 text-xs text-red-600">
+              {fieldErrors.name}
+            </p>
+          )}
         </div>
-        <div>
+        <div className="relative">
           <label htmlFor="company" className="block text-sm font-600 text-gray-900 mb-2">
             Company *
           </label>
@@ -56,14 +130,21 @@ export default function BookACallForm() {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue transition-colors"
+            onBlur={() => handleFieldBlur('company')}
+            aria-invalid={!!fieldErrors.company}
+            aria-describedby={fieldErrors.company ? 'company-error' : undefined}
+            className={fieldClass('company')}
             placeholder="Your company"
           />
+          {fieldErrors.company && (
+            <p id="company-error" role="alert" className="absolute left-0 top-full mt-1 text-xs text-red-600">
+              {fieldErrors.company}
+            </p>
+          )}
         </div>
       </div>
 
-      <div>
+      <div className="relative">
         <label htmlFor="email" className="block text-sm font-600 text-gray-900 mb-2">
           Email *
         </label>
@@ -73,10 +154,17 @@ export default function BookACallForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          required
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue transition-colors"
+          onBlur={() => handleFieldBlur('email')}
+          aria-invalid={!!fieldErrors.email}
+          aria-describedby={fieldErrors.email ? 'email-error' : undefined}
+          className={fieldClass('email')}
           placeholder="your@company.com"
         />
+        {fieldErrors.email && (
+          <p id="email-error" role="alert" className="absolute left-0 top-full mt-1 text-xs text-red-600">
+            {fieldErrors.email}
+          </p>
+        )}
       </div>
 
       <div>
@@ -98,7 +186,7 @@ export default function BookACallForm() {
         </select>
       </div>
 
-      <div>
+      <div className="relative mt-2 mb-6">
         <label htmlFor="message" className="block text-sm font-600 text-gray-900 mb-2">
           Tell us about your goals *
         </label>
@@ -107,18 +195,26 @@ export default function BookACallForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          required
+          onBlur={() => handleFieldBlur('message')}
           rows={5}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue transition-colors resize-none"
+          aria-invalid={!!fieldErrors.message}
+          aria-describedby={fieldErrors.message ? 'message-error' : undefined}
+          className={`${fieldClass('message')} resize-none`}
           placeholder="What are you hoping to build? What&apos;s your timeline?"
         />
+        {fieldErrors.message && (
+          <p id="message-error" role="alert" className="absolute left-0 top-full mt-1 text-xs text-red-600">
+            {fieldErrors.message}
+          </p>
+        )}
       </div>
 
       <button
         type="submit"
-        className="w-full px-6 py-3 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors"
+        disabled={submitting}
+        className="w-full px-6 py-3 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {submitted ? '✓ Message received' : 'Send message'}
+        {submitting ? 'Sending…' : 'Send message'}
       </button>
 
       <p className="text-sm text-gray-600 text-center">
@@ -127,6 +223,43 @@ export default function BookACallForm() {
           hello@intellispark.tech
         </a>
       </p>
+
+      {/* Dev-only popup preview triggers — uncomment to test StatusPopup without submitting for real.
+      {process.env.NODE_ENV === 'development' && (
+        <div className="flex items-center justify-center gap-4">
+          <button
+            type="button"
+            onClick={() => setShowSuccess(true)}
+            className="text-xs text-gray-400 hover:text-blue underline"
+          >
+            Preview success popup (dev only)
+          </button>
+          <button
+            type="button"
+            onClick={() => setErrorMessage('Something went wrong sending your message. Please try again or email us directly.')}
+            className="text-xs text-gray-400 hover:text-red-600 underline"
+          >
+            Preview error popup (dev only)
+          </button>
+        </div>
+      )}
+      */}
+
+      <StatusPopup
+        open={showSuccess}
+        onClose={() => setShowSuccess(false)}
+        status="success"
+        title="Message received"
+        message="Thanks for reaching out — we'll be in touch within 24 hours. Keep an eye on your inbox."
+      />
+      <StatusPopup
+        open={!!errorMessage}
+        onClose={() => setErrorMessage(null)}
+        status="error"
+        title="Message failed to send"
+        message={errorMessage ?? ''}
+        autoCloseMs={8000}
+      />
     </form>
   )
 }

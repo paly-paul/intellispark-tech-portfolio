@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Check, FileText } from '@phosphor-icons/react'
 import ArrowRight from '@/components/icons/ArrowRight'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const items = [
   "A 30-minute call — no longer unless you want it to be",
@@ -26,9 +27,9 @@ export default function CTASection() {
             There&apos;s no script, no sales deck on the first call. Just an honest conversation about where you are, what you&apos;re hoping to achieve, and whether we&apos;re the right fit for each other.
           </p>
           <div className="cta-strip__buttons">
-            <Link href="/book-a-call" className="btn-primary">
+            <BookACallLink location="cta_strip" className="btn-primary">
               Book a Call <ArrowRight size={15} />
-            </Link>
+            </BookACallLink>
             <Link href="/resources/gcc-guide" className="btn-secondary">
               <FileText weight="bold" size={16} />
               Download the GCC Guide

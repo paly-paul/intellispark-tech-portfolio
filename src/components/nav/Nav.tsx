@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Lightning, CaretDown, Buildings, ArrowsClockwise, UsersThree, Code, Robot, MapPin } from '@phosphor-icons/react'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -211,22 +212,22 @@ export default function Nav() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Link
-              href="/book-a-call"
+            <BookACallLink
+              location="nav"
               className="px-6 py-2 bg-blue text-white text-sm font-600 rounded-lg hover:bg-blue-light transition-colors"
             >
               Book a Call
-            </Link>
+            </BookACallLink>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-3">
-            <Link
-              href="/book-a-call"
+            <BookACallLink
+              location="nav_mobile"
               className="px-4 py-2 bg-blue text-white text-xs font-600 rounded-lg hover:bg-blue-light transition-colors"
             >
               Book a Call
-            </Link>
+            </BookACallLink>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="w-6 h-6 flex flex-col justify-center gap-1.5 hover:opacity-70"

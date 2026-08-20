@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/footer/Footer'
 import { AOSProvider } from '@/components/AOSProvider'
@@ -35,6 +36,9 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   )

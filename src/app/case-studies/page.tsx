@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import BookACallLink from '@/components/analytics/BookACallLink'
 
 const caseStudies = [
   {
@@ -225,12 +226,12 @@ export default function CaseStudies() {
           <p className="text-gray-500 text-[17px] md:text-[19px] max-w-2xl mx-auto mb-8 leading-relaxed">
             Every engagement starts with a free discovery call. No pitch deck, no obligation.
           </p>
-          <a
-            href="/book-a-call"
+          <BookACallLink
+            location="case_studies_cta"
             className="inline-flex items-center gap-2 px-8 py-3 bg-blue text-white font-600 rounded-lg hover:bg-blue-light transition-colors"
           >
             Book a Call →
-          </a>
+          </BookACallLink>
         </div>
       </section>
     </div>
