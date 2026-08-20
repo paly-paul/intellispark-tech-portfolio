@@ -88,6 +88,7 @@ export async function POST(request: NextRequest) {
       replyTo: email,
       subject: admin.subject,
       html: admin.html,
+      text: admin.text,
     })
 
     // Acknowledgement to the submitter — best-effort, doesn't fail the request if it errors.
@@ -99,6 +100,7 @@ export async function POST(request: NextRequest) {
         replyTo: adminEmail,
         subject: ack.subject,
         html: ack.html,
+        text: ack.text,
       })
     } catch (ackError) {
       console.error('Failed to send acknowledgement email:', ackError)

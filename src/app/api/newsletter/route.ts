@@ -61,6 +61,7 @@ export async function POST(request: NextRequest) {
       replyTo: email,
       subject: admin.subject,
       html: admin.html,
+      text: admin.text,
     })
   } catch (error) {
     console.error('Failed to send newsletter admin notification:', error)
@@ -76,6 +77,8 @@ export async function POST(request: NextRequest) {
       replyTo: adminEmail,
       subject: ack.subject,
       html: ack.html,
+      text: ack.text,
+      headers: ack.headers,
     })
   } catch (ackError) {
     console.error('Failed to send newsletter confirmation email:', ackError)
